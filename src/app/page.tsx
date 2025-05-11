@@ -1,9 +1,13 @@
-import FirstPart from "./components/HomePageElements/FirstPart";
+import HomePageSelection from "./components/HomePageElements/HomePageSelection";
+import HomePageSwiper from "./components/HomePageElements/HomePageSwiper";
 
 export default function Home() {
   return (
     <div className="">
-      <FirstPart />
+      {/* <FirstPart /> */}
+      <HomePageSwiper />
+
+      <HomePageSelection />
     </div>
   );
 }

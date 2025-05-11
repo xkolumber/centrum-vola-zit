@@ -39,7 +39,7 @@ const Navbar = () => {
   return (
     <>
       <div
-        className="hidden md:flex !justify-between  main_section m-auto !pt-4 !pb-4 items-center w-full"
+        className="hidden md:flex !justify-between  navbar_section m-auto !pt-4 !pb-4 items-center w-full"
         style={{
           borderBottom: "1px solid #F7F7F7",
         }}
@@ -49,10 +49,10 @@ const Navbar = () => {
           <IconFacebook />
           <IconYoutube />
         </div>
-        <div className="flex flex-row gap-4">
+        <div className="flex flex-row gap-8">
           {navbar_right_part.map((object, index) => (
-            <div className="flex flex-row gap-4" key={index}>
-              {object.icon} {object.text}
+            <div className="flex flex-row gap-4 items-center" key={index}>
+              {object.icon} <p className="2xl:text-[16px]">{object.text}</p>
             </div>
           ))}
         </div>
@@ -69,7 +69,7 @@ const Navbar = () => {
           borderBottom: "1px solid #F7F7F7",
         }}
       >
-        <div className="flex flex-row w-full main_section justify-between items-center !pt-0 !pb-0">
+        <div className="flex flex-row w-full navbar_section justify-between items-center !pt-0 !pb-0 m-auto">
           <div
             className={`lg:hidden cursor-pointer `}
             onClick={() => setOpenMobile(true)}
@@ -83,7 +83,7 @@ const Navbar = () => {
               src={`logo.svg`}
               width={40}
               height={40}
-              className="w-full h-16  object-cover"
+              className="w-full h-28  object-cover"
               alt="Logo"
             />
           </Link>
@@ -110,10 +110,10 @@ const Navbar = () => {
             ))}
           </div>
           <div className="hidden lg:flex flex-row items-center gap-20">
-            <div className="flex flex-row gap-2">
+            <div className="flex flex-row gap-4">
               <IconSponsorUs />
               <div className="flex flex-col">
-                <h6 className="font-bold">Prisnej</h6>
+                <p className="font-bold">Prispej</p>
                 <p>Podpor nás</p>
               </div>
             </div>

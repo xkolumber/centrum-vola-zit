@@ -14,23 +14,93 @@ body {
 }
 
 html {
+  font-size: 62.5%;
   scroll-behavior: smooth;
 }
 
-.own_edge {
-  display: flex;
-  justify-content: center;
-  padding: 1.2rem;
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 1.6rem;
+  background-color: var(--color-secondary);
+}
+b {
+  font-weight: 600;
+}
+p,
+a {
+  color: white;
+  font-weight: 400;
+  text-transform: none;
 }
 
-.padding_mobile {
-  padding: 1.2rem;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: black;
+  margin: 0;
+  /* margin-bottom: 1rem; */
+  line-height: 120%;
+  font-weight: 300;
+  letter-spacing: 0.5px;
 }
 
-@media screen and (min-width: 768px) {
-  .own_edge {
-    padding: 2.5rem;
+h1 {
+  font-size: 5rem;
+}
+h2 {
+  font-size: 3rem;
+}
+h3 {
+  font-size: 2.5rem;
+}
+h4 {
+  font-size: 2.4rem;
+}
+h5 {
+  font-size: 2.2rem;
+}
+h6 {
+  font-size: 1.8rem;
+}
+p,
+a,
+li {
+  font-size: 1.4rem;
+  line-height: 170%;
+  letter-spacing: 0px;
+  color: black;
+}
+
+@media screen and (min-width: 1800px) {
+  h2 {
+    font-size: 4.8rem;
   }
+  h3 {
+    font-size: 3.4rem;
+  }
+  h4 {
+    font-size: 3rem;
+  }
+  h5 {
+    font-size: 2.2rem;
+  }
+  h6 {
+    font-size: 2rem;
+  }
+  p,
+  a {
+    font-size: 1.8rem;
+  }
+  .custom-underline {
+    margin-bottom: 46px;
+  }
+}
+.navbar_section a {
+  font-weight: 400;
 }
 
 /*Main section */
@@ -38,6 +108,8 @@ html {
 .main_section {
   width: 100%;
   padding-top: 3rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -50,18 +122,18 @@ html {
   .main_section {
     padding-top: 7rem;
     padding-bottom: 7rem;
-    max-width: 1140px;
+    min-width: 1140px;
   }
 }
 
 @media screen and (min-width: 1240px) {
   .main_section {
-    max-width: 1340px;
+    min-width: 1340px;
   }
 }
 @media screen and (min-width: 1536px) {
   .main_section {
-    max-width: 1440px;
+    min-width: 1440px;
   }
   .left_section_inside {
     padding-left: 12rem;
@@ -89,5 +161,44 @@ html {
 @media screen and (max-width: 768px) {
   .no_padding_mobile {
     padding-top: 0px !important;
+  }
+}
+
+/*Navbar section */
+
+.navbar_section {
+  padding: 1.6rem;
+  padding-right: 2.5rem;
+  padding-left: 2.5rem;
+  max-width: 860px;
+
+  margin: auto;
+  z-index: 100;
+  position: relative;
+}
+
+@media screen and (min-width: 1024px) {
+  .navbar_section {
+    max-width: 1100px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .main_section {
+    max-width: 1100px;
+  }
+  .navbar_section {
+    max-width: 1200px;
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  .navbar_section {
+    max-width: 1500px;
+  }
+}
+@media screen and (min-width: 1836px) {
+  .navbar_section {
+    max-width: 1784px;
   }
 }
