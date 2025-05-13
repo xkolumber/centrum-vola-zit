@@ -5,3 +5,11 @@ export interface HowWeWork {
   link: string;
   color: string;
 }
+
+export interface TeamMemberInterface {
+  name: string;
+  job: string;
+  desc: string;
+  fb_link: string;
+  ig_link: string;
+}

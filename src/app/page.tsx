@@ -1,6 +1,7 @@
 import HomePageHowWeWork from "./components/HomePageElements/HomePageHowWeWork";
 import HomePageSelection from "./components/HomePageElements/HomePageSelection";
 import HomePageSwiper from "./components/HomePageElements/HomePageSwiper";
+import HomePageTeam from "./components/HomePageElements/HomePageTeam";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
 
       <HomePageSelection />
       <HomePageHowWeWork />
+      <HomePageTeam />
     </div>
   );
 }

@@ -110,7 +110,7 @@ const Navbar = () => {
             ))}
           </div>
           <div className="hidden lg:flex flex-row items-center gap-20">
-            <div className="flex flex-row gap-4">
+            <div className="flex flex-row gap-4 items-center">
               <IconSponsorUs />
               <div className="flex flex-col">
                 <p className="font-bold">Prispej</p>
