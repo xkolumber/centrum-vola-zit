@@ -75,7 +75,7 @@ const IconSponsorUs = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(21.9041 20.9781) rotate(-29.408) scale(19.6713 15.6043)"
         >
-          <stop stop-color="white" stopOpacity="0.25" />
+          <stop stopColor="white" stopOpacity="0.25" />
           <stop offset="1" stopColor="white" stopOpacity="0" />
         </radialGradient>
         <radialGradient
@@ -86,7 +86,7 @@ const IconSponsorUs = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(28.9756 27.6561) rotate(-26.296) scale(14.3593 7.09552)"
         >
-          <stop stop-color="#BD2719" stopOpacity="0.25" />
+          <stop stopColor="#BD2719" stopOpacity="0.25" />
           <stop offset="1" stopColor="#BD2719" stopOpacity="0" />
         </radialGradient>
         <radialGradient
@@ -97,7 +97,7 @@ const IconSponsorUs = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(19.1027 19.3925) rotate(-21.6908) scale(5.10472 3.17097)"
         >
-          <stop stop-color="white" />
+          <stop stopColor="white" />
           <stop offset="1" stopColor="white" stopOpacity="0" />
         </radialGradient>
         <radialGradient
@@ -108,7 +108,7 @@ const IconSponsorUs = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(29.0756 18.9135) rotate(-40.7634) scale(4.22642 2.62556)"
         >
-          <stop stop-color="white" />
+          <stop stopColor="white" />
           <stop offset="1" stopColor="white" stopOpacity="0" />
         </radialGradient>
         <linearGradient
@@ -119,7 +119,7 @@ const IconSponsorUs = () => {
           y2="13.5756"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#860805" />
+          <stop stopColor="#860805" />
           <stop offset="1" stopColor="#BD2719" stopOpacity="0" />
         </linearGradient>
       </defs>
