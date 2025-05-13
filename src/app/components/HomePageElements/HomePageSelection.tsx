@@ -14,7 +14,7 @@ const HomePageSelection = () => {
             height={600}
             className="w-full h-full object-cover rounded-[8px]"
           />
-          <TextWithArrow link="/" title="Zdravotnícke pomôcky" />
+          <TextWithArrow link="/" title="Terapie" />
         </div>
 
         <div className="grid grid-rows-2 gap-8 h-full">
@@ -27,7 +27,7 @@ const HomePageSelection = () => {
               className="w-full h-[370px] object-cover rounded-[8px]"
             />
 
-            <TextWithArrow link="/" title="Zdravotnícke pomôcky" />
+            <TextWithArrow link="/" title="Služby" />
           </div>
 
           <div className="grid grid-cols-2 gap-8">

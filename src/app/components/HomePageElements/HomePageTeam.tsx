@@ -39,13 +39,13 @@ const HomePageTeam = () => {
               necessitatibus saepe
             </p>
           </div>
-          <div className="flex flex-row gap-4">
+          <div className=" flex-row gap-4 hidden md:flex">
             <IconArrowLeftTeam />
             <IconArrowRightTeam />
           </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-24 mt-16">
+        <div className="grid-cols-3 gap-24 mt-16 hidden md:grid">
           {team_members.map((object, index) => (
             <HomePageMember data={object} key={index} />
           ))}

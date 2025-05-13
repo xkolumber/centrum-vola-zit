@@ -5,24 +5,25 @@ import { HowWeWork } from "@/app/lib/interface";
 const data: HowWeWork[] = [
   {
     id: "01",
-    title: "Pomáhame získať financie",
-    text: "Mnohí rodičia nevedia, že môžu požiadať poisťovne o príspevky na liečbu a terapie. Pomôžeme vám s administratívou, aby vaše dieťa dostalo, na čo má nárok.",
-    link: "/",
-    color: "#20A9E1",
-  },
-  {
-    id: "02",
-    title: "Poskytujeme odbornú starostlivosť",
-    text: "V našom tíme sú lekári, fyzioterapeuti, psychológovia a logopédi. Všetci spoločne pracujeme na tom, aby vaše dieťa dostalo individuálnu a kvalitnú starostlivosť.",
+    title: "Poskytujeme odbornú a sociálnu starostlivosť",
+    text: "V našom tíme sú fyzioterapeuti, psychológovia a logopédi. Všetci spoločne pracujeme na tom, aby vaše dieťa dostalo individuálnu a kvalitnú starostlivosť.",
     link: "/",
     color: "#C3F12D",
   },
+
   {
-    id: "03",
+    id: "02",
     title: "Máme bezpečné a podporné priestory",
     text: "Naše centrum je miestom, kde sa deti cítia prijaté, pochopené a majú podmienky na svoj rozvoj.",
     link: "/",
     color: "#95BB40",
+  },
+  {
+    id: "03",
+    title: "Pomáhame získať financie",
+    text: "Mnohí rodičia nevedia, že môžu požiadať poisťovne o príspevky na liečbu a terapie. Pomôžeme vám s administratívou, aby vaše dieťa dostalo, na čo má nárok.",
+    link: "/",
+    color: "#20A9E1",
   },
   {
     id: "04",
