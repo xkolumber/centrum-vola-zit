@@ -1,3 +1,4 @@
+import HomePageFaq from "./components/HomePageElements/HomePageFaq";
 import HomePageHowWeWork from "./components/HomePageElements/HomePageHowWeWork";
 import HomePageSelection from "./components/HomePageElements/HomePageSelection";
 import HomePageSwiper from "./components/HomePageElements/HomePageSwiper";
@@ -12,6 +13,7 @@ export default function Home() {
       <HomePageSelection />
       <HomePageHowWeWork />
       <HomePageTeam />
+      <HomePageFaq />
     </div>
   );
 }

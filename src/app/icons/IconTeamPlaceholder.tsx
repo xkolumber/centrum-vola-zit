@@ -10,7 +10,7 @@ const IconTeamPlaceholder = () => {
       xmlns="http://www.w3.org/2000/svg"
     >
       <rect width="460" height="380" rx="16" fill="#F1F1F1" />
-      <g clip-path="url(#clip0_189_378)">
+      <g clipPath="url(#clip0_189_378)">
         <mask
           id="mask0_189_378"
           style={{ maskType: "alpha" }}
