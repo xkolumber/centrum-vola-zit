@@ -19,7 +19,7 @@ const Footer = () => {
               height={50}
               alt="logo"
               priority={true}
-              className="w-[100px] lg:w-[200px] pt-2 "
+              className="w-[100px] pt-2 "
             />
           </div>
           {/* <h5 className="font-semibold">M & Z</h5> */}

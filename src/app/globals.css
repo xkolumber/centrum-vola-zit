@@ -208,3 +208,19 @@ li {
   height: 6.4rem;
   border-radius: 100%;
 }
+
+.react-player__preview {
+  height: 500px !important;
+}
+
+.react_player_own {
+  border-radius: 16px;
+  overflow: hidden;
+  width: 100%;
+  height: 513px;
+  background-color: black;
+}
+
+.react-player__preview {
+  height: inherit !important;
+}
