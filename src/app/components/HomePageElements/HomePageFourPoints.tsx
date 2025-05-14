@@ -30,7 +30,7 @@ const data: HowWeWork[] = [
     title: "Každý môže pomôcť",
     text: "Podporiť nás môže ktokoľvek – príspevkom na transparentný účet alebo pravidelným darcovstvom. Aj malá pomoc mení veľké životy.",
     link: "/",
-    color: "#F1A32D",
+    color: "#2E63AD",
   },
 ];
 
