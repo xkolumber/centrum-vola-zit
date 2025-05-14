@@ -1,22 +1,22 @@
 export const navbar_data = [
   {
     title: "Domov",
-    slug: "/",
+    slug: "/domov",
   },
   {
     title: "Služby",
-    slug: "/",
+    slug: "/sluzby",
   },
   {
     title: "O nás",
-    slug: "/",
+    slug: "/o-nas",
   },
   {
     title: "Kontakt",
-    slug: "/",
+    slug: "/kontakt",
   },
   {
-    title: "E-shop",
-    slug: "/e-shop",
+    title: "Pomôcky",
+    slug: "/pomocky",
   },
 ];

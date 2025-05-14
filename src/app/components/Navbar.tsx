@@ -23,7 +23,7 @@ const navbar_right_part = [
   {
     id: 1,
     icon: <IconLocation />,
-    text: "Dr. Alexandra 42 060 01 Kezmarok, Slovensko",
+    text: "Dr. Alexandra 42 060 01 Kežmarok, Slovensko",
   },
   { id: 2, icon: <IconPhone />, text: "0915 653 553" },
   { id: 3, icon: <IconTime />, text: "8:00 - 16:00" },
@@ -35,6 +35,8 @@ const Navbar = () => {
   const open = Boolean(anchorEl);
 
   const [openMobile, setOpenMobile] = useState(false);
+
+  console.log(pathname);
 
   return (
     <>
@@ -96,7 +98,7 @@ const Navbar = () => {
                   key={index}
                   className={`  ${
                     pathname.includes(object.slug)
-                      ? "active_navbar"
+                      ? "!font-bold"
                       : "item_navbar"
                   } ${
                     object.slug === "/domov" &&

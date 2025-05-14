@@ -5,6 +5,9 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import { Inter } from "next/font/google";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import HydrationZustand from "./components/HydrationZustand";
+import { ThemeProvider } from "@mui/material/styles";
+import theme from "./lib/theme";
 
 const inter = Inter({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -25,8 +28,12 @@ export default function RootLayout({
     <html lang="sk">
       <AppRouterCacheProvider>
         <body className={`${inter.className} antialiased`}>
-          <Navbar /> {children}
-          <Footer />
+          <HydrationZustand>
+            <ThemeProvider theme={theme}>
+              <Navbar /> {children}
+              <Footer />
+            </ThemeProvider>
+          </HydrationZustand>
         </body>
       </AppRouterCacheProvider>
     </html>

@@ -26,3 +26,11 @@ export interface GalleryPhotoInterface {
   image: string;
   link: string;
 }
+
+export interface ContactFormInterface {
+  agree: boolean;
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+}

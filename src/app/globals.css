@@ -209,6 +209,12 @@ li {
   border-radius: 100%;
 }
 
+.circle_contact {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100%;
+}
+
 .react-player__preview {
   height: 500px !important;
 }

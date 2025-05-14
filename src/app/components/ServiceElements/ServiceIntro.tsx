@@ -12,25 +12,29 @@ const services = [
   },
   {
     name: "Závesný systém",
-    videoUrl: "video_test.mp4",
+    videoUrl:
+      "https://justtesttt.s3.eu-north-1.amazonaws.com/Bobath+koncept+v+MNO+_+1.+d%C3%ADl+-+Prevence.mp4",
     description:
       "Cvičenie je určené na nácvik chôdze a vertikalizáciu pacienta",
   },
   {
     name: "Redcord",
-    videoUrl: "video_test.mp4",
+    videoUrl:
+      "https://justtesttt.s3.eu-north-1.amazonaws.com/Bobath+koncept+v+MNO+_+1.+d%C3%ADl+-+Prevence.mp4",
     description:
       "Ide o unikátne cvičenie v závesnom systéme. Redcord je metóda zameraná na diagnostiku a následnú terapiu pri poruchách funkčných pohybových vzorov. Pomocou systému Redcord vieme odstrániť bolesti, zlepšiť pohybové stereotypy a obnoviť rozsah pohyblivosti v kĺboch. Zameriavame sa najmä na odstránenie príčiny daného motorického problému.",
   },
   {
     name: "Galileo",
-    videoUrl: "video_test.mp4",
+    videoUrl:
+      "https://justtesttt.s3.eu-north-1.amazonaws.com/Bobath+koncept+v+MNO+_+1.+d%C3%ADl+-+Prevence.mp4",
     description:
       "Vibračná plošina Galileo MED 25 je inovatívne zariadenie určené na efektívnu rehabilitáciu a výcviku v oblasti terapie a rehabilitácie ortopedických, neurologických a pohybových ochorení. Rovnako tak nachádza svoje maximálne využitie v oblasti fitness a vrcholového športu. Prístroj dosahuje vynikajúce výsledky aj v oblasti budovania kondície a prevencie zhoršenia zdravotného stavu v každom veku.",
   },
   {
     name: "Horizontálny motomed",
-    videoUrl: "video_test.mp4",
+    videoUrl:
+      "https://justtesttt.s3.eu-north-1.amazonaws.com/Bobath+koncept+v+MNO+_+1.+d%C3%ADl+-+Prevence.mp4",
     description:
       "je zariadenie, ktoré podporuje rozvoj motorických funkcií a tým zároveň aj nápravu poškodení CNS (centrálneho nervového systému). V procese obnovy CNS vyvoláva vytváranie nových nervových buniek a množenie funkčných buniek. Zariadenie využíva rytmické, dynamicky koordinované pohyby, ktoré podporujú obnovenie základných funkcií CNS. Pohyby pacientov na zariadení spúšťajú impulzy v receptoroch kože, svalov, kĺbov a iných tkanív, ktoré mnohonásobným opakovaním vyvolávajú zmeny v nervovej sústave.",
   },
@@ -79,7 +83,7 @@ export default function ServiceIntro() {
         </div>
         <div className="w-full lg:w-1/2 space-y-4">
           <h3 className=" font-semibold">{services[active].name}</h3>
-          <p className="text-gray-700">{services[active].description}</p>
+          <p className="text-gray-800">{services[active].description}</p>
         </div>
       </div>
     </div>
