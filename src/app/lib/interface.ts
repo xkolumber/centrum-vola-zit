@@ -34,3 +34,15 @@ export interface ContactFormInterface {
   phone: string;
   message: string;
 }
+
+export interface GalleryInterface {
+  datum_pridania: string;
+  fotky: string[];
+  nazov: string;
+  id: string;
+  partition_key: string;
+}
+
+export interface IsLoadingMap {
+  [key: string]: boolean;
+}

@@ -131,7 +131,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             }}
           >
             <Image
-              src={`logo.svg`}
+              src={`/logo.svg`}
               alt="logo"
               width={100}
               height={100}

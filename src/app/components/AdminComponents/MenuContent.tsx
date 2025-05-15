@@ -1,13 +1,7 @@
 "use client";
-import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 import CollectionsIcon from "@mui/icons-material/Collections";
-import ContactsIcon from "@mui/icons-material/Contacts";
-import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
-import PeopleRoundedIcon from "@mui/icons-material/PeopleRounded";
-import ProductionQuantityLimitsIcon from "@mui/icons-material/ProductionQuantityLimits";
-import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -19,46 +13,15 @@ import { usePathname } from "next/navigation";
 
 const mainListItems = [
   {
-    text: "Blog",
+    text: "Články",
     icon: <MenuBookIcon />,
-    link: "/admin/blog",
+    link: "/admin/clanky",
   },
-  {
-    text: "Cenník",
-    icon: <CurrencyExchangeIcon />,
-    link: "/admin/cennik",
-  },
-  { text: "Domov", icon: <HomeRoundedIcon />, link: "/admin/domov" },
+  { text: "Domov", icon: <HomeRoundedIcon />, link: "/admin" },
   {
     text: "Galéria",
     icon: <CollectionsIcon />,
     link: "/admin/galeria",
-  },
-  {
-    text: "Kontakt",
-    icon: <ContactsIcon />,
-    link: "/admin/kontakt",
-  },
-  {
-    text: "O nás",
-    icon: <PeopleRoundedIcon />,
-    link: "/admin/o-nas",
-  },
-  {
-    text: "Produkty",
-    icon: <ProductionQuantityLimitsIcon />,
-    link: "/admin/produkty",
-  },
-
-  {
-    text: "Služby",
-    icon: <AutoStoriesIcon />,
-    link: "/admin/sluzby",
-  },
-  {
-    text: "Viac o timbermaxe",
-    icon: <QuestionMarkIcon />,
-    link: "/admin/viac-o-timbermaxe",
   },
 ];
 

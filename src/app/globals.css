@@ -230,3 +230,83 @@ li {
 .react-player__preview {
   height: inherit !important;
 }
+
+/*btn*/
+.btn {
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 1rem 0;
+  outline: 0;
+  padding: 0.8rem 2.7rem;
+  text-align: center;
+  white-space: nowrap;
+  max-width: fit-content;
+  justify-content: center;
+  display: flex;
+  transition: 0.1s ease-in;
+  align-items: center;
+  font-weight: 400;
+  z-index: 10;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 2px;
+}
+
+@media screen and (min-width: 1024px) {
+  .btn {
+    font-size: 1.6rem;
+  }
+}
+
+.btn--primary {
+  /* background: #384239; */
+  background-color: #1f2820;
+  color: white;
+}
+.btn--primary:hover {
+  background-color: #344235;
+}
+
+.behind_card_background {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  align-items: center;
+  padding: 1rem;
+  opacity: 0.6;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  z-index: 2400;
+}
+.popup_message {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  background-color: white;
+  border: 1px solid black;
+  padding: 1.6rem;
+  position: fixed;
+  z-index: 2500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .popup_message {
+    width: 750px;
+    max-height: 80vh;
+    padding: 5rem;
+  }
+}
+
+.disabledBtn {
+  opacity: 0.7;
+  cursor: default;
+}

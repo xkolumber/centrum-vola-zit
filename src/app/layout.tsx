@@ -9,6 +9,7 @@ import HydrationZustand from "./components/HydrationZustand";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./lib/theme";
 import ConfigureAmplifyClientSide from "./lib/awsAmplifyCognito";
+import Provider from "./hooks/providerQuery";
 
 const inter = Inter({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -32,8 +33,10 @@ export default function RootLayout({
           <ConfigureAmplifyClientSide />
           <ThemeProvider theme={theme}>
             <HydrationZustand>
-              <Navbar /> {children}
-              <Footer />
+              <Provider>
+                <Navbar /> {children}
+                <Footer />
+              </Provider>
             </HydrationZustand>
           </ThemeProvider>
         </body>
