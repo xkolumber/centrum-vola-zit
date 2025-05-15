@@ -36,12 +36,12 @@ const Navbar = () => {
 
   const [openMobile, setOpenMobile] = useState(false);
 
-  console.log(pathname);
-
   return (
     <>
       <div
-        className="hidden md:flex !justify-between  navbar_section m-auto !pt-4 !pb-4 items-center w-full"
+        className={`hidden md:flex !justify-between  navbar_section m-auto !pt-4 !pb-4 items-center w-full ${
+          pathname.startsWith("/admin") && "!hidden"
+        }`}
         style={{
           borderBottom: "1px solid #F7F7F7",
         }}
@@ -82,7 +82,7 @@ const Navbar = () => {
           <Link href={"/"}>
             {" "}
             <Image
-              src={`logo.svg`}
+              src={`/logo.svg`}
               width={40}
               height={40}
               className="w-full h-28  object-cover"
@@ -91,7 +91,7 @@ const Navbar = () => {
           </Link>
 
           <div className="flex-row gap-[16px] xl:gap-[24px] justify-between hidden lg:flex items-center">
-            {navbar_data.map((object, index) => (
+            {navbar_data.map((object: any, index) => (
               <div className="flex flex-row items-center gap-4" key={index}>
                 <Link
                   href={object.slug === "/domov" ? "/" : object.slug}

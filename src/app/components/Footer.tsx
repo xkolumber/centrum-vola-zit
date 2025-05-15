@@ -1,14 +1,19 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import IconFacebook from "../icons/IconFacebook";
 import IconInstagram from "../icons/IconInstagram";
+import { usePathname } from "next/navigation";
 
 const Footer = () => {
   const actual_year = new Date().getFullYear();
+  const pathname = usePathname();
   return (
     <>
       <footer
-        className="gap-12 pt-16 p-7 md:p-12 md:pt-16 md:pb-16 2xl:pt-32 2xl:pb-32   border-t border-gray  xl:gap-72 flex justify-between  "
+        className={`gap-12 pt-16 p-7 md:p-12 md:pt-16 md:pb-16 2xl:pt-32 2xl:pb-32   border-t border-gray  xl:gap-72 flex justify-between   ${
+          pathname.startsWith("/admin") && "!hidden"
+        }`}
         id="footer_contacts"
       >
         <div className="main_section m-auto !pt-0 !pb-0 flex flex-col gap-12 md:gap-0 md:flex-row justify-between w-full  ">
@@ -65,7 +70,11 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <div className="flex flex-col md:flex-row justify-center items-center gap-3 md:gap-12 p-7   border-t border-gray">
+      <div
+        className={`flex flex-col md:flex-row justify-center items-center gap-3 md:gap-12 p-7   border-t border-gray  ${
+          pathname.startsWith("/admin") && "!hidden"
+        }`}
+      >
         <p className="text-[12px] md:text-[14px] text-center">
           © Copyright {actual_year} Centrum vôľa žiť - všetky práva vyhradené
         </p>
