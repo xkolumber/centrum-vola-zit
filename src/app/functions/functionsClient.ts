@@ -14,12 +14,17 @@ export const navbar_data = [
     slug: "/o-nas",
   },
   {
-    title: "Kontakt",
-    slug: "/kontakt",
+    title: "Galéria",
+    slug: "/galeria",
   },
+
   {
     title: "Pomôcky",
     slug: "/pomocky",
+  },
+  {
+    title: "Kontakt",
+    slug: "/kontakt",
   },
 ];
 
@@ -48,3 +53,11 @@ export async function CompressImage(file: File) {
 
 export const BLUR_DATA_URL_GRAY =
   "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAYAAAC09K7GAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAEklEQVR4nGN48uTJf2TMQFAAAGDvLAXo+D4xAAAAAElFTkSuQmCC";
+
+export const getFormatDate = (date: string) => {
+  const d = new Date(date);
+  const day = String(d.getDate()).padStart(2, "0");
+  const month = String(d.getMonth() + 1).padStart(2, "0");
+  const year = d.getFullYear();
+  return `${day}.${month}.${year}`;
+};

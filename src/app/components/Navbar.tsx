@@ -90,7 +90,7 @@ const Navbar = () => {
             />
           </Link>
 
-          <div className="flex-row gap-[16px] xl:gap-[24px] justify-between hidden lg:flex items-center">
+          <div className="flex-row gap-[16px] xl:gap-[36px] justify-between hidden lg:flex items-center">
             {navbar_data.map((object: any, index) => (
               <div className="flex flex-row items-center gap-4" key={index}>
                 <Link

@@ -4,12 +4,13 @@ import {
   DeleteCommand,
   GetCommand,
   PutCommand,
+  QueryCommand,
   ScanCommand,
   UpdateCommand,
 } from "@aws-sdk/lib-dynamodb";
 import { clientS3, docClient } from "../lib/awsConfig";
 import { GalleryInterface } from "../lib/interface";
-import { aws_bucket_name, createSlug } from "./functionsNeutral";
+import { aws_bucket_name, createSlug, LIMIT_GALLERY } from "./functionsNeutral";
 
 import { createPresignedPost } from "@aws-sdk/s3-presigned-post";
 
@@ -105,6 +106,7 @@ export async function AdminAddPhotoGallery(actualizeGallery: GalleryInterface) {
           nazov: actualizeGallery.nazov,
           datum_pridania: new Date().toISOString(),
           partition_key: "all",
+          slug: createSlug(actualizeGallery.nazov),
         },
       })
     );
@@ -154,6 +156,8 @@ export async function AdminActualizeAlbumGallery(
       throw new Error(`Item with id ${actualizeData.id} not found`);
     }
 
+    actualizeData.slug = createSlug(actualizeData.nazov);
+
     const updateExpression = Object.keys(actualizeData)
       .filter((key) => key !== "id")
       .map((key) => `#${key} = :${key}`)
@@ -187,5 +191,57 @@ export async function AdminActualizeAlbumGallery(
   } catch (error) {
     console.error("DynamoDB Update Error:", error);
     return "false";
+  }
+}
+
+export async function fetchGalleriesLatest(
+  exclusiveStartKey?: any
+): Promise<{ items: GalleryInterface[]; lastEvaluatedKey?: any }> {
+  try {
+    const command = new QueryCommand({
+      TableName: "galeria",
+      IndexName: "partition_key-datum_pridania-index",
+      KeyConditionExpression: "partition_key = :partition_key",
+      ExpressionAttributeValues: {
+        ":partition_key": "all",
+      },
+      ScanIndexForward: false,
+      Limit: LIMIT_GALLERY,
+      ExclusiveStartKey: exclusiveStartKey,
+    });
+
+    const response = await docClient.send(command);
+
+    return {
+      items: response.Items as GalleryInterface[],
+      lastEvaluatedKey: response.LastEvaluatedKey,
+    };
+  } catch (err) {
+    console.error("Error fetching product references:", err);
+    return { items: [] };
+  }
+}
+
+export async function fetchGallerySlug(slug: string) {
+  try {
+    const command = new QueryCommand({
+      TableName: "galeria",
+      IndexName: "slug-index",
+      KeyConditionExpression: "slug = :slug",
+      ExpressionAttributeValues: {
+        ":slug": slug,
+      },
+    });
+
+    const response = await docClient.send(command);
+
+    if (!response.Items || response.Items.length === 0) {
+      throw new Error();
+    }
+
+    return response.Items[0] as GalleryInterface;
+  } catch (error) {
+    console.log(error);
+    throw new Error();
   }
 }

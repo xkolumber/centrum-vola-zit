@@ -41,6 +41,7 @@ export interface GalleryInterface {
   nazov: string;
   id: string;
   partition_key: string;
+  slug: string;
 }
 
 export interface IsLoadingMap {

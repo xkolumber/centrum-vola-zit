@@ -33,11 +33,12 @@ const Page = () => {
     nazov: "",
     id: "",
     partition_key: "all",
+    slug: "",
   });
 
   const [dataLoading, setDataLoading] = useState(false);
 
-  const handleAddGalleryFirebase = async (e: any) => {
+  const handleAddGallery = async (e: any) => {
     e.preventDefault();
     setIsLoading(true);
     try {
@@ -155,7 +156,7 @@ const Page = () => {
       <Link href={"/admin/galeria"}>
         <p className="hover:underline ease-in text-black">Späť</p>
       </Link>
-      <form onSubmit={handleAddGalleryFirebase}>
+      <form onSubmit={handleAddGallery}>
         <h3>Pridanie nového albumu</h3>
 
         <div className="flex flex-row justify-between items-center gap-4 mt-8">

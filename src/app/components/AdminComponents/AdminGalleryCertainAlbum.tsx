@@ -41,6 +41,7 @@ const AdminGalleryCertainAlbum = ({ id }: Props) => {
     nazov: "",
     id: "",
     partition_key: "all",
+    slug: "",
   });
   const [isLoadingMap, setIsLoadingMap] = useState<IsLoadingMap>({});
 
@@ -107,6 +108,8 @@ const AdminGalleryCertainAlbum = ({ id }: Props) => {
         nazov: data.nazov ? data.nazov : "",
         id: data.id,
         partition_key: "all",
+        slug: data.slug ? data.slug : "",
+        datum_pridania: data.datum_pridania,
       }));
     }
   }, [data]);
