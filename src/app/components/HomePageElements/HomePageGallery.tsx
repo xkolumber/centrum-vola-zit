@@ -12,7 +12,7 @@ const HomePageGallery = () => {
     getNextPageParam: (lastPage) => lastPage.lastEvaluatedKey ?? undefined,
     initialPageParam: undefined,
     initialData: { pages: [], pageParams: [] },
-    refetchOnWindowFocus: true,
+    refetchOnWindowFocus: false,
   });
 
   return (

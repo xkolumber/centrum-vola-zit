@@ -5,18 +5,17 @@ import Link from "next/link";
 import { useState } from "react";
 
 import { Drawer, Typography } from "@mui/material";
-import Button from "@mui/material/Button";
 import { usePathname } from "next/navigation";
 
 import CloseIcon from "@mui/icons-material/Close";
 import { navbar_data } from "../functions/functionsClient";
 import IconFacebook from "../icons/IconFacebook";
 import IconInstagram from "../icons/IconInstagram";
-import IconYoutube from "../icons/IconYoutube";
 import IconLocation from "../icons/IconLocation";
 import IconPhone from "../icons/IconPhone";
-import IconTime from "../icons/IconTime";
 import IconSponsorUs from "../icons/IconSponsorUs";
+import IconTime from "../icons/IconTime";
+import IconYoutube from "../icons/IconYoutube";
 import ButtonMui from "./ButtonMui";
 
 const navbar_right_part = [
@@ -71,7 +70,7 @@ const Navbar = () => {
           borderBottom: "1px solid #F7F7F7",
         }}
       >
-        <div className="flex flex-row w-full navbar_section justify-between items-center !pt-0 !pb-0 m-auto">
+        <div className="flex flex-row w-full navbar_section justify-between items-center !pt-2 !pb-2 m-auto">
           <div
             className={`lg:hidden cursor-pointer `}
             onClick={() => setOpenMobile(true)}
@@ -85,7 +84,7 @@ const Navbar = () => {
               src={`/logo.svg`}
               width={40}
               height={40}
-              className="w-full h-28  object-cover"
+              className="w-full h-20 md:h-28  object-cover"
               alt="Logo"
             />
           </Link>
@@ -143,10 +142,10 @@ const Navbar = () => {
                 <Link href={"/"}>
                   {" "}
                   <Image
-                    src={`${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/logo_navbar.svg`}
+                    src={`/logo.svg`}
                     width={90}
                     height={90}
-                    className="w-32 h-24 md:w-32 md:h-32"
+                    className="w-full h-20 md:h-28  object-cover"
                     alt="Logo"
                   />
                 </Link>
@@ -170,58 +169,6 @@ const Navbar = () => {
                     </Link>
                   )
               )}
-
-              <div
-                className="m-[1.2rem] rounded-[8px]"
-                style={{
-                  border: "1px solid rgba(0, 0, 0, 0.10)",
-                }}
-              >
-                <Link
-                  className="flex flex-row items-center gap-4 padding_mobile"
-                  href={"/clenska-zona"}
-                  style={{
-                    borderBottom: "1px solid rgba(0, 0, 0, 0.10)",
-                  }}
-                  onClick={() => setOpenMobile(false)}
-                >
-                  <Typography variant="body2" fontWeight={"600"}>
-                    Členská zóna
-                  </Typography>
-                </Link>
-                <Link
-                  className="flex flex-row items-center gap-4 padding_mobile"
-                  href={"/clenska-zona"}
-                  style={{
-                    borderBottom: "1px solid rgba(0, 0, 0, 0.10)",
-                  }}
-                  onClick={() => setOpenMobile(false)}
-                >
-                  <Typography variant="body2" fontWeight={"600"}>
-                    Váš profil
-                  </Typography>
-                </Link>
-              </div>
-              <Link
-                href={"/konzultacie"}
-                className="padding_mobile !pt-0"
-                onClick={() => setOpenMobile(false)}
-              >
-                <Button
-                  variant="contained"
-                  // startIcon={<IconCalendar />}
-                  sx={{
-                    paddingTop: "10.5px",
-                    paddingBottom: "10.5px",
-                    boxShadow: "none",
-                    width: "100%",
-                    textTransform: "capitalize",
-                  }}
-                  style={{ background: "#76AE4D", borderRadius: "8px" }}
-                >
-                  Rezervácia
-                </Button>
-              </Link>
             </>
           </Drawer>
         </div>
