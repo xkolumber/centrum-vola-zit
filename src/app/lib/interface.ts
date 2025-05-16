@@ -47,3 +47,20 @@ export interface GalleryInterface {
 export interface IsLoadingMap {
   [key: string]: boolean;
 }
+
+export interface ActualityInterface {
+  author: string;
+  id: string;
+  title: string;
+  date: string;
+  slug: string;
+  title_photo: string;
+  partition_key: "all";
+  text1: string;
+  text2: string;
+  text3: string;
+  photo1: string;
+  photo2: string;
+  photo3: string;
+  another_photos: string[];
+}

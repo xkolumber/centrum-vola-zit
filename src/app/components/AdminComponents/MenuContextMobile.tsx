@@ -1,7 +1,4 @@
 "use client";
-import CollectionsIcon from "@mui/icons-material/Collections";
-import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
-import MenuBookIcon from "@mui/icons-material/MenuBook";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -10,20 +7,7 @@ import ListItemText from "@mui/material/ListItemText";
 import Stack from "@mui/material/Stack";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-const mainListItems = [
-  {
-    text: "Články",
-    icon: <MenuBookIcon />,
-    link: "/admin/clanky",
-  },
-  { text: "Domov", icon: <HomeRoundedIcon />, link: "/admin/domov" },
-  {
-    text: "Galéria",
-    icon: <CollectionsIcon />,
-    link: "/admin/galeria",
-  },
-];
+import { mainListItems } from "./MenuContent";
 
 interface Props {
   clickedMobile: () => void;

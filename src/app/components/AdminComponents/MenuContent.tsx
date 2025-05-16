@@ -11,7 +11,12 @@ import Stack from "@mui/material/Stack";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const mainListItems = [
+export const mainListItems = [
+  {
+    text: "Aktuality",
+    icon: <MenuBookIcon />,
+    link: "/admin/aktuality",
+  },
   {
     text: "Články",
     icon: <MenuBookIcon />,

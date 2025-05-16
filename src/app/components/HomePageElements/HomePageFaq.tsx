@@ -33,10 +33,8 @@ const HomePageFaq = () => {
     <div className="w-full bg-[#F1F1F1]  flex justify-center pt-8 pb-8 2xl:pt-32 2xl:pb-32">
       <div className="main_section justify-center w-full flex flex-col md:flex-row gap-8 xl:gap-16 ">
         <div className="flex flex-col w-full ">
-          <h2 className="font-extrabold text-center">
-            Najčastejšie kladené otázky
-          </h2>
-          <p className="text-center pt-4 mb-8 2xl:mb-24">
+          <h2 className="font-extrabold ">Najčastejšie kladené otázky</h2>
+          <p className=" pt-4 mb-8 2xl:mb-24">
             Temporibus autem quibusdam et aut officiis debitis aut rerum
             necessitatibus saepe
           </p>

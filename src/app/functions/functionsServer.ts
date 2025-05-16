@@ -9,7 +9,7 @@ import {
   UpdateCommand,
 } from "@aws-sdk/lib-dynamodb";
 import { clientS3, docClient } from "../lib/awsConfig";
-import { GalleryInterface } from "../lib/interface";
+import { ActualityInterface, GalleryInterface } from "../lib/interface";
 import { aws_bucket_name, createSlug, LIMIT_GALLERY } from "./functionsNeutral";
 
 import { createPresignedPost } from "@aws-sdk/s3-presigned-post";
@@ -139,23 +139,33 @@ export async function fetchGalleryId(id: string): Promise<GalleryInterface> {
   }
 }
 
+export async function fetchActualityId(
+  id: string
+): Promise<ActualityInterface> {
+  try {
+    const command = new GetCommand({
+      TableName: "aktuality",
+      Key: {
+        id: id,
+      },
+    });
+
+    const response = await docClient.send(command);
+    if (!response.Item) {
+      throw new Error(`Item with id not found.`);
+    }
+
+    return response.Item as ActualityInterface;
+  } catch (err) {
+    console.log(err);
+    throw new Error(`Item with  not found.`);
+  }
+}
+
 export async function AdminActualizeAlbumGallery(
   actualizeData: GalleryInterface
 ) {
   try {
-    const getCommand = new GetCommand({
-      TableName: "galeria",
-      Key: {
-        id: actualizeData.id,
-      },
-    });
-
-    const data = await docClient.send(getCommand);
-
-    if (!data.Item) {
-      throw new Error(`Item with id ${actualizeData.id} not found`);
-    }
-
     actualizeData.slug = createSlug(actualizeData.nazov);
 
     const updateExpression = Object.keys(actualizeData)
@@ -243,5 +253,106 @@ export async function fetchGallerySlug(slug: string) {
   } catch (error) {
     console.log(error);
     throw new Error();
+  }
+}
+
+export async function fetchActualities(): Promise<ActualityInterface[]> {
+  try {
+    const command = new ScanCommand({
+      TableName: "aktuality",
+    });
+
+    const response = await docClient.send(command);
+    if (response.Items) {
+      return response.Items as ActualityInterface[];
+    }
+
+    throw new Error(`Item with  not found.`);
+  } catch (err) {
+    console.log(err);
+    throw new Error(`Item with  not found.`);
+  }
+}
+
+export async function AdminDeleteActuality(id: string) {
+  try {
+    const command = new DeleteCommand({
+      TableName: "aktuality",
+      Key: {
+        id,
+      },
+    });
+
+    const response = await docClient.send(command);
+
+    return response.$metadata.httpStatusCode;
+  } catch (error) {
+    console.error("Database Error: Failed", error);
+    return "false";
+  }
+}
+
+export async function AdminActualizeActuality(
+  actualizeData: ActualityInterface
+) {
+  try {
+    actualizeData.slug = createSlug(actualizeData.title);
+
+    const updateExpression = Object.keys(actualizeData)
+      .filter((key) => key !== "id")
+      .map((key) => `#${key} = :${key}`)
+      .join(", ");
+
+    const ExpressionAttributeNames = Object.keys(actualizeData)
+      .filter((key) => key !== "id")
+      .reduce((acc, key) => {
+        acc[`#${key}`] = key;
+        return acc;
+      }, {} as Record<string, string>);
+
+    const ExpressionAttributeValues = Object.entries(actualizeData)
+      .filter(([key]) => key !== "id")
+      .reduce((acc, [key, value]) => {
+        acc[`:${key}`] = value;
+        return acc;
+      }, {} as Record<string, any>);
+
+    const updateCommand = new UpdateCommand({
+      TableName: "aktuality",
+      Key: { id: actualizeData.id },
+      UpdateExpression: `SET ${updateExpression}`,
+      ExpressionAttributeNames,
+      ExpressionAttributeValues,
+      ReturnValues: "ALL_NEW",
+    });
+
+    const response = await docClient.send(updateCommand);
+    return response.$metadata.httpStatusCode;
+  } catch (error) {
+    console.error("DynamoDB Update Error:", error);
+    return "false";
+  }
+}
+
+export async function AdminAddActuality(actualizeData: ActualityInterface) {
+  const uuid = crypto.randomUUID();
+
+  try {
+    const putParams = {
+      TableName: "aktuality",
+      Item: {
+        ...actualizeData,
+        id: uuid,
+        slug: createSlug(actualizeData.title),
+        date: new Date().toISOString(),
+        partition_key: "all",
+      },
+    };
+
+    const response = await docClient.send(new PutCommand(putParams));
+    return response.$metadata.httpStatusCode;
+  } catch (error) {
+    console.error("DynamoDB Add Error:", error);
+    return "false";
   }
 }
