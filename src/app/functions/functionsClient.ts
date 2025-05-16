@@ -10,8 +10,8 @@ export const navbar_data = [
     slug: "/sluzby",
   },
   {
-    title: "O nás",
-    slug: "/o-nas",
+    title: "Aktuality",
+    slug: "/aktuality",
   },
   {
     title: "Galéria",

@@ -232,6 +232,34 @@ export async function fetchGalleriesLatest(
   }
 }
 
+export async function fetchActualityLatest(
+  exclusiveStartKey?: any
+): Promise<{ items: ActualityInterface[]; lastEvaluatedKey?: any }> {
+  try {
+    const command = new QueryCommand({
+      TableName: "aktuality",
+      IndexName: "partition_key-date-index",
+      KeyConditionExpression: "partition_key = :partition_key",
+      ExpressionAttributeValues: {
+        ":partition_key": "all",
+      },
+      ScanIndexForward: false,
+      Limit: LIMIT_GALLERY,
+      ExclusiveStartKey: exclusiveStartKey,
+    });
+
+    const response = await docClient.send(command);
+
+    return {
+      items: response.Items as ActualityInterface[],
+      lastEvaluatedKey: response.LastEvaluatedKey,
+    };
+  } catch (err) {
+    console.error("Error fetching product references:", err);
+    return { items: [] };
+  }
+}
+
 export async function fetchGallerySlug(slug: string) {
   try {
     const command = new QueryCommand({
@@ -250,6 +278,30 @@ export async function fetchGallerySlug(slug: string) {
     }
 
     return response.Items[0] as GalleryInterface;
+  } catch (error) {
+    console.log(error);
+    throw new Error();
+  }
+}
+
+export async function fetchActualitySlug(slug: string) {
+  try {
+    const command = new QueryCommand({
+      TableName: "aktuality",
+      IndexName: "slug-index",
+      KeyConditionExpression: "slug = :slug",
+      ExpressionAttributeValues: {
+        ":slug": slug,
+      },
+    });
+
+    const response = await docClient.send(command);
+
+    if (!response.Items || response.Items.length === 0) {
+      throw new Error();
+    }
+
+    return response.Items[0] as ActualityInterface;
   } catch (error) {
     console.log(error);
     throw new Error();
