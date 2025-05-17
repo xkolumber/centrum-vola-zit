@@ -12,6 +12,7 @@ export interface TeamMemberInterface {
   desc: string;
   fb_link: string;
   ig_link: string;
+  photo: string;
 }
 
 export interface ThreeElementInterface {

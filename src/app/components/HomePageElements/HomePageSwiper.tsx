@@ -32,7 +32,7 @@ const HomePageSwiper = () => {
     <div className="bg-[#F1F1F1] flex flex-col justify-center items-center  md:h-[600px] lg:min-h-[70vh] relative">
       <div className="w-full   flex">
         {isFetching && (
-          <div className="main_section  ">
+          <div className="main_section  m-auto">
             <CircularProgress
               size={24}
               color="inherit"

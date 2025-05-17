@@ -8,7 +8,6 @@ import HomePageTeam from "./components/HomePageElements/HomePageTeam";
 export default function Home() {
   return (
     <div className="">
-      {/* <FirstPart /> */}
       <HomePageSwiper />
 
       <HomePageSelection />
