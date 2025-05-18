@@ -42,7 +42,7 @@ const HomePageSwiper = () => {
         )}
         {error && <p>Chyba pri načítaní dát.</p>}
 
-        {data && (
+        {data && !isFetching && (
           <>
             <Swiper
               breakpoints={{

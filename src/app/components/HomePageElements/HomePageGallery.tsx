@@ -1,9 +1,9 @@
 "use client";
 
 import { fetchGalleriesLatest } from "@/app/functions/functionsServer";
+import { CircularProgress } from "@mui/material";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import GalleryObject from "../GalleryElements/GalleryObject";
-import { CircularProgress } from "@mui/material";
 
 const HomePageGallery = () => {
   const { data, error, isFetching } = useInfiniteQuery({

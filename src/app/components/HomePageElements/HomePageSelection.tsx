@@ -4,7 +4,7 @@ import TextWithArrow from "../TextWithArrow";
 
 const HomePageSelection = () => {
   return (
-    <div className="main_section m-auto">
+    <div className="main_section m-auto" id="sluzby">
       <div className="hidden lg:grid grid-cols-2 gap-8 ">
         <div className="h-full relative">
           <Image
@@ -14,7 +14,7 @@ const HomePageSelection = () => {
             height={600}
             className="w-full h-full object-cover rounded-[8px]"
           />
-          <TextWithArrow link="/" title="Terapie" />
+          <TextWithArrow link="/terapie" title="Terapie" />
         </div>
 
         <div className="grid grid-rows-2 gap-8 h-full">
@@ -27,7 +27,10 @@ const HomePageSelection = () => {
               className="w-full h-[370px] object-cover rounded-[8px]"
             />
 
-            <TextWithArrow link="/" title="Služby" />
+            <TextWithArrow
+              link="/doplnkove-terapie"
+              title="Doplnkové terapie"
+            />
           </div>
 
           <div className="grid grid-cols-2 gap-8">
@@ -39,7 +42,7 @@ const HomePageSelection = () => {
                 height={300}
                 className="w-full h-[370px] object-cover  rounded-[8px]"
               />
-              <TextWithArrow link="/" title="2%" />
+              <TextWithArrow link="/masaze" title="Masáže" />
             </div>
 
             <div className="relative">
@@ -88,7 +91,7 @@ const HomePageSelection = () => {
             height={300}
             className="w-full h-[200px] object-cover  rounded-[8px]"
           />
-          <TextWithArrow link="/" title="2%" />
+          <TextWithArrow link="/masaze" title="Masáže" />
         </div>
 
         <div className="relative">

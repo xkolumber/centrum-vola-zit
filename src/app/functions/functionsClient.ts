@@ -7,7 +7,7 @@ export const navbar_data = [
   },
   {
     title: "Služby",
-    slug: "/sluzby",
+    slug: "/#sluzby",
   },
   {
     title: "Aktuality",
@@ -61,3 +61,5 @@ export const getFormatDate = (date: string) => {
   const year = d.getFullYear();
   return `${day}.${month}.${year}`;
 };
+
+export const STALE_TIME = 1000 * 60 * 10;

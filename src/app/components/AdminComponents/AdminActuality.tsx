@@ -16,6 +16,7 @@ import IconPen from "@/app/icons/IconPen";
 import IconTrash from "@/app/icons/IconTrash";
 import { ActualityInterface, IsLoadingMap } from "@/app/lib/interface";
 import { CircularProgress } from "@mui/material";
+import { STALE_TIME } from "@/app/functions/functionsClient";
 
 const AdminActuality = () => {
   const queryClient = useQueryClient();
@@ -23,7 +24,7 @@ const AdminActuality = () => {
   const { data, error, isLoading } = useQuery<ActualityInterface[]>({
     queryKey: ["admin_actuality"],
     queryFn: () => fetchActualities(),
-    staleTime: 1000 * 60 * 5,
+    staleTime: STALE_TIME,
     refetchOnWindowFocus: false,
     placeholderData: (previousData) => previousData,
   });

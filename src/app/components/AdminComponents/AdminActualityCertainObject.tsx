@@ -5,6 +5,7 @@ import {
   BLUR_DATA_URL_GRAY,
   cloudfront_url,
   CompressImage,
+  STALE_TIME,
 } from "@/app/functions/functionsClient";
 import {
   AdminActualizeActuality,
@@ -31,7 +32,7 @@ const AdminActualityCertainObject = ({ id }: Props) => {
   const { data, error, isLoading } = useQuery<ActualityInterface>({
     queryKey: ["admin_actuality", id],
     queryFn: () => fetchActualityId(id),
-    staleTime: 1000 * 60 * 5,
+    staleTime: STALE_TIME,
     refetchOnWindowFocus: false,
     placeholderData: (previousData) => previousData,
   });

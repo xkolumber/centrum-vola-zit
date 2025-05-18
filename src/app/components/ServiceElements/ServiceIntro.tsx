@@ -45,7 +45,7 @@ export default function ServiceIntro() {
 
   return (
     <div className="main_section m-auto py-12 min-h-screen">
-      <h2 className=" font-bold  mb-8">Naše služby</h2>
+      <h2 className=" font-bold  mb-8">Terapie</h2>
       <div className="flex  gap-4 mb-6 flex-wrap">
         {services.map((s, i) => (
           <button

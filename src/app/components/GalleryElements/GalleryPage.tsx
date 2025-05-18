@@ -5,6 +5,7 @@ import React, { useEffect } from "react";
 import GalleryObject from "./GalleryObject";
 import { useInView } from "react-intersection-observer";
 import { CircularProgress } from "@mui/material";
+import { STALE_TIME } from "@/app/functions/functionsClient";
 
 const GalleryPage = () => {
   const { ref, inView } = useInView();
@@ -16,7 +17,8 @@ const GalleryPage = () => {
       getNextPageParam: (lastPage) => lastPage.lastEvaluatedKey ?? undefined,
       initialPageParam: undefined,
       initialData: { pages: [], pageParams: [] },
-      refetchOnWindowFocus: true,
+      refetchOnWindowFocus: false,
+      staleTime: STALE_TIME,
     });
 
   useEffect(() => {
