@@ -497,3 +497,9 @@ p:empty {
 .product_admin_row {
   margin-top: 2rem;
 }
+
+.padding_mobile {
+  padding: 1.6rem;
+  padding-right: 2.5rem;
+  padding-left: 2.5rem;
+}

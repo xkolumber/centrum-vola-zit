@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <>
       <footer
-        className={`gap-12 pt-16 p-7 md:p-12 md:pt-16 md:pb-16 2xl:pt-32 2xl:pb-32   border-t border-gray  xl:gap-72 flex justify-between   ${
+        className={`gap-12 pt-16 md:p-12 md:pt-16 md:pb-16 2xl:pt-32 2xl:pb-32   border-t border-gray  xl:gap-72 flex justify-between   ${
           pathname.startsWith("/admin") && "!hidden"
         }`}
         id="footer_contacts"

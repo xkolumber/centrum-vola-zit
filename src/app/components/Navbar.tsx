@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-import { Drawer, Typography } from "@mui/material";
+import { Drawer } from "@mui/material";
 import { usePathname } from "next/navigation";
 
 import CloseIcon from "@mui/icons-material/Close";
@@ -75,7 +75,12 @@ const Navbar = () => {
             className={`lg:hidden cursor-pointer `}
             onClick={() => setOpenMobile(true)}
           >
-            <MenuIcon />
+            <MenuIcon
+              style={{
+                height: "20px",
+                width: "20px",
+              }}
+            />
           </div>
 
           <Link href={"/"}>
@@ -84,7 +89,7 @@ const Navbar = () => {
               src={`/logo.svg`}
               width={40}
               height={40}
-              className="w-full h-20 md:h-28  object-cover"
+              className="w-full h-24 md:h-28  object-cover"
               alt="Logo"
             />
           </Link>
@@ -110,16 +115,22 @@ const Navbar = () => {
               </div>
             ))}
           </div>
-          <div className="hidden lg:flex flex-row items-center gap-20">
-            <div className="flex flex-row gap-4 items-center">
+          <div className="hidden lg:flex flex-row items-center gap-16">
+            <Link
+              className="flex flex-row gap-4 items-center"
+              href={"/sponzori"}
+            >
               <IconSponsorUs />
               <div className="flex flex-col">
-                <p className="font-bold">Prispej</p>
-                <p>Podpor nás</p>
+                <p>Sponzori</p>
               </div>
-            </div>
+            </Link>
 
-            <ButtonMui color="#ADCA2A" text="Darovať 2%" link="/" />
+            <ButtonMui
+              color="#ADCA2A"
+              text="Spolupracujeme"
+              link="/spolupracujeme"
+            />
           </div>
 
           <Drawer
@@ -131,44 +142,75 @@ const Navbar = () => {
             }}
           >
             <>
-              <div className="flex flex-row items-center w-full justify-between pl-[1.2rem] pr-[1.2rem] ">
+              <div className="flex flex-row items-center w-full  navbar_section justify-between !pt-2 !pb-2 !m-0 ">
                 <div
-                  className={`lg:hidden cursor-pointer `}
+                  className={`lg:hidden cursor-pointer`}
                   onClick={() => setOpenMobile(false)}
                 >
-                  <CloseIcon />
+                  <CloseIcon
+                    style={{
+                      height: "24px",
+                      width: "24px",
+                    }}
+                  />
                 </div>
 
-                <Link href={"/"}>
+                <Link href={"/"} onClick={() => setOpenMobile(false)}>
                   {" "}
                   <Image
                     src={`/logo.svg`}
-                    width={90}
-                    height={90}
-                    className="w-full h-20 md:h-28  object-cover"
+                    width={40}
+                    height={40}
+                    className="w-full h-24 md:h-28  object-cover"
                     alt="Logo"
                   />
                 </Link>
               </div>
 
-              {navbar_data.map(
-                (object, index) =>
-                  object.slug != "/e-shop" && (
-                    <Link
-                      href={object.slug}
-                      key={index}
-                      className={`   padding_mobile                  `}
-                      onClick={() => setOpenMobile(false)}
-                      style={{
-                        borderTop: "1px solid rgba(0, 0, 0, 0.10)",
-                      }}
-                    >
-                      <Typography variant="body2" fontWeight={"600"}>
-                        {object.title}
-                      </Typography>
-                    </Link>
-                  )
-              )}
+              {navbar_data.map((object, index) => (
+                <Link
+                  href={object.slug === "/domov" ? "/" : object.slug}
+                  key={index}
+                  className={`   padding_mobile                  `}
+                  onClick={() => setOpenMobile(false)}
+                  style={{
+                    borderTop: "1px solid rgba(0, 0, 0, 0.10)",
+                  }}
+                >
+                  <p> {object.title}</p>
+                </Link>
+              ))}
+              <div
+                className="flex flex-col items-center gap-4"
+                style={{
+                  borderTop: "1px solid rgba(0, 0, 0, 0.10)",
+                }}
+              >
+                <Link
+                  className="flex flex-row gap-4 items-center pt-8"
+                  href={"/sponzori"}
+                  onClick={() => setOpenMobile(false)}
+                >
+                  <Image
+                    src={`/yellow_heart.svg`}
+                    width={40}
+                    height={40}
+                    className="w-full h-20  object-cover"
+                    alt="Logo"
+                  />
+                  <div className="flex flex-col">
+                    <p>Sponzori</p>
+                  </div>
+                </Link>
+
+                <div className="" onClick={() => setOpenMobile(false)}>
+                  <ButtonMui
+                    color="#ADCA2A"
+                    text="Spolupracujeme"
+                    link="/spolupracujeme"
+                  />
+                </div>
+              </div>
             </>
           </Drawer>
         </div>

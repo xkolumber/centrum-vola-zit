@@ -6,6 +6,10 @@ export const navbar_data = [
     slug: "/domov",
   },
   {
+    title: "O nás",
+    slug: "/o-nas",
+  },
+  {
     title: "Služby",
     slug: "/#sluzby",
   },
