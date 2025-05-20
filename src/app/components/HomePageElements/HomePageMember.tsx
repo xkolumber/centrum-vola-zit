@@ -1,5 +1,6 @@
 import IconFacebookTeam from "@/app/icons/IconFacebookTeam";
 import IconInstagramTeam from "@/app/icons/IconInstagramTeam";
+import IconTeamPlaceholder from "@/app/icons/IconTeamPlaceholder";
 import { TeamMemberInterface } from "@/app/lib/interface";
 import Image from "next/image";
 
@@ -11,13 +12,17 @@ const HomePageMember = ({ data }: Props) => {
   return (
     <div>
       <div className="flex flex-col">
-        <Image
-          alt="image"
-          width={600}
-          height={600}
-          src={data.photo}
-          className="rounded-[16px] h-full"
-        />
+        {data.photo != "none" ? (
+          <Image
+            alt="image"
+            width={600}
+            height={600}
+            src={data.photo}
+            className="rounded-[16px] h-[280px] md:h-[440px]"
+          />
+        ) : (
+          <IconTeamPlaceholder />
+        )}
 
         <p className="text-[12px] mt-4 uppercase font-medium">{data.job}</p>
         <h5 className="font-extrabold">{data.name}</h5>

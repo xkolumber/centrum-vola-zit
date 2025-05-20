@@ -52,6 +52,7 @@ const AdminActualityCertainObject = ({ id }: Props) => {
     photo2: "",
     photo3: "",
     another_photos: [],
+    viditelnost: false,
   });
   const [isLoadingMap, setIsLoadingMap] = useState<IsLoadingMap>({});
 
@@ -129,6 +130,7 @@ const AdminActualityCertainObject = ({ id }: Props) => {
         photo2: data.photo2,
         photo3: data.photo3,
         another_photos: data.another_photos,
+        viditelnost: data.viditelnost,
       }));
     }
   }, [data]);
@@ -233,6 +235,13 @@ const AdminActualityCertainObject = ({ id }: Props) => {
     }));
   };
 
+  const handleChangeCheck = (isChecked: boolean) => {
+    setActualizeData({
+      ...actualizeData,
+      viditelnost: isChecked,
+    });
+  };
+
   return (
     <div>
       <div className="products_admin">
@@ -260,6 +269,17 @@ const AdminActualityCertainObject = ({ id }: Props) => {
                 required
               />
             </div>
+
+            <div className="product_admin_row">
+              <p>Viditeľnosť článku:</p>
+              <input
+                type="checkbox"
+                name="viditelnost"
+                onChange={(e) => handleChangeCheck(e.target.checked)}
+                checked={actualizeData.viditelnost}
+              />
+            </div>
+
             <div className="flex flex-row justify-between items-center gap-4 mt-8">
               <h6>Meno autora:</h6>
               <input

@@ -10,16 +10,16 @@ import { useState } from "react";
 
 const faq_data = [
   {
-    title: "This is the frequently ask question",
-    desc: "This is description needed",
+    title: "Od akého veku viete pomôcť môjmu dieťaťu?",
+    desc: "Najvhodnejšie je začať s terapiami od 5. mesiaca veku dieťaťa. V prípade mladšieho veku nás však neváhajte kontaktovať – radi s Vami preberieme možnosti a poradíme individuálne.",
   },
   {
-    title: "This is the frequently ask question",
-    desc: "This is description needed",
+    title: "Bude moje dieťa chodiť?",
+    desc: "Každé dieťa je jedinečné a preto nemožno dať jednoznačnú odpoveď. Vďaka špecializovaným terapiám však dokážeme výrazne zlepšiť jeho motorické schopnosti a celkovú kvalitu života.",
   },
   {
-    title: "This is the frequently ask question",
-    desc: "This is description needed",
+    title: "Ako viem svojmu dieťaťu zabezpečiť financovanie terapií?",
+    desc: "Existuje viacero možností finančnej podpory – od príspevkov zo sociálneho systému, cez príspevky z rôznych nadácií, až po individuálne zbierky. Radi vám poradíme s výberom najvhodnejšej formy podpory.",
   },
 ];
 
@@ -35,8 +35,9 @@ const HomePageFaq = () => {
         <div className="flex flex-col w-full ">
           <h2 className="font-extrabold ">Najčastejšie kladené otázky</h2>
           <p className=" pt-4 mb-8 2xl:mb-24">
-            Temporibus autem quibusdam et aut officiis debitis aut rerum
-            necessitatibus saepe
+            Tu nájdete odpovede na otázky, ktoré nám najčastejšie kladú rodičia.
+            Ak medzi nimi nenájdete tú svoju, pokojne nás kontaktujte – sme tu
+            pre Vás.
           </p>
           {faq_data.map((item, index) => {
             const isExpanded = expandedIndex === index;

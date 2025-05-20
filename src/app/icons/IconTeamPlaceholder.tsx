@@ -1,45 +1,10 @@
-import React from "react";
+import IconPerson from "./IconPerson";
 
 const IconTeamPlaceholder = () => {
   return (
-    <svg
-      width="460"
-      height="380"
-      viewBox="0 0 460 380"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <rect width="460" height="380" rx="16" fill="#F1F1F1" />
-      <g clipPath="url(#clip0_189_378)">
-        <mask
-          id="mask0_189_378"
-          style={{ maskType: "alpha" }}
-          maskUnits="userSpaceOnUse"
-          x="198"
-          y="158"
-          width="64"
-          height="64"
-        >
-          <rect x="198" y="158" width="64" height="64" fill="#D9D9D9" />
-        </mask>
-        <g mask="url(#mask0_189_378)">
-          <path
-            d="M230 190C227.067 190 224.555 188.956 222.467 186.867C220.378 184.778 219.333 182.267 219.333 179.333C219.333 176.4 220.378 173.889 222.467 171.8C224.555 169.711 227.067 168.667 230 168.667C232.933 168.667 235.444 169.711 237.533 171.8C239.622 173.889 240.667 176.4 240.667 179.333C240.667 182.267 239.622 184.778 237.533 186.867C235.444 188.956 232.933 190 230 190ZM208.667 211.333V203.867C208.667 202.356 209.055 200.967 209.833 199.7C210.611 198.433 211.644 197.467 212.933 196.8C215.689 195.422 218.489 194.389 221.333 193.7C224.178 193.011 227.067 192.667 230 192.667C232.933 192.667 235.822 193.011 238.667 193.7C241.511 194.389 244.311 195.422 247.067 196.8C248.355 197.467 249.389 198.433 250.167 199.7C250.944 200.967 251.333 202.356 251.333 203.867V211.333H208.667Z"
-            fill="#D9D9D9"
-          />
-        </g>
-      </g>
-      <defs>
-        <clipPath id="clip0_189_378">
-          <rect
-            width="64"
-            height="64"
-            fill="white"
-            transform="translate(198 158)"
-          />
-        </clipPath>
-      </defs>
-    </svg>
+    <div className="w-full h-[280px] md:h-[440px] bg-[#F1F1F1] flex justify-center items-center rounded-[16px]">
+      <IconPerson />
+    </div>
   );
 };
 

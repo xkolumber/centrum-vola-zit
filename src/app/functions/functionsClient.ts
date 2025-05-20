@@ -14,10 +14,6 @@ export const navbar_data = [
     slug: "/#sluzby",
   },
   {
-    title: "Aktuality",
-    slug: "/aktuality",
-  },
-  {
     title: "Galéria",
     slug: "/galeria",
   },

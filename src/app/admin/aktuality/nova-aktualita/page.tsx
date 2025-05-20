@@ -39,6 +39,7 @@ const Page = () => {
     photo2: "",
     photo3: "",
     another_photos: [],
+    viditelnost: false,
   });
   const [isLoadingMap, setIsLoadingMap] = useState<IsLoadingMap>({});
 
@@ -201,6 +202,13 @@ const Page = () => {
     }));
   };
 
+  const handleChangeCheck = (isChecked: boolean) => {
+    setActualizeData({
+      ...actualizeData,
+      viditelnost: isChecked,
+    });
+  };
+
   return (
     <div>
       <div className="products_admin">
@@ -220,6 +228,15 @@ const Page = () => {
               onChange={handleChangeMain}
               className="w-full border border-solid border-black h-[5rem] mt-4"
               required
+            />
+          </div>
+          <div className="product_admin_row">
+            <p>Viditeľnosť článku:</p>
+            <input
+              type="checkbox"
+              name="viditelnost"
+              onChange={(e) => handleChangeCheck(e.target.checked)}
+              checked={actualizeData.viditelnost}
             />
           </div>
           <div className="flex flex-row justify-between items-center gap-4 mt-8">

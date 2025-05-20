@@ -6,8 +6,8 @@ const data: HowWeWork[] = [
   {
     id: "01",
     title: "Poskytujeme odbornú a sociálnu starostlivosť",
-    text: "V našom tíme sú fyzioterapeuti, psychológovia a logopédi. Všetci spoločne pracujeme na tom, aby vaše dieťa dostalo individuálnu a kvalitnú starostlivosť.",
-    link: "/",
+    text: "V našom tíme sú fyzioterapeuti, psychológovia a logopédi. Všetci spoločne pracujeme na tom, aby Vaše dieťa dostalo individuálnu a kvalitnú starostlivosť.",
+    link: "/o-nas",
     color: "#C3F12D",
   },
 
@@ -21,15 +21,15 @@ const data: HowWeWork[] = [
   {
     id: "03",
     title: "Pomáhame získať financie",
-    text: "Mnohí rodičia nevedia, že môžu požiadať poisťovne o príspevky na liečbu a terapie. Pomôžeme vám s administratívou, aby vaše dieťa dostalo, na čo má nárok.",
-    link: "/",
+    text: "Mnohí rodičia nevedia, že môžu požiadať poisťovne o príspevky na liečbu a terapie. Pomôžeme Vám s administratívou, aby vaše dieťa dostalo, na čo má nárok. Neváhajte nás kontaktovať.",
+    link: "/kontakt",
     color: "#20A9E1",
   },
   {
     id: "04",
     title: "Každý môže pomôcť",
     text: "Podporiť nás môže ktokoľvek – príspevkom na transparentný účet alebo pravidelným darcovstvom. Aj malá pomoc mení veľké životy.",
-    link: "/",
+    link: "/transparentny-ucet",
     color: "#2E63AD",
   },
 ];

@@ -61,6 +61,7 @@ const HomePageSwiper = () => {
             >
               {data.pages
                 .flatMap((page) => page.items)
+                .filter((object) => object.viditelnost)
                 .map((object, index) => (
                   <SwiperSlide key={index}>
                     <div className="main_section m-auto justify-center items-center flex flex-col md:flex-row w-full gap-8 xl:gap-16 ">
@@ -93,6 +94,7 @@ const HomePageSwiper = () => {
                         height={800}
                         className="w-full md:w-[40%] max-h-[400px] object-cover rounded-[8px]"
                         alt="Logo"
+                        priority
                       />
                     </div>
                   </SwiperSlide>

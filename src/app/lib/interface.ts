@@ -64,4 +64,5 @@ export interface ActualityInterface {
   photo2: string;
   photo3: string;
   another_photos: string[];
+  viditelnost: boolean;
 }

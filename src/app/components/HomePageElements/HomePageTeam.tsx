@@ -12,33 +12,41 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 const team_members: TeamMemberInterface[] = [
   {
+    name: "Mrg. Alexandra Németh",
+    job: "externý fyzioterapeut",
+    desc: "Pomáham ako externý fyzioterapeut Bobath konceptu, poskytujem tiež reflexnú masáž a tejping.",
+    fb_link: "www.facebook.com",
+    ig_link: "www.instagram.com",
+    photo: "none",
+  },
+  {
+    name: "Bc. Peter Németh",
+    job: "fyzioterapeut",
+    desc: "Zameriavam sa na neurologických pacientov a pomáham ako fyzioterapeut.",
+    fb_link: "www.facebook.com",
+    ig_link: "www.instagram.com",
+    photo: "none",
+  },
+  {
+    name: "Júlia Priezivsko",
+    job: "logopedička",
+    desc: "Monsectetuer adipiscing elit cras elementum duis pulvinar temporibus autem quibusdam et aut officiis debitis",
+    fb_link: "www.facebook.com",
+    ig_link: "www.instagram.com",
+    photo: "none",
+  },
+  {
+    name: "Miriam Garneková",
+    job: "zraková stimulácia",
+    desc: "Monsectetuer adipiscing elit cras elementum duis pulvinar temporibus autem quibusdam et aut officiis debitis",
+    fb_link: "www.facebook.com",
+    ig_link: "www.instagram.com",
+    photo: "none",
+  },
+  {
     name: "Lucia Kačmarčíková",
-    job: "CEO & vedúca",
-    desc: "Monsectetuer adipiscing elit cras elementum duis pulvinar temporibus autem quibusdam et aut officiis debitis",
-    fb_link: "www.facebook.com",
-    ig_link: "www.instagram.com",
-    photo: "/lucia.jpg",
-  },
-  {
-    name: "Petra Navrátilová",
-    job: "masér",
-    desc: "Monsectetuer adipiscing elit cras elementum duis pulvinar temporibus autem quibusdam et aut officiis debitis",
-    fb_link: "www.facebook.com",
-    ig_link: "www.instagram.com",
-    photo: "/lucia.jpg",
-  },
-  {
-    name: "Chloe Williams",
-    job: "CEO & founder",
-    desc: "Monsectetuer adipiscing elit cras elementum duis pulvinar temporibus autem quibusdam et aut officiis debitis",
-    fb_link: "www.facebook.com",
-    ig_link: "www.instagram.com",
-    photo: "/lucia.jpg",
-  },
-  {
-    name: "Chloe Williams",
-    job: "CEO & founder",
-    desc: "Monsectetuer adipiscing elit cras elementum duis pulvinar temporibus autem quibusdam et aut officiis debitis",
+    job: "sociálna a nadačná sféra",
+    desc: "Zabezpečujem sociálne vybavanie pre klientov, plus pomôccky.",
     fb_link: "www.facebook.com",
     ig_link: "www.instagram.com",
     photo: "/lucia.jpg",
@@ -52,9 +60,10 @@ const HomePageTeam = () => {
         <div className="flex flex-row justify-between">
           <div className="flex flex-col ">
             <h2 className="font-extrabold">Spoznajte náš tím</h2>
-            <p className=" pt-4 mb-4">
-              Temporibus autem quibusdam et aut officiis debitis aut rerum
-              necessitatibus saepe
+            <p className=" pt-4 mb-4 max-w-[700px]">
+              V našom tíme sú fyzioterapeuti, psychológovia a logopédi. Všetci
+              spoločne pracujeme na tom, aby Vaše dieťa dostalo individuálnu a
+              kvalitnú starostlivosť.
             </p>
           </div>
           <div className=" flex-row gap-4 hidden md:flex">
@@ -88,7 +97,7 @@ const HomePageTeam = () => {
           modules={[Navigation, Autoplay]}
           navigation={{ nextEl: ".arrow-left", prevEl: ".arrow-right" }}
           speed={1000}
-          className=" rounded-[16px] w-full h-auto"
+          className=" rounded-[16px] w-full h-auto mt-8"
         >
           {team_members.map((object, index) => (
             <SwiperSlide key={index}>
@@ -97,7 +106,7 @@ const HomePageTeam = () => {
           ))}
         </Swiper>
 
-        <div className="flex mt-8 flex-row gap-4 md:hidden justify-center items-center mb-16">
+        <div className="flex mt-8 flex-row gap-8 lg:gap-4 md:hidden justify-center items-center mb-16">
           <div className="arrow-right ">
             <IconArrowLeftTeam />
           </div>
