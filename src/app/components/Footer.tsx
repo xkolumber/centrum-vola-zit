@@ -4,6 +4,7 @@ import Image from "next/image";
 import IconFacebook from "../icons/IconFacebook";
 import IconInstagram from "../icons/IconInstagram";
 import { usePathname } from "next/navigation";
+import IconYoutube from "../icons/IconYoutube";
 
 const Footer = () => {
   const actual_year = new Date().getFullYear();
@@ -39,16 +40,31 @@ const Footer = () => {
                 <p>Email: centrumvolazit@gmail.com</p>{" "}
               </a>
 
-              <div className="flex flex-row gap-4 md:scale-90 lg:scale-100">
-                <Link href={"https://www.facebook.com/"}>
+              <div className="flex flex-row gap-4 mt-2">
+                <Link
+                  href={
+                    "https://www.facebook.com/profile.php?id=100079550524517"
+                  }
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <IconFacebook />
                 </Link>
-                <Link href={"https://www.instagram.com"}>
+                <Link
+                  href={"https://www.instagram.com/centrumvolazit"}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <IconInstagram />
                 </Link>
-                {/* <a href="tel:+421911565363">
-                  <IconCall />
-                </a> */}
+
+                <Link
+                  href={"https://www.youtube.com"}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <IconYoutube />
+                </Link>
               </div>
             </div>
           </div>

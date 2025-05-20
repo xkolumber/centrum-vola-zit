@@ -6,6 +6,7 @@ import MailIcon from "@mui/icons-material/Mail";
 import CallIcon from "@mui/icons-material/Call";
 import LocationPinIcon from "@mui/icons-material/LocationPin";
 import VolunteerActivismIcon from "@mui/icons-material/VolunteerActivism";
+import Link from "next/link";
 
 const data = [
   {
@@ -70,9 +71,24 @@ const ContactInfo = () => {
       </div>
       <h4 className="font-extrabold mt-16">Sledujte nás</h4>
       <div className="flex flex-row gap-4 mt-4">
-        <IconInstagram />
-        <IconFacebook />
-        <IconYoutube />
+        <Link
+          href={"https://www.facebook.com/profile.php?id=100079550524517"}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <IconFacebook />
+        </Link>
+        <Link
+          href={"https://www.instagram.com/centrumvolazit"}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <IconInstagram />
+        </Link>
+
+        <Link href={"https://www.youtube.com"} target="_blank" rel="noreferrer">
+          <IconYoutube />
+        </Link>
       </div>
     </div>
   );

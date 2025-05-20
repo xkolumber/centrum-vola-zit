@@ -46,9 +46,28 @@ const Navbar = () => {
         }}
       >
         <div className="flex flex-row gap-4">
-          <IconInstagram />
-          <IconFacebook />
-          <IconYoutube />
+          <Link
+            href={"https://www.facebook.com/profile.php?id=100079550524517"}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <IconFacebook />
+          </Link>
+          <Link
+            href={"https://www.instagram.com/centrumvolazit"}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <IconInstagram />
+          </Link>
+
+          <Link
+            href={"https://www.youtube.com"}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <IconYoutube />
+          </Link>
         </div>
         <div className="flex flex-row gap-8">
           {navbar_right_part.map((object, index) => (
