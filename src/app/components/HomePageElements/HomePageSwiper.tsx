@@ -92,7 +92,7 @@ const HomePageSwiper = () => {
                         )}
                         width={800}
                         height={800}
-                        className="w-full md:w-[40%] max-h-[400px] object-cover rounded-[8px]"
+                        className="w-full md:w-[40%] h-[280px]  md:h-full max-h-[400px] object-cover rounded-[8px] hidden md:block"
                         alt="Logo"
                         priority
                       />

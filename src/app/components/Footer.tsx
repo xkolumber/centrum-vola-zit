@@ -36,8 +36,8 @@ const Footer = () => {
               <a href="tel:+421915653553">
                 <p>Tel: +421 915 653 553</p>
               </a>
-              <a href="mailto:info@fstavenergy.sk?subject=Otázka">
-                <p>Email: centrumvolazit@gmail.com</p>{" "}
+              <a href="mailto:centrum.volazit@gmail.com?subject=Otázka">
+                <p>Email: centrum.volazit@gmail.com</p>{" "}
               </a>
 
               <div className="flex flex-row gap-4 mt-2">
@@ -97,9 +97,6 @@ const Footer = () => {
         <p className="text-[12px] md:text-[14px] text-center">
           © Copyright {actual_year} Centrum vôľa žiť - všetky práva vyhradené
         </p>
-        <Link className="text-[10px] md:text-[12px] underline" href={"/"}>
-          VOP + GDPR{" "}
-        </Link>
       </div>
     </>
   );

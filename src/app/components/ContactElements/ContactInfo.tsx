@@ -11,7 +11,7 @@ import ContactForm from "./ContactForm";
 
 const data = [
   {
-    title: "Kontakt OZ",
+    title: "Ochotná pomôcť",
     desc: "Mgr. Lucia Kačmarčíková",
     color: "#F4D529",
     icon: <VolunteerActivismIcon />,
@@ -51,7 +51,7 @@ const data = [
 
 const data2 = [
   {
-    title: "Kontakt Centrum",
+    title: "Ochotní pomôcť",
     desc: "Mgr. Alexandra Németh, Bc. Peter Németh",
     color: "#F4D529",
     icon: <VolunteerActivismIcon />,
