@@ -62,7 +62,7 @@ const Navbar = () => {
           </Link>
 
           <Link
-            href={"https://www.youtube.com"}
+            href={"https://www.youtube.com/watch?v=yr6Xx1BDj40"}
             target="_blank"
             rel="noreferrer"
           >

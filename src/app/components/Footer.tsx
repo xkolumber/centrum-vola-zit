@@ -32,9 +32,9 @@ const Footer = () => {
           <div className="flex flex-col">
             <h5 className="uppercase mb-2 font-semibold">Kontakt</h5>
             <div className="flex flex-col ">
-              <p>Zodp.osoba: Lucia Kačmarčíková</p>
-              <a href="tel:+421911565363">
-                <p>Tel: +4219186554146</p>
+              <p>OS Vôľa Žiť: Mgr. Lucia Kačmarčíková</p>
+              <a href="tel:+421915653553">
+                <p>Tel: +421 915 653 553</p>
               </a>
               <a href="mailto:info@fstavenergy.sk?subject=Otázka">
                 <p>Email: centrumvolazit@gmail.com</p>{" "}
@@ -59,7 +59,7 @@ const Footer = () => {
                 </Link>
 
                 <Link
-                  href={"https://www.youtube.com"}
+                  href={"https://www.youtube.com/watch?v=yr6Xx1BDj40"}
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -70,12 +70,11 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col">
-            <h5 className="uppercase mb-2 font-semibold">Fakturačné údaje</h5>
-            <div className="flex flex-col">
-              <p>IČO: 46205284</p>
-              <p>DIČ: 2023283680</p>
-              <p>IČ DPH:SK2023283680</p>
-            </div>
+            <h5 className="uppercase mb-2 font-semibold">Kontakt - Fyzio</h5>
+            <p className="">Centrum Vôľa Žiť: Mgr. Alexandra Németh</p>
+            <a href="tel:+421911744717">
+              <p>Tel: +421 911 744 717</p>
+            </a>
           </div>
           <div className="flex flex-col">
             <h5 className="uppercase mb-2 font-semibold">Adresa</h5>

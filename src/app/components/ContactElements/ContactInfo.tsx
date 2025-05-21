@@ -11,7 +11,7 @@ import Link from "next/link";
 const data = [
   {
     title: "Pripravený pomôcť",
-    desc: "Lucia Kačmarčíková",
+    desc: "Mgr. Lucia Kačmarčíková",
     color: "#F4D529",
     icon: <VolunteerActivismIcon />,
   },
@@ -23,7 +23,7 @@ const data = [
   },
   {
     title: "Telefónny kontakt",
-    desc: "+421 999 999 999",
+    desc: "+421 915 653 553",
     color: "#20A9E1",
     icon: (
       <CallIcon
@@ -34,8 +34,20 @@ const data = [
     ),
   },
   {
-    title: "Navšívte nás na",
-    desc: "Dr. Alexandra 42 060 01 Kežmarok, Slovensko",
+    title: "Kontakt OZ",
+    desc: "Dr. Alexandra 42, 060 01 Kežmarok, Slovensko",
+    color: "#2E63AD",
+    icon: (
+      <LocationPinIcon
+        style={{
+          color: "#ffffff",
+        }}
+      />
+    ),
+  },
+  {
+    title: "Občianske združenie",
+    desc: "Zimná 442/46, 059 01 Spišská Belá, Slovensko",
     color: "#2E63AD",
     icon: (
       <LocationPinIcon
@@ -86,7 +98,11 @@ const ContactInfo = () => {
           <IconInstagram />
         </Link>
 
-        <Link href={"https://www.youtube.com"} target="_blank" rel="noreferrer">
+        <Link
+          href={"https://www.youtube.com/watch?v=yr6Xx1BDj40"}
+          target="_blank"
+          rel="noreferrer"
+        >
           <IconYoutube />
         </Link>
       </div>

@@ -6,7 +6,7 @@ const page = () => {
     <div className="main_section m-auto  flex flex-col md:flex-row w-full justify-between min-h-screen ">
       <div className="flex flex-col ">
         <p>Zanechajte nám správu</p>
-        <h2 className="font-extrabold">Kontakt</h2>
+        <h2 className="font-extrabold">Kontakt OZ</h2>
         <p className=" pt-4 mb-4">
           Ostaňme spolu v kontakte. Napíšte nám alebo nás sledujete na
           sociálnych sieťach.
