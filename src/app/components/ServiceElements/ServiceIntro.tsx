@@ -138,7 +138,11 @@ export default function ServiceIntro() {
                 aws_bucket_url,
                 cloudfront_url
               )}
-              className="w-full h-[513px] object-cover rounded-[16px]"
+              className={`w-full ${
+                services[active].slug === "zavesny-system"
+                  ? "h-full"
+                  : "h-[513px] "
+              }  object-cover rounded-[16px]`}
               priority
             />
           )}
