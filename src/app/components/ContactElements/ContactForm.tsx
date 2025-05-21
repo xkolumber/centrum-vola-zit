@@ -45,6 +45,11 @@ const ContactForm = () => {
 
   return (
     <div className="lg:w-[50%]">
+      <p className=" pt-4 mb-4">
+        Ostaňme spolu v kontakte. Napíšte nám alebo nás sledujete na sociálnych
+        sieťach.
+      </p>
+
       <Box
         paddingTop={"24px"}
         component="form"

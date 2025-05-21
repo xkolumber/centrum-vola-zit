@@ -32,7 +32,7 @@ const Footer = () => {
           <div className="flex flex-col">
             <h5 className="uppercase mb-2 font-semibold">Kontakt</h5>
             <div className="flex flex-col ">
-              <p>OS Vôľa Žiť: Mgr. Lucia Kačmarčíková</p>
+              <p>OZ Vôľa Žiť: Mgr. Lucia Kačmarčíková</p>
               <a href="tel:+421915653553">
                 <p>Tel: +421 915 653 553</p>
               </a>
@@ -70,10 +70,14 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col">
-            <h5 className="uppercase mb-2 font-semibold">Kontakt - Fyzio</h5>
+            <h5 className="uppercase mb-2 font-semibold">Fyzioterapia</h5>
             <p className="">Centrum Vôľa Žiť: Mgr. Alexandra Németh</p>
             <a href="tel:+421911744717">
               <p>Tel: +421 911 744 717</p>
+            </a>
+            <p className="">Centrum Vôľa Žiť: Bc. Peter Németh</p>
+            <a href="tel:+421918457939">
+              <p>Tel: +421 918 457 939</p>
             </a>
           </div>
           <div className="flex flex-col">
