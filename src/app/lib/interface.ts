@@ -74,3 +74,11 @@ export interface SponsorInterface {
   title: string;
   partition_key: "all";
 }
+
+export interface CooperationInterface {
+  id: string;
+  link: string;
+  logo: string;
+  title: string;
+  partition_key: "all";
+}

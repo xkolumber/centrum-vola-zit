@@ -1,11 +1,8 @@
 import React from "react";
+import CooperationPage from "../components/CooperationPage";
 
 const page = () => {
-  return (
-    <div className="main_section m-auto  flex flex-col md:flex-row w-full justify-between min-h-screen ">
-      <h2 className="font-extrabold">Spolupracujeme</h2>
-    </div>
-  );
+  return <CooperationPage />;
 };
 
 export default page;

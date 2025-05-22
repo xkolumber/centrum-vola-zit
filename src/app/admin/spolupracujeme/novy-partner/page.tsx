@@ -6,10 +6,10 @@ import {
   CompressImage,
 } from "@/app/functions/functionsClient";
 import {
-  AdminAddSponsor,
+  AdminAddPartner,
   uploadFileToS3,
 } from "@/app/functions/functionsServer";
-import { IsLoadingMap, SponsorInterface } from "@/app/lib/interface";
+import { CooperationInterface, IsLoadingMap } from "@/app/lib/interface";
 import { useQueryClient } from "@tanstack/react-query";
 
 import Image from "next/image";
@@ -22,7 +22,7 @@ import { ClipLoader } from "react-spinners";
 const Page = () => {
   const queryClient = useQueryClient();
 
-  const [actualizeData, setActualizeData] = useState<SponsorInterface>({
+  const [actualizeData, setActualizeData] = useState<CooperationInterface>({
     id: "",
     link: "",
     logo: "",
@@ -45,16 +45,16 @@ const Page = () => {
     }));
 
     try {
-      const response = await AdminAddSponsor(actualizeData);
+      const response = await AdminAddPartner(actualizeData);
       if (response === 200) {
         await queryClient.refetchQueries({
-          queryKey: ["admin_sponzori"],
+          queryKey: ["admin_spolupracujeme"],
         });
         toast.success("Objekt bol aktualizovaný");
         if (fileInputRef.current) {
           fileInputRef.current.value = "";
         }
-        router.push("/admin/sponzori");
+        router.push("/admin/spolupracujeme");
       } else {
         toast.error("Niekde nastala chyba");
       }
@@ -120,14 +120,14 @@ const Page = () => {
     <div>
       <div className="products_admin">
         <Toaster />
-        <Link href={"/admin/sponzori"}>
+        <Link href={"/admin/spolupracujeme"}>
           <p className="hover:underline ease-in text-black">Späť</p>
         </Link>
 
         <form onSubmit={handleSaveData}>
-          <h5 className="text-center">Nový sponzor:</h5>
+          <h5 className="text-center">Nový partner:</h5>
           <div className="flex flex-row justify-between items-center gap-4 mt-8">
-            <h6>Názov sponzora:</h6>
+            <h6>Názov partnera:</h6>
             <input
               type="text"
               name="title"

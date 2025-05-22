@@ -1,21 +1,20 @@
 "use client";
+import { CircularProgress } from "@mui/material";
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
-import { SponsorInterface } from "../lib/interface";
-import { fetchSponsors } from "../functions/functionsServer";
+import Image from "next/image";
+import Link from "next/link";
 import {
   aws_bucket_url,
   cloudfront_url,
   STALE_TIME,
 } from "../functions/functionsClient";
-import { CircularProgress } from "@mui/material";
-import Image from "next/image";
-import Link from "next/link";
+import { fetchCooperationPartners } from "../functions/functionsServer";
+import { CooperationInterface } from "../lib/interface";
 
-const SponsorsPage = () => {
-  const { data, error, isLoading } = useQuery<SponsorInterface[]>({
-    queryKey: ["sponzori"],
-    queryFn: () => fetchSponsors(),
+const CooperationPage = () => {
+  const { data, error, isLoading } = useQuery<CooperationInterface[]>({
+    queryKey: ["spolupracujeme"],
+    queryFn: () => fetchCooperationPartners(),
     staleTime: STALE_TIME,
     refetchOnWindowFocus: false,
     placeholderData: (previousData) => previousData,
@@ -23,17 +22,18 @@ const SponsorsPage = () => {
 
   return (
     <div className="main_section m-auto  flex flex-col w-full  min-h-screen ">
-      <h2 className="font-extrabold">Sponzori</h2>
+      <h2 className="font-extrabold">Spolupracujeme</h2>
 
       <p className="pt-4">
-        Bez Vás by to nešlo. Vďaka podpore našich partnerov môžeme každý deň
-        pomáhať deťom, ktoré to najviac potrebujú. Vaša pomoc nám umožňuje
-        zabezpečiť odborné terapie, kvalitné pomôcky a bezpečné priestory, v
-        ktorých deti nachádzajú oporu a nové možnosti.
+        Vážime si každého partnera, ktorý s nami zdieľa spoločnú víziu – pomáhať
+        deťom rásť, rozvíjať sa a napredovať napriek prekážkam. Naša spolupráca
+        je postavená na dôvere, odbornosti a spoločnom cieli: vytvárať lepšie
+        podmienky pre život detí so znevýhodnením.
       </p>
       <p className="pt-4">
-        Spoločne meníme svet detí k lepšiemu. Ďakujeme, že ste súčasťou tejto
-        cesty. 💙
+        Ďakujeme všetkým organizáciám, firmám a odborníkom, ktorí nám pomáhajú
+        zabezpečiť kvalitné pomôcky, poradenstvo, odborné služby aj technickú
+        podporu. Vaša spolupráca je pre nás kľúčová.
       </p>
 
       {isLoading && (
@@ -59,6 +59,9 @@ const SponsorsPage = () => {
                 key={index}
                 priority
               />
+              <h6 className="font-extrabold text-center pt-4">
+                {object.title}
+              </h6>
             </Link>
           ))}
         </div>
@@ -67,4 +70,4 @@ const SponsorsPage = () => {
   );
 };
 
-export default SponsorsPage;
+export default CooperationPage;

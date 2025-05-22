@@ -13,6 +13,8 @@ import { usePathname } from "next/navigation";
 
 import PeopleIcon from "@mui/icons-material/People";
 
+import HandshakeIcon from "@mui/icons-material/Handshake";
+
 export const mainListItems = [
   {
     text: "Aktuality",
@@ -34,6 +36,11 @@ export const mainListItems = [
     text: "Sponzori",
     icon: <PeopleIcon />,
     link: "/admin/sponzori",
+  },
+  {
+    text: "Spolupracujeme",
+    icon: <HandshakeIcon />,
+    link: "/admin/spolupracujeme",
   },
 ];
 
