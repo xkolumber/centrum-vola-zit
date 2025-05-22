@@ -52,7 +52,7 @@ const data = [
 const data2 = [
   {
     title: "Ochotní pomôcť",
-    desc: "Mgr. Alexandra Németh, Bc. Peter Németh",
+    desc: "Mgr. Alexandra Németh, Mgr. Lucia Kačmarčíková",
     color: "#F4D529",
     icon: <VolunteerActivismIcon />,
   },
@@ -64,7 +64,7 @@ const data2 = [
   },
   {
     title: "Telefónny kontakt",
-    desc: "+421 911 744 717, +421 918 457 939",
+    desc: "+421 911 744 717, +421 915 653 553",
     color: "#20A9E1",
     icon: (
       <CallIcon
