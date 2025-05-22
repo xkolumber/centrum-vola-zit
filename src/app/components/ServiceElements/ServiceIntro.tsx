@@ -53,8 +53,9 @@ const services = [
     id: 4,
     name: "Horizontálny motomed",
     slug: "horizontalny-motomed",
-    videoUrl:
-      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/horizontalny_motomed.mp4",
+    imageUrl:
+      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/horizontalny_motomed.jpg",
+    videoUrl: "none",
     description:
       "je zariadenie, ktoré podporuje rozvoj motorických funkcií a tým zároveň aj nápravu poškodení CNS (centrálneho nervového systému). V procese obnovy CNS vyvoláva vytváranie nových nervových buniek a množenie funkčných buniek. Zariadenie využíva rytmické, dynamicky koordinované pohyby, ktoré podporujú obnovenie základných funkcií CNS. Pohyby pacientov na zariadení spúšťajú impulzy v receptoroch kože, svalov, kĺbov a iných tkanív, ktoré mnohonásobným opakovaním vyvolávajú zmeny v nervovej sústave.",
   },
