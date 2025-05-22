@@ -6,12 +6,34 @@ import React, { useState } from "react";
 import Lightbox, { SlideImage } from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import NextJsImage from "../NextImage";
+import {
+  aws_bucket_url,
+  cloudfront_url,
+} from "@/app/functions/functionsClient";
 
 interface Props {
   data: HowWeWork;
 }
 
-const photos_room = ["/intro_photo.png", "/intro_photo.png"];
+const photos_room = [
+  "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/priestory/1.jpg",
+  "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/priestory/2.jpg",
+  "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/priestory/3.jpg",
+  "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/priestory/4.jpg",
+  "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/priestory/5.jpg",
+  "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/priestory/6.jpg",
+  "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/priestory/7.jpg",
+  "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/priestory/8.jpg",
+  "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/priestory/9.jpg",
+  "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/priestory/10.jpg",
+  "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/priestory/11.jpg",
+  "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/priestory/12.jpg",
+  "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/priestory/13.jpg",
+  "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/priestory/14.jpg",
+  "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/priestory/15.jpg",
+  "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/priestory/16.jpg",
+  "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/priestory/17.jpg",
+];
 
 const HomePageOnePoint = ({ data }: Props) => {
   const [open, setOpen] = useState(false);
@@ -21,7 +43,7 @@ const HomePageOnePoint = ({ data }: Props) => {
   const handleOpenGallery = () => {
     if (data) {
       const transformedAlbum = photos_room.map((url) => ({
-        src: url,
+        src: url.replace(aws_bucket_url, cloudfront_url),
       }));
       setChoosenAlbum(transformedAlbum);
       setOpen(true);
