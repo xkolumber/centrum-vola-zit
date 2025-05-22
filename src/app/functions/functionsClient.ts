@@ -19,8 +19,8 @@ export const navbar_data = [
   },
 
   {
-    title: "Pomôcky",
-    slug: "/pomocky",
+    title: "Blog",
+    slug: "/blog",
   },
   {
     title: "Kontakt",

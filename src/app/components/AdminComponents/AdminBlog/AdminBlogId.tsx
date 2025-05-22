@@ -8,27 +8,20 @@ import {
   STALE_TIME,
 } from "@/app/functions/functionsClient";
 import {
-  AdminActualizeActuality,
   AdminActualizeBlog,
-  fetchActualityId,
   fetchBlogId,
   uploadFileToS3,
 } from "@/app/functions/functionsServer";
-import {
-  ActualityInterface,
-  BlogInterface,
-  IsLoadingMap,
-} from "@/app/lib/interface";
+import { BlogInterface, IsLoadingMap } from "@/app/lib/interface";
 import { CircularProgress } from "@mui/material";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 
 import Image from "next/image";
-import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { ClipLoader } from "react-spinners";
-import Tiptap from "../../TipTapEditor/TipTap";
 import StepBack from "../../StepBack";
+import Tiptap from "../../TipTapEditor/TipTap";
 
 interface Props {
   id: string;

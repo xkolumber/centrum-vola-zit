@@ -1,19 +1,16 @@
 "use client";
 
 import {
-  fetchActualityLatest,
-  fetchBlogsLatest,
-} from "@/app/functions/functionsServer";
-import { CircularProgress } from "@mui/material";
-import { useInfiniteQuery } from "@tanstack/react-query";
-import React, { useEffect } from "react";
-import { useInView } from "react-intersection-observer";
-import Image from "next/image";
-import {
   aws_bucket_url,
   cloudfront_url,
 } from "@/app/functions/functionsClient";
+import { fetchBlogsLatest } from "@/app/functions/functionsServer";
+import { CircularProgress } from "@mui/material";
+import { useInfiniteQuery } from "@tanstack/react-query";
+import Image from "next/image";
 import Link from "next/link";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
 const BlogPage = () => {
   const { ref, inView } = useInView();
@@ -49,6 +46,7 @@ const BlogPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
           {data.pages
             .flatMap((page) => page.items)
+            .filter((object) => object.viditelnost)
             .map((object, index) => (
               <Link
                 className="hover:scale-[1.02] duration-200"

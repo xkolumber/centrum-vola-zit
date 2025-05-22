@@ -24,9 +24,7 @@ const GalleryObject = ({ data }: Props) => {
         className="w-full h-[280px] md:h-[440px] object-cover rounded-[16px]"
       />
       <h6 className="font-extrabold mt-4">{data.nazov}</h6>
-      <p className="text-[#757575] mt-2">
-        {getFormatDate(data.datum_pridania)}
-      </p>
+      <p className="text-gray-700 mt-2">{getFormatDate(data.datum_pridania)}</p>
     </Link>
   );
 };
