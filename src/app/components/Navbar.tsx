@@ -23,14 +23,17 @@ const navbar_right_part = [
     id: 1,
     icon: <IconLocation />,
     text: "Dr. Alexandra 42 060 01 Kežmarok, Slovensko",
+    address: "yes",
+    link: "https://www.google.com/maps/place/Dr.+Alexandra+139%2F42,+060+02+Ke%C5%BEmarok/@49.1378685,20.4279255,3a,75y,49.29h,83.8t/data=!3m7!1e1!3m5!1sOos3Erhb-0-N2evAb_S6Ig!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D6.200787104741508%26panoid%3DOos3Erhb-0-N2evAb_S6Ig%26yaw%3D49.28589491242888!7i13312!8i6656!4m6!3m5!1s0x473e3c3343317eed:0x4f78caad87ef6a06!8m2!3d49.1379652!4d20.4280159!16s%2Fg%2F11snqxcmrh?entry=ttu&g_ep=EgoyMDI1MDUxNS4xIKXMDSoASAFQAw%3D%3D",
   },
-  { id: 2, icon: <IconPhone />, text: "0915 653 553" },
+  { id: 2, icon: <IconPhone />, text: "0915 653 553", phone: "yes" },
   { id: 3, icon: <IconTime />, text: "8:00 - 16:00" },
 ];
 
 const Navbar = () => {
   const pathname = usePathname();
   const [anchorEl] = useState<null | HTMLElement>(null);
+
   const open = Boolean(anchorEl);
 
   const [openMobile, setOpenMobile] = useState(false);
@@ -70,11 +73,42 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="flex flex-row gap-8">
-          {navbar_right_part.map((object, index) => (
-            <div className="flex flex-row gap-4 items-center" key={index}>
-              {object.icon} <p className="2xl:text-[16px]">{object.text}</p>
-            </div>
-          ))}
+          {navbar_right_part.map((object, index) => {
+            if (object.phone === "yes") {
+              return (
+                <a
+                  className="flex flex-row gap-4 items-center"
+                  key={index}
+                  href="tel:+421915653553"
+                >
+                  {object.icon}
+                  <p className="2xl:text-[16px]">{object.text}</p>
+                </a>
+              );
+            }
+
+            if (object.address === "yes") {
+              return (
+                <Link
+                  className="flex flex-row gap-4 items-center"
+                  key={index}
+                  href={object.link}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {object.icon}
+                  <p className="2xl:text-[16px]">{object.text}</p>
+                </Link>
+              );
+            }
+
+            return (
+              <div className="flex flex-row gap-4 items-center" key={index}>
+                {object.icon}
+                <p className="2xl:text-[16px]">{object.text}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
 

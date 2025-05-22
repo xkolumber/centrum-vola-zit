@@ -9,10 +9,16 @@ import {
   UpdateCommand,
 } from "@aws-sdk/lib-dynamodb";
 import { clientS3, docClient } from "../lib/awsConfig";
-import { ActualityInterface, GalleryInterface } from "../lib/interface";
+import {
+  ActualityInterface,
+  ContactFormInterface,
+  GalleryInterface,
+} from "../lib/interface";
 import { aws_bucket_name, createSlug, LIMIT_GALLERY } from "./functionsNeutral";
 
 import { createPresignedPost } from "@aws-sdk/s3-presigned-post";
+import { EmailContactPage } from "../components/EmailContactPage";
+import { Resend } from "resend";
 
 export async function fetchGalleries(): Promise<GalleryInterface[]> {
   try {
@@ -175,17 +181,23 @@ export async function AdminActualizeAlbumGallery(
 
     const ExpressionAttributeNames = Object.keys(actualizeData)
       .filter((key) => key !== "id")
-      .reduce((acc, key) => {
-        acc[`#${key}`] = key;
-        return acc;
-      }, {} as Record<string, string>);
+      .reduce(
+        (acc, key) => {
+          acc[`#${key}`] = key;
+          return acc;
+        },
+        {} as Record<string, string>
+      );
 
     const ExpressionAttributeValues = Object.entries(actualizeData)
       .filter(([key]) => key !== "id")
-      .reduce((acc, [key, value]) => {
-        acc[`:${key}`] = value;
-        return acc;
-      }, {} as Record<string, any>);
+      .reduce(
+        (acc, [key, value]) => {
+          acc[`:${key}`] = value;
+          return acc;
+        },
+        {} as Record<string, any>
+      );
 
     const updateCommand = new UpdateCommand({
       TableName: "galeria",
@@ -357,17 +369,23 @@ export async function AdminActualizeActuality(
 
     const ExpressionAttributeNames = Object.keys(actualizeData)
       .filter((key) => key !== "id")
-      .reduce((acc, key) => {
-        acc[`#${key}`] = key;
-        return acc;
-      }, {} as Record<string, string>);
+      .reduce(
+        (acc, key) => {
+          acc[`#${key}`] = key;
+          return acc;
+        },
+        {} as Record<string, string>
+      );
 
     const ExpressionAttributeValues = Object.entries(actualizeData)
       .filter(([key]) => key !== "id")
-      .reduce((acc, [key, value]) => {
-        acc[`:${key}`] = value;
-        return acc;
-      }, {} as Record<string, any>);
+      .reduce(
+        (acc, [key, value]) => {
+          acc[`:${key}`] = value;
+          return acc;
+        },
+        {} as Record<string, any>
+      );
 
     const updateCommand = new UpdateCommand({
       TableName: "aktuality",
@@ -406,5 +424,34 @@ export async function AdminAddActuality(actualizeData: ActualityInterface) {
   } catch (error) {
     console.error("DynamoDB Add Error:", error);
     return "false";
+  }
+}
+
+export async function sendFormEmail(actualizeData: ContactFormInterface) {
+  const emailHtml = EmailContactPage({
+    name: actualizeData.name,
+    email: actualizeData.email,
+    tel_number: actualizeData.phone,
+    message: actualizeData.message,
+  });
+
+  const resend = new Resend(process.env.RESEND_API_KEY!);
+
+  try {
+    const data = await resend.emails.send({
+      from: "symbiom@symbiom.sk",
+      to: "centrum.volazit@gmail.com",
+      subject: "Dotaz od klienta z webstránky",
+      html: emailHtml,
+    });
+
+    if (data.data!.id) {
+      return 200;
+    } else {
+      return 500;
+    }
+  } catch (error) {
+    console.log(error);
+    return 500;
   }
 }

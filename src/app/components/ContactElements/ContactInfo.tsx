@@ -97,13 +97,15 @@ const ContactInfo = () => {
           {data2.map((object, index) => (
             <div className="flex flex-row gap-4 items-center" key={index}>
               {" "}
-              <div
-                className="circle_contact flex justify-center items-center"
-                style={{
-                  backgroundColor: object.color,
-                }}
-              >
-                {object.icon}
+              <div className="">
+                <div
+                  className="circle_contact flex justify-center items-center"
+                  style={{
+                    backgroundColor: object.color,
+                  }}
+                >
+                  {object.icon}
+                </div>
               </div>
               <div className="flex flex-col">
                 <p className="text-[12px]">{object.title}</p>
@@ -118,13 +120,15 @@ const ContactInfo = () => {
           {data.map((object, index) => (
             <div className="flex flex-row gap-4 items-center" key={index}>
               {" "}
-              <div
-                className="circle_contact flex justify-center items-center"
-                style={{
-                  backgroundColor: object.color,
-                }}
-              >
-                {object.icon}
+              <div className="m">
+                <div
+                  className="circle_contact flex justify-center items-center"
+                  style={{
+                    backgroundColor: object.color,
+                  }}
+                >
+                  {object.icon}
+                </div>
               </div>
               <div className="flex flex-col">
                 <p className="text-[12px]">{object.title}</p>

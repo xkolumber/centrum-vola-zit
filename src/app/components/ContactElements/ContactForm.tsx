@@ -1,4 +1,5 @@
 "use client";
+import { sendFormEmail } from "@/app/functions/functionsServer";
 import { ContactFormInterface } from "@/app/lib/interface";
 import {
   Box,
@@ -9,6 +10,7 @@ import {
   TextField,
 } from "@mui/material";
 import React, { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 const ContactForm = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -16,6 +18,25 @@ const ContactForm = () => {
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     setIsLoading(true);
+
+    const response = await sendFormEmail(actualizeData);
+
+    if (response === 200) {
+      toast.success("Email bol úspešne odoslaný.");
+      setActualizeData((prevData) => ({
+        ...prevData,
+        agree: false,
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      }));
+    } else {
+      toast.error("Pri odosielaní emailu nastala chyba, zavolajte nám.", {
+        duration: 5000,
+      });
+    }
+    setIsLoading(false);
   };
 
   const handleChange = (
@@ -44,20 +65,16 @@ const ContactForm = () => {
     };
 
   return (
-    <div className="lg:w-[50%]">
-      <p className=" pt-4 mb-4">
-        Ostaňme spolu v kontakte. Napíšte nám alebo nás sledujete na sociálnych
-        sieťach.
-      </p>
-
+    <div className="lg:w-[50%] mt-16 md:mt-0 mb-16">
+      <Toaster />
       <Box
-        paddingTop={"24px"}
         component="form"
         gap={"16px"}
         flexDirection={"column"}
         display={"flex"}
-        // autoComplete="off"
+        autoComplete="off"
         onSubmit={handleSubmit}
+        className="sticky top-44"
       >
         <Box className="flex flex-col md:flex-row" gap={"16px"}>
           <TextField
@@ -148,12 +165,14 @@ const ContactForm = () => {
         />
 
         <TextField
-          label="Poznámka"
+          label="Správa"
           variant="outlined"
           multiline
           rows={8}
           name="message"
+          value={actualizeData.message}
           onChange={handleChange}
+          required
           sx={{
             "& .MuiOutlinedInput-root": {
               borderRadius: "8px",
@@ -179,7 +198,7 @@ const ContactForm = () => {
 
         <FormControlLabel
           key={"1"}
-          label={"Súhlasím s VOP a so spracovaním osobných údajov"}
+          label={"Súhlasím so spracovaním osobných údajov"}
           required
           control={
             <Checkbox
@@ -190,7 +209,7 @@ const ContactForm = () => {
                 borderRadius: "4px",
                 color: "rgba(0, 0, 0, 0.50)",
                 "&.Mui-checked": {
-                  color: "#76AE4D",
+                  color: "#ADCA2A",
                 },
               }}
             />
