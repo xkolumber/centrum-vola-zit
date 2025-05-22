@@ -28,7 +28,8 @@ b {
   font-weight: 600;
 }
 p,
-a {
+a,
+li {
   color: white;
   font-weight: 400;
   text-transform: none;
@@ -92,7 +93,8 @@ li {
     font-size: 2rem;
   }
   p,
-  a {
+  a,
+  li {
     font-size: 1.8rem;
   }
   .custom-underline {

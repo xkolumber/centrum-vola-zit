@@ -5,6 +5,7 @@ import ReactPlayer from "react-player/lazy";
 import { aws_bucket_url, cloudfront_url } from "../functions/functionsClient";
 import Image from "next/image";
 import StepBack from "./StepBack";
+import CallToAction from "./CallToAction";
 
 const services = [
   {
@@ -148,7 +149,7 @@ export default function TherapyComplementary() {
                 aws_bucket_url,
                 cloudfront_url
               )}
-              className="w-full h-[513px] object-cover rounded-[16px]"
+              className={`w-full h-[513px] object-cover rounded-[16px] object-right" ${services[active].slug === "oxygenoterapia" && "object-[85%_75%]"}`}
               priority
             />
           )}
@@ -157,6 +158,9 @@ export default function TherapyComplementary() {
           <h3 className=" font-semibold">{services[active].name}</h3>
           <p className="text-gray-800">{services[active].description}</p>
         </div>
+      </div>
+      <div className="mt-16 lg:mt-32 2xl:mt-52">
+        <CallToAction />
       </div>
     </div>
   );

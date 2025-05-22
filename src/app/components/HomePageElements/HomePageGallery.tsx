@@ -19,6 +19,7 @@ const HomePageGallery = () => {
     <div className="w-full  flex justify-center pt-8 pb-8 2xl:pt-32 2xl:pb-32">
       <div className="main_section justify-center w-full flex flex-col  ">
         <div className="flex flex-col w-full ">
+          <p>Spomienky</p>
           <h2 className="font-extrabold">Galéria fotiek</h2>
           <p className=" pt-4 mb-8 2xl:mb-16 ">
             Pozrite sa, ako vyzerá naša každodenná práca – momenty plné

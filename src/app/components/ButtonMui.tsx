@@ -19,7 +19,7 @@ const ButtonMui = ({ color, text, link }: Props) => {
           paddingLeft: "32px",
           paddingRight: "32px",
           boxShadow: "none",
-          textTransform: "capitalize",
+          textTransform: "none",
           "&:hover": {
             boxShadow: "none",
           },

@@ -8,6 +8,7 @@ import ReactPlayer from "react-player/lazy";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import StepBack from "../StepBack";
+import CallToAction from "../CallToAction";
 
 const services = [
   {
@@ -152,6 +153,9 @@ export default function ServiceIntro() {
           <h3 className=" font-semibold">{services[active].name}</h3>
           <p className="text-gray-800">{services[active].description}</p>
         </div>
+      </div>
+      <div className="mt-16 lg:mt-32 2xl:mt-52">
+        <CallToAction />
       </div>
     </div>
   );

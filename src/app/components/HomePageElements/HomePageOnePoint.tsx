@@ -15,7 +15,7 @@ interface Props {
   data: HowWeWork;
 }
 
-const photos_room = [
+export const photos_room = [
   "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/priestory/1.jpg",
   "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/priestory/2.jpg",
   "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/priestory/3.jpg",

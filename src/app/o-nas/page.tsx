@@ -1,11 +1,8 @@
 import React from "react";
+import AboutUsElement from "../components/AboutUsElement";
 
-const page = () => {
-  return (
-    <div className="main_section m-auto  flex flex-col md:flex-row w-full justify-between min-h-screen ">
-      <h2 className="font-extrabold">O nás</h2>
-    </div>
-  );
+const Page = () => {
+  return <AboutUsElement />;
 };
 
-export default page;
+export default Page;

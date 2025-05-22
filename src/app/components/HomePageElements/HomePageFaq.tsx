@@ -33,6 +33,7 @@ const HomePageFaq = () => {
     <div className="w-full bg-[#F1F1F1]  flex justify-center pt-8 pb-8 2xl:pt-32 2xl:pb-32">
       <div className="main_section justify-center w-full flex flex-col md:flex-row gap-8 xl:gap-16 ">
         <div className="flex flex-col w-full ">
+          <p>Faq</p>
           <h2 className="font-extrabold ">Najčastejšie kladené otázky</h2>
           <p className=" pt-4 mb-8 2xl:mb-24">
             Tu nájdete odpovede na otázky, ktoré nám najčastejšie kladú rodičia.

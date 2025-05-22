@@ -5,7 +5,7 @@ const HomePageHowWeWork = () => {
   return (
     <div className="main_section m-auto justify-center items-center flex flex-col w-full gap-8 xl:gap-16 ">
       <div className="flex flex-col ">
-        <p>Novinka 1</p>
+        <p>Naša práca</p>
         <h2 className="font-extrabold">Ako pracujeme?</h2>
         <p className=" pt-4 mb-4">
           Každé dieťa má právo na dôstojnú a plnohodnotnú budúcnosť. V našej

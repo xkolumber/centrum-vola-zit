@@ -59,6 +59,7 @@ const HomePageTeam = () => {
       <div className="flex flex-col w-full">
         <div className="flex flex-row justify-between">
           <div className="flex flex-col ">
+            <p>Tím</p>
             <h2 className="font-extrabold">Spoznajte náš tím</h2>
             <p className=" pt-4 mb-4 max-w-[700px]">
               V našom tíme sú fyzioterapeuti, psychológovia a logopédi. Všetci
