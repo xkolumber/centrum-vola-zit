@@ -1,11 +1,8 @@
 import React from "react";
+import SponsorsPage from "../components/SponsorsPage";
 
-const page = () => {
-  return (
-    <div className="main_section m-auto  flex flex-col md:flex-row w-full justify-between min-h-screen ">
-      <h2 className="font-extrabold">Sponzori</h2>
-    </div>
-  );
+const Page = () => {
+  return <SponsorsPage />;
 };
 
-export default page;
+export default Page;

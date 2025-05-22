@@ -33,7 +33,7 @@ const AboutUsElement = () => {
           podporu – fyzickú, psychologickú aj sociálnu – v bezpečnom a
           priateľskom prostredí.
         </p>
-        <p className="pb-4">
+        <p>
           V našom tíme nájdete logopédov, fyzioterapeutov a psychológov, ktorí
           sa venujú individuálnym potrebám každého dieťaťa. Pomáhame aj rodičom
           – s vybavením pomôcok na mieru či získavaním financií cez sociálnu
@@ -41,7 +41,7 @@ const AboutUsElement = () => {
         </p>
 
         <div>
-          <h3 className="font-extrabold mt-8 lg:mt-16 mb-4">Naše služby</h3>
+          <h3 className="font-extrabold mt-16 mb-4">Naše služby</h3>
           <ul className="list-disc list-inside text-gray-700 space-y-1">
             <li>
               {" "}
@@ -60,7 +60,7 @@ const AboutUsElement = () => {
         </div>
 
         <div>
-          <h3 className="font-extrabold mt-8 lg:mt-16 mb-8">Náš tím</h3>
+          <h3 className="font-extrabold mt-16 mb-8">Náš tím</h3>
           <Image
             src={cloudfront_url + `/o_nas.jpg`}
             alt="Náš tím"
@@ -72,7 +72,7 @@ const AboutUsElement = () => {
         </div>
 
         <div>
-          <h3 className="font-extrabold mt-8 lg:mt-24 mb-4">Naše priestory</h3>
+          <h3 className="font-extrabold mt-16 lg:mt-24 mb-4">Naše priestory</h3>
           <p className="mb-4 text-gray-700 max-w-[700px]">
             Vytvorili sme bezpečné a podporné prostredie, kde sa deti môžu cítiť
             príjemne a slobodne. Priestory sú navrhnuté tak, aby podporovali
@@ -86,7 +86,7 @@ const AboutUsElement = () => {
                 alt="Priestor 1"
                 width={400}
                 height={300}
-                className="rounded-lg w-full h-full max-h-[280px] object-cover cursor-pointer hover:scale-[1.02] duration-200"
+                className="rounded-lg w-full h-full max-h-[300px] object-cover cursor-pointer hover:scale-[1.02] duration-200"
                 key={index}
                 onClick={() => handleOpenGallery(index)}
                 priority

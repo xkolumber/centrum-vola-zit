@@ -66,3 +66,11 @@ export interface ActualityInterface {
   another_photos: string[];
   viditelnost: boolean;
 }
+
+export interface SponsorInterface {
+  id: string;
+  link: string;
+  logo: string;
+  title: string;
+  partition_key: "all";
+}

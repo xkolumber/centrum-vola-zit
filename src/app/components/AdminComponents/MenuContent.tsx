@@ -11,6 +11,8 @@ import Stack from "@mui/material/Stack";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import PeopleIcon from "@mui/icons-material/People";
+
 export const mainListItems = [
   {
     text: "Aktuality",
@@ -27,6 +29,11 @@ export const mainListItems = [
     text: "Galéria",
     icon: <CollectionsIcon />,
     link: "/admin/galeria",
+  },
+  {
+    text: "Sponzori",
+    icon: <PeopleIcon />,
+    link: "/admin/sponzori",
   },
 ];
 

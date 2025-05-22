@@ -13,6 +13,7 @@ import {
   ActualityInterface,
   ContactFormInterface,
   GalleryInterface,
+  SponsorInterface,
 } from "../lib/interface";
 import { aws_bucket_name, createSlug, LIMIT_GALLERY } from "./functionsNeutral";
 
@@ -162,6 +163,27 @@ export async function fetchActualityId(
     }
 
     return response.Item as ActualityInterface;
+  } catch (err) {
+    console.log(err);
+    throw new Error(`Item with  not found.`);
+  }
+}
+
+export async function fetchSponsorId(id: string): Promise<SponsorInterface> {
+  try {
+    const command = new GetCommand({
+      TableName: "sponzori",
+      Key: {
+        id: id,
+      },
+    });
+
+    const response = await docClient.send(command);
+    if (!response.Item) {
+      throw new Error(`Item with id not found.`);
+    }
+
+    return response.Item as SponsorInterface;
   } catch (err) {
     console.log(err);
     throw new Error(`Item with  not found.`);
@@ -338,10 +360,46 @@ export async function fetchActualities(): Promise<ActualityInterface[]> {
   }
 }
 
+export async function fetchSponsors(): Promise<SponsorInterface[]> {
+  try {
+    const command = new ScanCommand({
+      TableName: "sponzori",
+    });
+
+    const response = await docClient.send(command);
+    if (response.Items) {
+      return response.Items as SponsorInterface[];
+    }
+
+    throw new Error(`Item with  not found.`);
+  } catch (err) {
+    console.log(err);
+    throw new Error(`Item with  not found.`);
+  }
+}
+
 export async function AdminDeleteActuality(id: string) {
   try {
     const command = new DeleteCommand({
       TableName: "aktuality",
+      Key: {
+        id,
+      },
+    });
+
+    const response = await docClient.send(command);
+
+    return response.$metadata.httpStatusCode;
+  } catch (error) {
+    console.error("Database Error: Failed", error);
+    return "false";
+  }
+}
+
+export async function AdminDeleteSponsor(id: string) {
+  try {
+    const command = new DeleteCommand({
+      TableName: "sponzori",
       Key: {
         id,
       },
@@ -404,6 +462,50 @@ export async function AdminActualizeActuality(
   }
 }
 
+export async function AdminActualizeSponsor(actualizeData: SponsorInterface) {
+  try {
+    const updateExpression = Object.keys(actualizeData)
+      .filter((key) => key !== "id")
+      .map((key) => `#${key} = :${key}`)
+      .join(", ");
+
+    const ExpressionAttributeNames = Object.keys(actualizeData)
+      .filter((key) => key !== "id")
+      .reduce(
+        (acc, key) => {
+          acc[`#${key}`] = key;
+          return acc;
+        },
+        {} as Record<string, string>
+      );
+
+    const ExpressionAttributeValues = Object.entries(actualizeData)
+      .filter(([key]) => key !== "id")
+      .reduce(
+        (acc, [key, value]) => {
+          acc[`:${key}`] = value;
+          return acc;
+        },
+        {} as Record<string, any>
+      );
+
+    const updateCommand = new UpdateCommand({
+      TableName: "sponzori",
+      Key: { id: actualizeData.id },
+      UpdateExpression: `SET ${updateExpression}`,
+      ExpressionAttributeNames,
+      ExpressionAttributeValues,
+      ReturnValues: "ALL_NEW",
+    });
+
+    const response = await docClient.send(updateCommand);
+    return response.$metadata.httpStatusCode;
+  } catch (error) {
+    console.error("DynamoDB Update Error:", error);
+    return "false";
+  }
+}
+
 export async function AdminAddActuality(actualizeData: ActualityInterface) {
   const uuid = crypto.randomUUID();
 
@@ -415,6 +517,27 @@ export async function AdminAddActuality(actualizeData: ActualityInterface) {
         id: uuid,
         slug: createSlug(actualizeData.title),
         date: new Date().toISOString(),
+        partition_key: "all",
+      },
+    };
+
+    const response = await docClient.send(new PutCommand(putParams));
+    return response.$metadata.httpStatusCode;
+  } catch (error) {
+    console.error("DynamoDB Add Error:", error);
+    return "false";
+  }
+}
+
+export async function AdminAddSponsor(actualizeData: SponsorInterface) {
+  const uuid = crypto.randomUUID();
+
+  try {
+    const putParams = {
+      TableName: "sponzori",
+      Item: {
+        ...actualizeData,
+        id: uuid,
         partition_key: "all",
       },
     };
