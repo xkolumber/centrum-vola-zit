@@ -11,6 +11,7 @@ import {
 import { clientS3, docClient } from "../lib/awsConfig";
 import {
   ActualityInterface,
+  BlogInterface,
   ContactFormInterface,
   CooperationInterface,
   GalleryInterface,
@@ -153,6 +154,27 @@ export async function fetchActualityId(
   try {
     const command = new GetCommand({
       TableName: "aktuality",
+      Key: {
+        id: id,
+      },
+    });
+
+    const response = await docClient.send(command);
+    if (!response.Item) {
+      throw new Error(`Item with id not found.`);
+    }
+
+    return response.Item as ActualityInterface;
+  } catch (err) {
+    console.log(err);
+    throw new Error(`Item with  not found.`);
+  }
+}
+
+export async function fetchBlogId(id: string): Promise<ActualityInterface> {
+  try {
+    const command = new GetCommand({
+      TableName: "blogy",
       Key: {
         id: id,
       },
@@ -318,6 +340,34 @@ export async function fetchActualityLatest(
   }
 }
 
+export async function fetchBlogsLatest(
+  exclusiveStartKey?: any
+): Promise<{ items: ActualityInterface[]; lastEvaluatedKey?: any }> {
+  try {
+    const command = new QueryCommand({
+      TableName: "blogy",
+      IndexName: "partition_key-date-index",
+      KeyConditionExpression: "partition_key = :partition_key",
+      ExpressionAttributeValues: {
+        ":partition_key": "all",
+      },
+      ScanIndexForward: false,
+      Limit: LIMIT_GALLERY,
+      ExclusiveStartKey: exclusiveStartKey,
+    });
+
+    const response = await docClient.send(command);
+
+    return {
+      items: response.Items as ActualityInterface[],
+      lastEvaluatedKey: response.LastEvaluatedKey,
+    };
+  } catch (err) {
+    console.error("Error fetching product references:", err);
+    return { items: [] };
+  }
+}
+
 export async function fetchGallerySlug(slug: string) {
   try {
     const command = new QueryCommand({
@@ -366,6 +416,30 @@ export async function fetchActualitySlug(slug: string) {
   }
 }
 
+export async function fetchBlogSlug(slug: string) {
+  try {
+    const command = new QueryCommand({
+      TableName: "blogy",
+      IndexName: "slug-index",
+      KeyConditionExpression: "slug = :slug",
+      ExpressionAttributeValues: {
+        ":slug": slug,
+      },
+    });
+
+    const response = await docClient.send(command);
+
+    if (!response.Items || response.Items.length === 0) {
+      throw new Error();
+    }
+
+    return response.Items[0] as ActualityInterface;
+  } catch (error) {
+    console.log(error);
+    throw new Error();
+  }
+}
+
 export async function fetchActualities(): Promise<ActualityInterface[]> {
   try {
     const command = new ScanCommand({
@@ -375,6 +449,24 @@ export async function fetchActualities(): Promise<ActualityInterface[]> {
     const response = await docClient.send(command);
     if (response.Items) {
       return response.Items as ActualityInterface[];
+    }
+
+    throw new Error(`Item with  not found.`);
+  } catch (err) {
+    console.log(err);
+    throw new Error(`Item with  not found.`);
+  }
+}
+
+export async function fetchBlogs(): Promise<BlogInterface[]> {
+  try {
+    const command = new ScanCommand({
+      TableName: "blogy",
+    });
+
+    const response = await docClient.send(command);
+    if (response.Items) {
+      return response.Items as BlogInterface[];
     }
 
     throw new Error(`Item with  not found.`);
@@ -426,6 +518,24 @@ export async function AdminDeleteActuality(id: string) {
   try {
     const command = new DeleteCommand({
       TableName: "aktuality",
+      Key: {
+        id,
+      },
+    });
+
+    const response = await docClient.send(command);
+
+    return response.$metadata.httpStatusCode;
+  } catch (error) {
+    console.error("Database Error: Failed", error);
+    return "false";
+  }
+}
+
+export async function AdminDeleteBlog(id: string) {
+  try {
+    const command = new DeleteCommand({
+      TableName: "blogy",
       Key: {
         id,
       },
@@ -542,6 +652,52 @@ export async function AdminActualizeActuality(
   }
 }
 
+export async function AdminActualizeBlog(actualizeData: BlogInterface) {
+  try {
+    actualizeData.slug = createSlug(actualizeData.title);
+
+    const updateExpression = Object.keys(actualizeData)
+      .filter((key) => key !== "id")
+      .map((key) => `#${key} = :${key}`)
+      .join(", ");
+
+    const ExpressionAttributeNames = Object.keys(actualizeData)
+      .filter((key) => key !== "id")
+      .reduce(
+        (acc, key) => {
+          acc[`#${key}`] = key;
+          return acc;
+        },
+        {} as Record<string, string>
+      );
+
+    const ExpressionAttributeValues = Object.entries(actualizeData)
+      .filter(([key]) => key !== "id")
+      .reduce(
+        (acc, [key, value]) => {
+          acc[`:${key}`] = value;
+          return acc;
+        },
+        {} as Record<string, any>
+      );
+
+    const updateCommand = new UpdateCommand({
+      TableName: "blogy",
+      Key: { id: actualizeData.id },
+      UpdateExpression: `SET ${updateExpression}`,
+      ExpressionAttributeNames,
+      ExpressionAttributeValues,
+      ReturnValues: "ALL_NEW",
+    });
+
+    const response = await docClient.send(updateCommand);
+    return response.$metadata.httpStatusCode;
+  } catch (error) {
+    console.error("DynamoDB Update Error:", error);
+    return "false";
+  }
+}
+
 export async function AdminActualizeSponsor(actualizeData: SponsorInterface) {
   try {
     const updateExpression = Object.keys(actualizeData)
@@ -638,6 +794,29 @@ export async function AdminAddActuality(actualizeData: ActualityInterface) {
   try {
     const putParams = {
       TableName: "aktuality",
+      Item: {
+        ...actualizeData,
+        id: uuid,
+        slug: createSlug(actualizeData.title),
+        date: new Date().toISOString(),
+        partition_key: "all",
+      },
+    };
+
+    const response = await docClient.send(new PutCommand(putParams));
+    return response.$metadata.httpStatusCode;
+  } catch (error) {
+    console.error("DynamoDB Add Error:", error);
+    return "false";
+  }
+}
+
+export async function AdminAddBlog(actualizeData: BlogInterface) {
+  const uuid = crypto.randomUUID();
+
+  try {
+    const putParams = {
+      TableName: "blogy",
       Item: {
         ...actualizeData,
         id: uuid,

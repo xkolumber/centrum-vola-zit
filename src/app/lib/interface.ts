@@ -82,3 +82,21 @@ export interface CooperationInterface {
   title: string;
   partition_key: "all";
 }
+
+export interface BlogInterface {
+  author: string;
+  id: string;
+  title: string;
+  date: string;
+  slug: string;
+  title_photo: string;
+  partition_key: "all";
+  text1: string;
+  text2: string;
+  text3: string;
+  photo1: string;
+  photo2: string;
+  photo3: string;
+  another_photos: string[];
+  viditelnost: boolean;
+}

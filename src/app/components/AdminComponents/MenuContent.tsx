@@ -22,9 +22,9 @@ export const mainListItems = [
     link: "/admin/aktuality",
   },
   {
-    text: "Články",
+    text: "Blog",
     icon: <MenuBookIcon />,
-    link: "/admin/clanky",
+    link: "/admin/blog",
   },
   { text: "Domov", icon: <HomeRoundedIcon />, link: "/admin" },
   {
