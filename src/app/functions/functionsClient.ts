@@ -63,3 +63,11 @@ export const getFormatDate = (date: string) => {
 };
 
 export const STALE_TIME = 1000 * 60 * 10;
+
+export function stripHtmlTags(html: string): string {
+  if (!html) return "";
+  return html
+    .replace(/<[^>]*>/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}

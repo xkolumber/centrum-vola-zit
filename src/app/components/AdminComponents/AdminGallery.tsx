@@ -64,7 +64,7 @@ const AdminGallery = () => {
     } finally {
       setIsLoadingMap((prevState) => ({
         ...prevState,
-        [`delete_project`]: false,
+        [`delete_album`]: false,
       }));
     }
   };

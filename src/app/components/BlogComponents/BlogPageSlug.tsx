@@ -80,10 +80,10 @@ const BlogPageSlug = ({ slug }: Props) => {
             <BlogAuthorAndSocial data={data} bottom={false} />
             <Image
               src={data.title_photo.replace(aws_bucket_url, cloudfront_url)}
-              width={1600}
-              height={800}
+              width={1920}
+              height={1080}
               priority
-              className="w-full h-full  object-cover rounded-[50px] mt-8 md:mt-0 max-h-[580px] cursor-pointer"
+              className="w-full h-full  object-cover rounded-[50px] mt-8 md:mt-0  cursor-pointer"
               alt="Blog foto"
               placeholder="blur"
               blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAEklEQVR4nGP48OHDf2TMQLoAABc0PPGQ/86sAAAAAElFTkSuQmCC"

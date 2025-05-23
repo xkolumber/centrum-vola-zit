@@ -3,6 +3,7 @@
 import {
   aws_bucket_url,
   cloudfront_url,
+  stripHtmlTags,
 } from "@/app/functions/functionsClient";
 import { fetchBlogsLatest } from "@/app/functions/functionsServer";
 import { CircularProgress } from "@mui/material";
@@ -64,11 +65,13 @@ const BlogPage = () => {
                   priority
                   className=" w-full h-[300px] rounded-[8px] object-cover"
                 />
-                <h6 className="font-extrabold pt-4">{object.title}</h6>
+                <h6 className="font-extrabold pt-4 line-clamp-1">
+                  {object.title}
+                </h6>
                 <div
                   className="w-full dark line-clamp-2 pt-1"
                   dangerouslySetInnerHTML={{
-                    __html: object?.text1,
+                    __html: stripHtmlTags(object?.text1),
                   }}
                 />
               </Link>
