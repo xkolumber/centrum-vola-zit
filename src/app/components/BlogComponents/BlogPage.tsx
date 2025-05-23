@@ -12,6 +12,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import SkeletonBlogPage from "./SkeletonBlogPage";
 
 const BlogPage = () => {
   const { ref, inView } = useInView();
@@ -42,7 +43,7 @@ const BlogPage = () => {
         všetkých, ktorým záleží na deťoch so znevýhodnením.
       </p>
 
-      {isFetching && <CircularProgress size={24} color="inherit" />}
+      {isFetching && <SkeletonBlogPage />}
       {data && (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
           {data.pages

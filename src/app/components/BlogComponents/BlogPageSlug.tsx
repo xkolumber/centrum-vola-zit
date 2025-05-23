@@ -7,7 +7,6 @@ import { fetchBlogSlug } from "@/app/functions/functionsServer";
 import { BlogInterface } from "@/app/lib/interface";
 import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
-import { ClipLoader } from "react-spinners";
 
 import { useState } from "react";
 import Lightbox, { SlideImage } from "yet-another-react-lightbox";
@@ -16,6 +15,7 @@ import BlogAuthorAndSocial from "../BlogComponents/BlogAuthorAndSocial";
 import ButtonMui from "../ButtonMui";
 import NextJsImage from "../NextImage";
 import StepBack from "../StepBack";
+import SkeletonBlogPageSlug from "./SkeletonBlogPageSlug";
 
 interface Props {
   slug: string;
@@ -62,6 +62,15 @@ const BlogPageSlug = ({ slug }: Props) => {
 
   return (
     <>
+      {isLoading && <SkeletonBlogPageSlug />}
+      {error && (
+        <div className="m-auto min-h-screen flex justify-center items-center flex-col">
+          <h2 className="font-extrabold">Daný článok neexistuje.</h2>
+
+          <ButtonMui color="#ADCA2A" text="Aktuality" link="/" />
+        </div>
+      )}
+
       {data && (
         <>
           <div className="m-auto main_section additional_padding !pb-0 ">
@@ -159,19 +168,6 @@ const BlogPageSlug = ({ slug }: Props) => {
             </div>
           </div>
         </>
-      )}
-
-      {isLoading && (
-        <div className="main_section m-auto min-h-screen">
-          <ClipLoader size={20} color={"#000000"} loading={isLoading} />
-        </div>
-      )}
-      {error && (
-        <div className="m-auto min-h-screen flex justify-center items-center flex-col">
-          <h2 className="font-extrabold">Daný článok neexistuje.</h2>
-
-          <ButtonMui color="#ADCA2A" text="Aktuality" link="/" />
-        </div>
       )}
 
       {open && (

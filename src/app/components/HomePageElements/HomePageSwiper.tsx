@@ -1,22 +1,21 @@
 "use client";
-import React from "react";
-import Image from "next/image";
-import ButtonMui from "../ButtonMui";
-import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import { Navigation, Autoplay } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { fetchActualityLatest } from "@/app/functions/functionsServer";
-import { useInfiniteQuery } from "@tanstack/react-query";
 import {
   aws_bucket_url,
   cloudfront_url,
 } from "@/app/functions/functionsClient";
+import { fetchActualityLatest } from "@/app/functions/functionsServer";
 import IconSwiperLeft from "@/app/icons/IconSwiperLeft";
 import IconSwiperRight from "@/app/icons/IconSwiperRight";
-import { CircularProgress } from "@mui/material";
+import { useInfiniteQuery } from "@tanstack/react-query";
+import Image from "next/image";
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Autoplay, Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SkeletonActualityHomePage from "../ActualityComponents/SkeletonActualityHomePage";
+import ButtonMui from "../ButtonMui";
 
 const HomePageSwiper = () => {
   const { data, error, isFetching } = useInfiniteQuery({
@@ -28,18 +27,11 @@ const HomePageSwiper = () => {
     refetchOnWindowFocus: false,
   });
 
+  // const [isFetching, setIsFetching] = useState(true);
   return (
     <div className="bg-[#F1F1F1] flex flex-col justify-center items-center  md:h-[600px] lg:min-h-[70vh] relative">
       <div className="w-full   flex">
-        {isFetching && (
-          <div className="main_section  m-auto">
-            <CircularProgress
-              size={24}
-              color="inherit"
-              className="mt-16 mb-16"
-            />
-          </div>
-        )}
+        {isFetching && <SkeletonActualityHomePage />}
         {error && <p>Chyba pri načítaní dát.</p>}
 
         {data && !isFetching && (

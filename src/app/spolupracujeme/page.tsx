@@ -1,5 +1,5 @@
 import React from "react";
-import CooperationPage from "../components/CooperationPage";
+import CooperationPage from "../components/CooperationComponents/CooperationPage";
 
 const page = () => {
   return <CooperationPage />;

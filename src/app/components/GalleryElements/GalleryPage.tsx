@@ -6,6 +6,7 @@ import GalleryObject from "./GalleryObject";
 import { useInView } from "react-intersection-observer";
 import { CircularProgress } from "@mui/material";
 import { STALE_TIME } from "@/app/functions/functionsClient";
+import SkeletonGalleryPage from "./SkeletonGalleryPage";
 
 const GalleryPage = () => {
   const { ref, inView } = useInView();
@@ -37,7 +38,7 @@ const GalleryPage = () => {
         aj úsilie odborníkov, ktorí im podávajú pomocnú ruku. Každý úsmev, každý
         malý krôčik vpred je pre nás dôkazom, že naša práca má zmysel.
       </p>
-      {isFetching && <CircularProgress size={24} color="inherit" />}
+      {isFetching && <SkeletonGalleryPage />}
       {data && (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
           {data.pages

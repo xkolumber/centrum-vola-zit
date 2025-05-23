@@ -1,5 +1,4 @@
 "use client";
-import { CircularProgress } from "@mui/material";
 import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,9 +6,10 @@ import {
   aws_bucket_url,
   cloudfront_url,
   STALE_TIME,
-} from "../functions/functionsClient";
-import { fetchCooperationPartners } from "../functions/functionsServer";
-import { CooperationInterface } from "../lib/interface";
+} from "../../functions/functionsClient";
+import { fetchCooperationPartners } from "../../functions/functionsServer";
+import { CooperationInterface } from "../../lib/interface";
+import SkeletonCooperationPage from "./SkeletonCooperationPage";
 
 const CooperationPage = () => {
   const { data, error, isLoading } = useQuery<CooperationInterface[]>({
@@ -36,9 +36,7 @@ const CooperationPage = () => {
         podporu. Vaša spolupráca je pre nás kľúčová.
       </p>
 
-      {isLoading && (
-        <CircularProgress size={24} color="inherit" className="mt-8" />
-      )}
+      {isLoading && <SkeletonCooperationPage />}
       {error && <p className="mt-8">Chyba pri načítaní dát.</p>}
 
       {data && (

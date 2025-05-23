@@ -1,16 +1,16 @@
 "use client";
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
-import { SponsorInterface } from "../lib/interface";
-import { fetchSponsors } from "../functions/functionsServer";
+
 import {
+  STALE_TIME,
   aws_bucket_url,
   cloudfront_url,
-  STALE_TIME,
-} from "../functions/functionsClient";
-import { CircularProgress } from "@mui/material";
+} from "@/app/functions/functionsClient";
+import { fetchSponsors } from "@/app/functions/functionsServer";
+import { SponsorInterface } from "@/app/lib/interface";
 import Image from "next/image";
 import Link from "next/link";
+import SkeletonSponsorsPage from "./SkeletonSponsorsPage";
 
 const SponsorsPage = () => {
   const { data, error, isLoading } = useQuery<SponsorInterface[]>({
@@ -36,9 +36,7 @@ const SponsorsPage = () => {
         cesty. 💙
       </p>
 
-      {isLoading && (
-        <CircularProgress size={24} color="inherit" className="mt-8" />
-      )}
+      {isLoading && <SkeletonSponsorsPage />}
       {error && <p className="mt-8">Chyba pri načítaní dát.</p>}
 
       {data && (
