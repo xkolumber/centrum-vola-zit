@@ -45,20 +45,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div className="grid grid-cols-1 md:grid-cols-[300px_1fr]">
         <>
           <div
-            className={`bg-[#384239] flex flex-row  justify-between p-4 pt-8 pb-8 md:hidden`}
+            className={`bg-[#384239] flex flex-row  justify-between p-4 pt-8 pb-8 md:hidden w-full`}
           >
-            <Link
-              href="/admin"
-              className="w-[130px] md:w-[150px] 2xl:w-[200px] "
-            >
+            <Link href="/admin" className="w-[70px]  ">
               <Image
-                src={`/logo.svg`}
+                src={`/logo_final.svg`}
                 alt="logo"
                 width={100}
                 height={10}
                 priority={true}
                 quality={100}
-                className="w-[130px] md:w-[150px] 2xl:w-[200px]   object-contain"
+                className="w-[70px]   object-contain"
               />
             </Link>
             <div className="flex flex-row gap-6 items-center">
@@ -74,7 +71,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
           <Drawer
             anchor="top"
-            className="md:hidden "
+            className="md:hidden w-full"
             open={openMobile}
             onClose={() => setOpenMobile(false)}
             PaperProps={{
@@ -85,7 +82,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <MenuContentMobile clickedMobile={handleClickedPage} />
               <Stack
                 direction="row"
-                className="!bg-primary"
+                className="!bg-[#384239]"
                 sx={{
                   p: 2,
                   gap: 1,
@@ -103,7 +100,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <Box sx={{ mr: "auto" }}>
                   <Typography
                     variant="body2"
-                    sx={{ fontWeight: 500, lineHeight: "16px" }}
+                    sx={{
+                      fontWeight: 500,
+                      lineHeight: "16px",
+                      color: "#ffffff",
+                    }}
                   >
                     Admin
                   </Typography>
@@ -131,7 +132,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             }}
           >
             <Image
-              src={`/logo.svg`}
+              src={`/logo_final.svg`}
               alt="logo"
               width={100}
               height={100}

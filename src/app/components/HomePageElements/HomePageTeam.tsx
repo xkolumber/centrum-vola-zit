@@ -49,7 +49,7 @@ const team_members: TeamMemberInterface[] = [
     desc: "Zabezpečujem sociálne vybavanie pre klientov, plus pomôccky.",
     fb_link: "www.facebook.com",
     ig_link: "www.instagram.com",
-    photo: "/lucia.jpg",
+    photo: "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/lucia.jpg",
   },
 ];
 

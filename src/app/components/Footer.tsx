@@ -20,7 +20,7 @@ const Footer = () => {
         <div className="main_section m-auto !pt-0 !pb-0 flex flex-col gap-12 md:gap-0 md:flex-row justify-between w-full  ">
           <div className="flex flex-col items-start">
             <Image
-              src={"/logo.svg"}
+              src={"/logo_complet.svg"}
               width={50}
               height={50}
               alt="logo"
@@ -28,7 +28,7 @@ const Footer = () => {
               className="w-[100px] pt-2 "
             />
           </div>
-          {/* <h5 className="font-semibold">M & Z</h5> */}
+
           <div className="flex flex-col">
             <h5 className="uppercase mb-2 font-semibold">Kontakt</h5>
             <div className="flex flex-col ">

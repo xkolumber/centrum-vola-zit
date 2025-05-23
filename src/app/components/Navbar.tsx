@@ -139,7 +139,7 @@ const Navbar = () => {
           <Link href={"/"}>
             {" "}
             <Image
-              src={`/logo.svg`}
+              src={`/logo_final.svg`}
               width={40}
               height={40}
               className="w-full h-24 md:h-28  object-cover"
@@ -211,7 +211,7 @@ const Navbar = () => {
                 <Link href={"/"} onClick={() => setOpenMobile(false)}>
                   {" "}
                   <Image
-                    src={`/logo.svg`}
+                    src={`/logo_final.svg`}
                     width={40}
                     height={40}
                     className="w-full h-24 md:h-28  object-cover"

@@ -18,7 +18,7 @@ export default function MenuContentMobile({ clickedMobile }: Props) {
   return (
     <Stack
       sx={{ flexGrow: 1, p: 1, justifyContent: "space-between" }}
-      className="!bg-primary"
+      className="!bg-[#384239]"
     >
       <List dense>
         {mainListItems.map((item, index) => (

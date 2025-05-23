@@ -1,3 +1,7 @@
+import {
+  aws_bucket_url,
+  cloudfront_url,
+} from "@/app/functions/functionsClient";
 import IconFacebookTeam from "@/app/icons/IconFacebookTeam";
 import IconInstagramTeam from "@/app/icons/IconInstagramTeam";
 import IconTeamPlaceholder from "@/app/icons/IconTeamPlaceholder";
@@ -17,8 +21,9 @@ const HomePageMember = ({ data }: Props) => {
             alt="image"
             width={600}
             height={600}
-            src={data.photo}
+            src={data.photo.replace(aws_bucket_url, cloudfront_url)}
             className="rounded-[16px] h-[280px] md:h-[440px]"
+            priority
           />
         ) : (
           <IconTeamPlaceholder />
