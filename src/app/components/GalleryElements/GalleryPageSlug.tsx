@@ -14,6 +14,7 @@ import { CircularProgress } from "@mui/material";
 import Lightbox, { SlideImage } from "yet-another-react-lightbox";
 import NextJsImage from "../NextImage";
 import "yet-another-react-lightbox/styles.css";
+import StepBack from "../StepBack";
 
 interface Props {
   slug: string;
@@ -44,6 +45,7 @@ const GalleryPageSlug = ({ slug }: Props) => {
     <div className="main_section  w-full flex flex-col m-auto min-h-screen ">
       {data && (
         <>
+          <StepBack />
           <h2 className="font-extrabold ">{data.nazov}</h2>
           <p>{getFormatDate(data.datum_pridania)}</p>
 
