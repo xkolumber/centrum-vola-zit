@@ -4,6 +4,7 @@ import { fetchGalleriesLatest } from "@/app/functions/functionsServer";
 import { CircularProgress } from "@mui/material";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import GalleryObject from "../GalleryElements/GalleryObject";
+import Link from "next/link";
 
 const HomePageGallery = () => {
   const { data, error, isFetching } = useInfiniteQuery({
@@ -20,7 +21,9 @@ const HomePageGallery = () => {
       <div className="main_section justify-center w-full flex flex-col  ">
         <div className="flex flex-col w-full ">
           <p>Spomienky</p>
-          <h2 className="font-extrabold">Galéria fotiek</h2>
+          <Link href={"/galeria"}>
+            <h2 className="font-extrabold">Galéria fotiek</h2>
+          </Link>
           <p className=" pt-4 mb-8 2xl:mb-16 ">
             Pozrite sa, ako vyzerá naša každodenná práca – momenty plné
             odhodlania, pokroku a radosti. Naša galéria zachytáva príbehy detí,

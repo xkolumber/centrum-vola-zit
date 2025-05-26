@@ -26,7 +26,7 @@ const data = [
     id: "04",
     title: "Zraková stimulácia",
     slug: "zrakova-stimulacia",
-    image: "/zrakova_stimulacia.avif",
+    image: "/zrakova_stimulacia.jpg",
   },
   {
     id: "05",
@@ -48,6 +48,7 @@ const HomePageSelection = () => {
       <div className="hidden lg:grid grid-cols-3 gap-8">
         {data.map((object, index) => (
           <div className="relative" key={index}>
+            <div className="absolute top-0 left-0 w-full h-full rounded-[8px] bg-gradient-to-b from-transparent to-black/10 z-10" />
             <Image
               src={cloudfront_url + `${object.image}`}
               alt={object.image}

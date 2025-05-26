@@ -1,5 +1,10 @@
 import { Metadata } from "next";
 import React from "react";
+import StepBack from "../components/StepBack";
+import Image from "next/image";
+import CallToAction from "../components/CallToAction";
+import { aws_bucket_url, cloudfront_url } from "../functions/functionsClient";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Pomôcky pre rehabilitáciu a podporu mobility",
@@ -35,12 +40,53 @@ export const metadata: Metadata = {
   },
 };
 
-const page = () => {
+const Page = () => {
+  const imageUrl =
+    "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/intro_pomocky.jpg";
   return (
-    <div className="main_section m-auto  flex flex-col md:flex-row w-full justify-between min-h-screen ">
-      <h2 className="font-extrabold">Zdravotnícke pomôcky</h2>
+    <div className="main_section m-auto py-12 min-h-screen">
+      <StepBack />
+      <h2 className=" font-bold  mb-8">Zdravotnícke pomôcky</h2>
+
+      <div className="flex flex-col lg:flex-row gap-16 items-start mt-16">
+        <div className="w-full lg:w-1/2 ">
+          <Image
+            alt="image"
+            width={1920}
+            height={1080}
+            src={imageUrl.replace(aws_bucket_url, cloudfront_url)}
+            className={`w-full h-[513px] "
+              }  object-cover rounded-[16px]`}
+            priority
+          />
+        </div>
+        <div className="w-full lg:w-1/2 sticky top-40">
+          <p>
+            V našom centre kladieme dôraz na individuálny prístup ku každému
+            dieťaťu. Podľa jeho potrieb a možností spoločne hľadáme vhodné
+            zdravotnícke pomôcky, ktoré mu môžu pomôcť zlepšiť pohyblivosť,
+            bezpečnosť a celkový komfort v každodennom živote.
+          </p>
+          <p className="mt-4">
+            Na výbere pomôcok spolupracujeme s odborníkmi a dodávateľom{" "}
+            <strong>Rehacare</strong>, ktorý nám poskytuje kvalitné a overené
+            produkty. V prípade záujmu vieme pomôcky zabezpečiť aj na domáce
+            používanie a pomôžeme vám s celým procesom objednávky.
+          </p>
+          <Link
+            href="https://www.rehacare.sk"
+            className="!font-bold"
+            target="_blank"
+            rel="noreferrer"
+          >
+            www.rehacare.sk
+          </Link>
+        </div>
+      </div>
+      <div className="mt-16 lg:mt-32 2xl:mt-52">
+        <CallToAction />
+      </div>
     </div>
   );
 };
-
-export default page;
+export default Page;

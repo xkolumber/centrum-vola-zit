@@ -1,86 +1,66 @@
 import CallToAction from "../components/CallToAction";
 import StepBack from "../components/StepBack";
+import Image from "next/image";
+import { aws_bucket_url, cloudfront_url } from "../functions/functionsClient";
 
-const page = () => {
+const Page = () => {
+  const imageUrl =
+    "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/zrakova_stimulacia.jpg";
   return (
-    <div className="main_section m-auto  flex flex-col w-full min-h-screen ">
+    <div className="main_section m-auto py-12 min-h-screen">
       <StepBack />
-      <h2 className="font-extrabold">Zraková stimulácia</h2>
-      <p className="pt-4">
-        Zraková stimulácia je dôležitou súčasťou podpory detí so zrakovým
-        znevýhodnením. Včasná diagnostika a odborné zásahy môžu významne
-        ovplyvniť celkový vývin dieťaťa. Na Slovensku pôsobí niekoľko
-        kvalifikovaných zrakových terapeutiek, ktoré poskytujú odbornú pomoc
-        rodinám detí s poruchami zraku.
-      </p>
-      <p className="mt-4">
-        Jednou z nich je <span className="font-bold">Mariana Garneková</span>,
-        ktorá pôsobí v{" "}
-        <span className="font-bold">
-          Špecializovanom centre poradenstva a prevencie pre deti a žiakov so
-          zrakovým postihnutím
-        </span>{" "}
-        v Levoči. Mariana poskytuje odbornú starostlivosť deťom od narodenia do
-        7 rokov, pričom sa zameriava na:
-      </p>
-      <ul className="">
-        <li>Posúdenie funkčného zraku</li>
-        <li>Zrakovú stimuláciu a terapiu</li>
-        <li>Úpravu prostredia pre podporu zrakového vývinu dieťaťa</li>
-      </ul>
-      <h5 className="font-extrabold mt-4">Čomu sa venujeme?</h5>
-      <p>
-        Zameriavame sa na deti so zrakovým a viacnásobným znevýhodnením, ako sú:
-      </p>
-      <ul>
-        <li>katarakta</li>
-        <li>glaukóm</li>
-        <li>slabozrakosť</li>
-        <li>slepota</li>
-        <li>genetické ochorenia</li>
-        <li>syndrómy</li>
-        <li>ROP</li>
-        <li>nystagmus</li>
-        <li>centrálna porucha zraku</li>
-        <li>amblyopia a iné</li>
-      </ul>
-      <h5 className="font-extrabold mt-4">Ako prebieha vyšetrenie?</h5>
-      <p>Používame špeciálne testy na hodnotenie funkčného zraku, napríklad:</p>
-      <ul>
-        <li>Ley Hyvärinen</li>
-        <li>Cardiff Acuity Test</li>
-        <li>City Cardiff</li>
-        <li>In Sight</li>
-      </ul>
-      <p>
-        Sledujeme zrakovú ostrosť, kontrastnú citlivosť, koordináciu oko-ruka či
-        binokulárne videnie. Na základe výsledkov poskytujeme rodičom praktické
-        odporúčania, ako s dieťaťom pracovať, aké pomôcky či hračky používať, a
-        ako upraviť domáce prostredie.
-      </p>
-      <h5 className="font-extrabold mt-4">Podpora v domácom prostredí</h5>
-      <p>
-        Podpora pokračuje aj mimo centra – v domácnosti. Pomáhame rodinám
-        vytvoriť zrakovo priaznivé prostredie:
-      </p>
-      <ul className="">
-        <li>upravujeme osvetlenie,</li>
-        <li>odporúčame kontrastné prvky v priestore,</li>
-        <li>zjednodušujeme vizuálne podnety,</li>
-        <li>
-          pozorujeme bežné aktivity dieťaťa (jedenie, hra, hygienické návyky ) a
-          hľadáme spôsoby, ako ich spraviť dostupnejšími a jednoduchšími.
-        </li>
-      </ul>{" "}
-      <p>
-        S rodinami sa stretávame pravidelne, sledujeme pokroky dieťaťa a
-        prispôsobujeme terapiu jeho aktuálnym potrebám.
-      </p>
-      <div className="mt-16 lg:mt-32">
+      <h2 className=" font-bold  mb-8">Zraková stimulácia</h2>
+
+      <div className="flex flex-col lg:flex-row gap-16 items-start mt-16">
+        <div className="w-full lg:w-1/2 ">
+          <Image
+            alt="image"
+            width={1920}
+            height={1080}
+            src={imageUrl.replace(aws_bucket_url, cloudfront_url)}
+            className={`w-full h-[513px] "
+              }  object-cover rounded-[16px]`}
+            priority
+          />
+        </div>
+        <div className="w-full lg:w-1/2">
+          <p className="text-gray-800">
+            {" "}
+            Zraková stimulácia je dôležitou súčasťou podpory detí so zrakovým
+            znevýhodnením. Včasná diagnostika a odborné zásahy môžu významne
+            ovplyvniť celkový vývin dieťaťa. Na Slovensku pôsobí niekoľko
+            kvalifikovaných zrakových terapeutiek, ktoré poskytujú odbornú pomoc
+            rodinám detí s poruchami zraku.
+          </p>
+          <p className="mt-4">
+            {" "}
+            Jednou z nich je{" "}
+            <span className="font-bold">Mariana Garneková</span>, ktorá pôsobí v{" "}
+            <span className="font-bold">
+              Špecializovanom centre poradenstva a prevencie pre deti a žiakov
+              so zrakovým postihnutím
+            </span>{" "}
+            v Levoči. Mariana poskytuje odbornú starostlivosť deťom od narodenia
+            do 7 rokov, pričom sa zameriava na:
+          </p>
+          <ul className="">
+            <li>Posúdenie funkčného zraku</li>
+            <li>Zrakovú stimuláciu a terapiu</li>
+            <li>Úpravu prostredia pre podporu zrakového vývinu dieťaťa</li>
+          </ul>
+          <p>
+            Zameriavame sa na deti so zrakovým a viacnásobným znevýhodnením, ako
+            sú: Katarakta, glaukóm, slabozrakosť, slepota, genetické ochorenia,
+            syndrómy, ROP, nystagmus, centrálna porucha zraku, degeneratívne
+            ochorenia sietnice, amblyopia a ďalšie.
+          </p>
+        </div>
+      </div>
+      <div className="mt-16 lg:mt-32 2xl:mt-52">
         <CallToAction />
       </div>
     </div>
   );
 };
 
-export default page;
+export default Page;

@@ -7,7 +7,7 @@ const StepBack = () => {
   return (
     <p
       onClick={() => router.back()}
-      className="hover:underline ease-in text-black cursor-pointer"
+      className="hover:underline ease-in text-black cursor-pointer max-w-fit"
     >
       Späť
     </p>

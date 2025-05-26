@@ -63,8 +63,7 @@ export default function MasageFirstPart() {
   const searchParams = useSearchParams();
   const druh = searchParams.get("druh");
 
-  const handlePageChange = (type: string, newPage: number) => {
-    setActive(newPage);
+  const handlePageChange = (type: string) => {
     router.replace(`?druh=${type}`);
   };
 
@@ -98,7 +97,7 @@ export default function MasageFirstPart() {
                   ? "bg-[#ADCA2A] text-white"
                   : "bg-gray-200 hover:bg-gray-300"
               }`}
-            onClick={() => handlePageChange(s.slug, i)}
+            onClick={() => handlePageChange(s.slug)}
           >
             {s.name}
           </button>
@@ -140,7 +139,7 @@ export default function MasageFirstPart() {
             />
           )}
         </div>
-        <div className="w-full lg:w-1/2 space-y-4">
+        <div className="w-full lg:w-1/2 space-y-4 sticky top-40">
           <h3 className=" font-semibold">{services[active].name}</h3>
           <p className="text-gray-800">{services[active].description}</p>
         </div>

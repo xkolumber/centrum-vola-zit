@@ -20,11 +20,13 @@ const ButtonMui = ({ color, text, link }: Props) => {
           paddingRight: "32px",
           boxShadow: "none",
           textTransform: "none",
+          backgroundColor: color,
+          borderRadius: "8px",
           "&:hover": {
             boxShadow: "none",
+            backgroundColor: "#b5d132",
           },
         }}
-        style={{ background: color, borderRadius: "8px" }}
         className="!text-[14px] 2xl:!text-[16px]"
       >
         {text}

@@ -81,6 +81,16 @@ const services = [
     description:
       "Snoezelen je multifunkčná metóda, ktorá sa realizuje v obzvlášť príjemnom a upravenom prostredí pomocou svetelných a zvukových prvkov, vôní a hudby, pričom jej cieľom je vyvolanie zmyslových pocitov. Je určená najmä pre osoby s vývinovými poruchami, s mentálnym, telesným alebo viacnásobným postihnutím, s poruchou autistického spektra, poruchami správania a učenia, s psychickými poruchami, traumatickým poranením mozgu, pre osoby s demenciou a pre chronicky chorých pacientov.",
   },
+  {
+    id: 7,
+    name: "SM systém",
+    slug: "sm-system",
+    imageUrl:
+      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/sm_system.jpg",
+    videoUrl: "none",
+    description:
+      "SM Systém je systematická starostlivosť o pohybový aparát človeka a funkciu vnútorných orgánov. Prepája rehabilitačnú liečbu s prevenciou, regeneráciou a kondičným i výkonnostným tréningom v jednotnom metodickom postupe. Hlavný efekt metódy je vyvolanie trakčnej (naťahovacej) sily v oblasti medzistavcových platničiek. Tento efekt dosahujeme aktiváciou špirálových svalových reťazcov, ktoré zužujú obvod pása a ťahajú telo smerom nahor. Týmto spôsobom je chrbtica pri pohybe aktívne stabilizovaná. Všeobecná indikácia cvičenia je posilňovanie, preťahovanie, koordinácia pohybu, optimálne koordinovaná a stabilizovaná chôdza a beh.",
+  },
 ];
 
 export default function ServiceIntro() {
@@ -89,8 +99,7 @@ export default function ServiceIntro() {
   const searchParams = useSearchParams();
   const druh = searchParams.get("druh");
 
-  const handlePageChange = (type: string, newPage: number) => {
-    setActive(newPage);
+  const handlePageChange = (type: string) => {
     router.replace(`?druh=${type}`);
   };
 
@@ -124,7 +133,7 @@ export default function ServiceIntro() {
                   ? "bg-[#ADCA2A] text-white"
                   : "bg-gray-200 hover:bg-gray-300"
               }`}
-            onClick={() => handlePageChange(s.slug, i)}
+            onClick={() => handlePageChange(s.slug)}
           >
             {s.name}
           </button>
@@ -162,7 +171,8 @@ export default function ServiceIntro() {
                 cloudfront_url
               )}
               className={`w-full ${
-                services[active].slug === "zavesny-system"
+                services[active].slug === "zavesny-system" ||
+                services[active].slug === "sm-system"
                   ? "h-full"
                   : "h-[513px] "
               }  object-cover rounded-[16px]`}
@@ -170,7 +180,7 @@ export default function ServiceIntro() {
             />
           )}
         </div>
-        <div className="w-full lg:w-1/2 space-y-4">
+        <div className="w-full lg:w-1/2 space-y-4 sticky top-40">
           <h3 className=" font-semibold">{services[active].name}</h3>
           <p className="text-gray-800">{services[active].description}</p>
         </div>
