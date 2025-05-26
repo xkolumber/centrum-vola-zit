@@ -14,7 +14,7 @@ const data = [
     id: "02",
     title: "Doplnkové terapie",
     slug: "doplnkove-terapie",
-    image: "/intro_doplnkove.jpg",
+    image: "/oxygenoterapia.jpg",
   },
   {
     id: "03",
@@ -26,7 +26,7 @@ const data = [
     id: "04",
     title: "Zraková stimulácia",
     slug: "zrakova-stimulacia",
-    image: "/logopedia_foto.jpg",
+    image: "/zrakova_stimulacia.avif",
   },
   {
     id: "05",

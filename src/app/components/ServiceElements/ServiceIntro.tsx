@@ -60,6 +60,27 @@ const services = [
     description:
       "je zariadenie, ktoré podporuje rozvoj motorických funkcií a tým zároveň aj nápravu poškodení CNS (centrálneho nervového systému). V procese obnovy CNS vyvoláva vytváranie nových nervových buniek a množenie funkčných buniek. Zariadenie využíva rytmické, dynamicky koordinované pohyby, ktoré podporujú obnovenie základných funkcií CNS. Pohyby pacientov na zariadení spúšťajú impulzy v receptoroch kože, svalov, kĺbov a iných tkanív, ktoré mnohonásobným opakovaním vyvolávajú zmeny v nervovej sústave.",
   },
+
+  {
+    id: 5,
+    name: "Motomed",
+    slug: "motomed",
+
+    videoUrl:
+      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/motomed_video.mp4",
+    description:
+      "Je vhodný pre pacientov, ktorí sú odkázaní na invalidný vozík  (paraplegici, kvadruplegici), DMO - rôzne formy, skleroza multiplex, priečne ochrnutie, a mnoho daľsích ochorení spôsobujúcich obmedzenie alebo ochrnutie pohyblivosti rúk a nôh. Zmierniť následky vyvolané nedostatkom pohybu, zredukovať spazmy (kŕče), dokáže identifikovať zostavújucu často aj skrytú silu v nohách, podporuje chôdzu a celkovo pomáha k lepšiemu pocitu a samostatnosti pacienta.",
+  },
+  {
+    id: 6,
+    name: "Snoozelen",
+    slug: "snoozelen",
+    imageUrl:
+      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/intro_doplnkove.jpg",
+    videoUrl: "none",
+    description:
+      "Snoezelen je multifunkčná metóda, ktorá sa realizuje v obzvlášť príjemnom a upravenom prostredí pomocou svetelných a zvukových prvkov, vôní a hudby, pričom jej cieľom je vyvolanie zmyslových pocitov. Je určená najmä pre osoby s vývinovými poruchami, s mentálnym, telesným alebo viacnásobným postihnutím, s poruchou autistického spektra, poruchami správania a učenia, s psychickými poruchami, traumatickým poranením mozgu, pre osoby s demenciou a pre chronicky chorých pacientov.",
+  },
 ];
 
 export default function ServiceIntro() {

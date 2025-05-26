@@ -39,7 +39,7 @@ const team_members: TeamMemberInterface[] = [
       "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/julia_foto.jpg",
   },
   {
-    name: "Miriam Garneková",
+    name: "Mgr. Miriam Garneková",
     job: "zraková stimulácia",
     desc: "Špecializované centrum poradenstva a prevencie pre deti a žiadkov so zrakovým postihnutím",
     fb_link: "www.facebook.com",
