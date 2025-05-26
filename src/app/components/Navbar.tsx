@@ -124,18 +124,6 @@ const Navbar = () => {
         }}
       >
         <div className="flex flex-row w-full navbar_section justify-between items-center !pt-2 !pb-2 m-auto">
-          <div
-            className={`lg:hidden cursor-pointer `}
-            onClick={() => setOpenMobile(true)}
-          >
-            <MenuIcon
-              style={{
-                height: "20px",
-                width: "20px",
-              }}
-            />
-          </div>
-
           <Link href={"/"}>
             {" "}
             <Image
@@ -147,6 +135,18 @@ const Navbar = () => {
               alt="Logo"
             />
           </Link>
+
+          <div
+            className={`lg:hidden cursor-pointer `}
+            onClick={() => setOpenMobile(true)}
+          >
+            <MenuIcon
+              style={{
+                height: "20px",
+                width: "20px",
+              }}
+            />
+          </div>
 
           <div className="flex-row gap-[16px] xl:gap-[36px] justify-between hidden lg:flex items-center">
             {navbar_data.map((object: any, index) => (
@@ -197,18 +197,6 @@ const Navbar = () => {
           >
             <>
               <div className="flex flex-row items-center w-full  navbar_section justify-between !pt-2 !pb-2 !m-0 ">
-                <div
-                  className={`lg:hidden cursor-pointer`}
-                  onClick={() => setOpenMobile(false)}
-                >
-                  <CloseIcon
-                    style={{
-                      height: "24px",
-                      width: "24px",
-                    }}
-                  />
-                </div>
-
                 <Link href={"/"} onClick={() => setOpenMobile(false)}>
                   {" "}
                   <Image
@@ -220,6 +208,18 @@ const Navbar = () => {
                     alt="Logo"
                   />
                 </Link>
+
+                <div
+                  className={`lg:hidden cursor-pointer`}
+                  onClick={() => setOpenMobile(false)}
+                >
+                  <CloseIcon
+                    style={{
+                      height: "24px",
+                      width: "24px",
+                    }}
+                  />
+                </div>
               </div>
 
               {navbar_data_mobile.map((object, index) => (

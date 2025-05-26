@@ -30,9 +30,9 @@ const team_members: TeamMemberInterface[] = [
       "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/peter_foto.jpg",
   },
   {
-    name: "Júlia Priezivsko",
-    job: "logopedička",
-    desc: "Monsectetuer adipiscing elit cras elementum duis pulvinar temporibus autem quibusdam et aut officiis debitis",
+    name: "Yuliia Bushmatova",
+    job: "Nápravná výchova: logopédia, defektológia",
+    desc: "Práca s deťmi s narušenou výslovnosťou, bez reči. Logopedická masáž - orofaciálna, intraorálna stimulácia (sondova, vibračná stimulácia artikulačných svalov)",
     fb_link: "www.facebook.com",
     ig_link: "www.instagram.com",
     photo: "none",
