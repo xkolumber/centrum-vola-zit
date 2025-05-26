@@ -13,7 +13,7 @@ const services = [
     name: "Klasická masáž",
     slug: "klasicka-masaz",
     videoUrl:
-      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/klasicka_masaz.mp4",
+      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/klasicka_masaz_new.mp4",
     description:
       "Je najčastejšie používaným druhom masáže. Využíva sa ako prevencia proti vzniku rôznych diagnóz, na doliečenie prekonaných ochorení a prispieva k uvoľneniu a regenerácii celého tela. Ide o relaxačné techniky a hmaty, ktoré uvoľňujú svalstvo a kožné napätie. Prekrvuje kožu a svaly, zlepšuje kvalitu tkanív a odstraňuje bolesť.",
   },
@@ -22,7 +22,7 @@ const services = [
     name: "Reflexná masáž",
     slug: "reflexna-masaz",
     videoUrl:
-      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/reflexna_masaz.mp4",
+      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/reflexna_masaz_new.mp4",
     description:
       "Pri reflexnej masáži miestom zásahu nie je primárne postihnuté tkanivo alebo orgán, ale oblasť (koža, podkožie, väzivo...), kde sa porucha daného tkaniva alebo orgánu reflexne prejavila. Princípom reflexnej masáže je dráždenie nervových receptorov a očakávaná spätná reakcia na podráždenie. Konečným cieľom je ovplyvnenie tkaniva alebo orgánu reflexne. Odtiaľ pochádza názov reflexná masáž. Pri reflexnej masáži sa používa súbor špeciálnych techník a hmatov, ktoré volí fyzioterapeut podľa aktuálneho stavu klienta.",
   },
@@ -31,7 +31,7 @@ const services = [
     name: "Myofasciálna masáž",
     slug: "myofascinalna-masaz",
     videoUrl:
-      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/myofascialna_masaz.mp4",
+      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/myofascialna_masaz_new.mp4",
     description:
       "Zahŕňa naťahovanie aj jemné masážne techniky, ktoré pôsobia na spojivové tkanivo alebo fascie. Samotné myofasciálne techniky sa používajú ako súčasť masáže. Rovnako tak aj spoločne s vyšetrením a ošetrením svalov. Existuje celý rad stavov a symptómov, pri ktorých je myofasciálna masáž vhodná. ",
   },
@@ -40,7 +40,7 @@ const services = [
     name: "Lymfodrenáž",
     slug: "lymfodrenaz",
     videoUrl:
-      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/lymfodrenaz.mp4",
+      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/lymfodrenaz_new.mp4",
     description:
       "Je jemná technika, ktorá podporuje tok lymfy po tele. Táto metóda je šetrná a pomalá, s minimálnym tlakom, pretože lymfatický systém sa nachádza blízko povrchu tela. Cieľom tejto masáže je odstrániť a odviezť toxíny z tkanív. Je vhodná aj pre tých, čo trpia kŕčovými žilami. Lymfodrenážna masáž sa používa aj ako prevencia pred celulitídou, opuchmi a ochoreniami, vrátane onkologických chorôb, a má pozitívny vplyv na športovcov.",
   },
