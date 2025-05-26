@@ -43,7 +43,7 @@ const services = [
     name: "Bioptron Lampa",
     slug: "bioptron-lampa",
     imageUrl:
-      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/intro_doplnkove.jpg",
+      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/bioptron_lampa.jpg",
     videoUrl: "none",
     description:
       "Môže pôsobiť prirodzeným spôsobom, podporujúc regeneračné a vyvažujúce funkcie tela, a preto pomáha telu aktivovať vlastný, liečebný potenciál. Svetelná energia po preniknutí do tkanív napomáha procesu biostimulácie (to znamená, že pozitívnym spôsobom stimuluje rôzne biologické procesy v organizme, čím zlepšuje telesné funkcie).",
