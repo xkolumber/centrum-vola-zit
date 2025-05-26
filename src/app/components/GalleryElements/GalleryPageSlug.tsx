@@ -67,7 +67,7 @@ const GalleryPageSlug = ({ slug }: Props) => {
         </>
       )}
       {isLoading && <CircularProgress size={24} color="inherit" />}
-      {error && <p>Chyba pri načítaní dát.</p>}
+      {(error || data === null) && <p>Chyba pri načítaní dát.</p>}
 
       {open && (
         <Lightbox

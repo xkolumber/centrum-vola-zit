@@ -382,13 +382,13 @@ export async function fetchGallerySlug(slug: string) {
     const response = await docClient.send(command);
 
     if (!response.Items || response.Items.length === 0) {
-      throw new Error();
+      return null;
     }
 
     return response.Items[0] as GalleryInterface;
   } catch (error) {
     console.log(error);
-    throw new Error();
+    return null;
   }
 }
 

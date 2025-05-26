@@ -12,20 +12,22 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 const team_members: TeamMemberInterface[] = [
   {
-    name: "Mrg. Alexandra Németh",
+    name: "Mgr. Alexandra Németh",
     job: "externý fyzioterapeut",
-    desc: "Pomáham ako externý fyzioterapeut Bobath konceptu, poskytujem tiež reflexnú masáž a tejping.",
+    desc: "Neurorehabilitácia detí, Detský Bobath terapeut, diagnostika a terapia posturálnych porúch, SM-systém, Kineziotejping",
     fb_link: "www.facebook.com",
     ig_link: "www.instagram.com",
-    photo: "none",
+    photo:
+      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/alexandra_foto.jpg",
   },
   {
     name: "Bc. Peter Németh",
     job: "fyzioterapeut",
-    desc: "Zameriavam sa na neurologických pacientov a pomáham ako fyzioterapeut.",
+    desc: "Neurorehabilitácia detí a dospelých, diagnostika a terapia posturálnych porúch DNS - dynamická neuromuskulárna stabilizácia, Redcord, SM-systém, Kineziotejping",
     fb_link: "www.facebook.com",
     ig_link: "www.instagram.com",
-    photo: "none",
+    photo:
+      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/peter_foto.jpg",
   },
   {
     name: "Júlia Priezivsko",
@@ -38,15 +40,16 @@ const team_members: TeamMemberInterface[] = [
   {
     name: "Miriam Garneková",
     job: "zraková stimulácia",
-    desc: "Monsectetuer adipiscing elit cras elementum duis pulvinar temporibus autem quibusdam et aut officiis debitis",
+    desc: "Špecializované centrum poradenstva a prevencie pre deti a žiadkov so zrakovým postihnutím",
     fb_link: "www.facebook.com",
     ig_link: "www.instagram.com",
-    photo: "none",
+    photo:
+      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/mariana_foto.jpg",
   },
   {
-    name: "Lucia Kačmarčíková",
+    name: "Mgr. Lucia Kačmarčíková",
     job: "sociálna a nadačná sféra",
-    desc: "Zabezpečujem sociálne vybavanie pre klientov, plus pomôccky.",
+    desc: "Zabezpečujem sociálne vybavanie pre klientov, výber vhodných pomôcok pre dieťa.",
     fb_link: "www.facebook.com",
     ig_link: "www.instagram.com",
     photo: "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/lucia.jpg",

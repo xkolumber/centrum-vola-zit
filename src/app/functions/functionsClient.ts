@@ -28,6 +28,42 @@ export const navbar_data = [
   },
 ];
 
+export const navbar_data_mobile = [
+  {
+    title: "Domov",
+    slug: "/domov",
+  },
+  {
+    title: "O nás",
+    slug: "/o-nas",
+  },
+  {
+    title: "Služby",
+    slug: "/#sluzby",
+  },
+  {
+    title: "Galéria",
+    slug: "/galeria",
+  },
+
+  {
+    title: "Blog",
+    slug: "/blog",
+  },
+  {
+    title: "Sponzori",
+    slug: "/sponzori",
+  },
+  {
+    title: "Spolupracujeme",
+    slug: "/spolupracujeme",
+  },
+  {
+    title: "Kontakt",
+    slug: "/kontakt",
+  },
+];
+
 export const aws_bucket_name = "centrumvolazitopen";
 
 export const aws_bucket_url =

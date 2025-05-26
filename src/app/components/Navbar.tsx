@@ -8,7 +8,7 @@ import { Drawer } from "@mui/material";
 import { usePathname } from "next/navigation";
 
 import CloseIcon from "@mui/icons-material/Close";
-import { navbar_data } from "../functions/functionsClient";
+import { navbar_data, navbar_data_mobile } from "../functions/functionsClient";
 import IconFacebook from "../icons/IconFacebook";
 import IconInstagram from "../icons/IconInstagram";
 import IconLocation from "../icons/IconLocation";
@@ -143,6 +143,7 @@ const Navbar = () => {
               width={40}
               height={40}
               className="w-full h-24 md:h-28  object-cover"
+              priority
               alt="Logo"
             />
           </Link>
@@ -215,12 +216,13 @@ const Navbar = () => {
                     width={40}
                     height={40}
                     className="w-full h-24 md:h-28  object-cover"
+                    priority
                     alt="Logo"
                   />
                 </Link>
               </div>
 
-              {navbar_data.map((object, index) => (
+              {navbar_data_mobile.map((object, index) => (
                 <Link
                   href={object.slug === "/domov" ? "/" : object.slug}
                   key={index}
@@ -233,36 +235,52 @@ const Navbar = () => {
                   <p> {object.title}</p>
                 </Link>
               ))}
+
               <div
-                className="flex flex-col items-center gap-4"
+                className="flex flex-col"
                 style={{
                   borderTop: "1px solid rgba(0, 0, 0, 0.10)",
                 }}
               >
-                <Link
-                  className="flex flex-row gap-4 items-center pt-8"
-                  href={"/sponzori"}
-                  onClick={() => setOpenMobile(false)}
-                >
-                  <Image
-                    src={`/yellow_heart.svg`}
-                    width={40}
-                    height={40}
-                    className="w-full h-20  object-cover"
-                    alt="Logo"
-                  />
-                  <div className="flex flex-col">
-                    <p>Sponzori</p>
-                  </div>
-                </Link>
+                {navbar_right_part.map((object, index) => {
+                  if (object.phone === "yes") {
+                    return (
+                      <a
+                        className="flex flex-row gap-4 items-center padding_mobile"
+                        key={index}
+                        href="tel:+421915653553"
+                      >
+                        {object.icon}
+                        <p className="2xl:text-[16px]">{object.text}</p>
+                      </a>
+                    );
+                  }
 
-                <div className="" onClick={() => setOpenMobile(false)}>
-                  <ButtonMui
-                    color="#ADCA2A"
-                    text="Spolupracujeme"
-                    link="/spolupracujeme"
-                  />
-                </div>
+                  if (object.address === "yes") {
+                    return (
+                      <Link
+                        className="flex flex-row gap-4 items-center padding_mobile"
+                        key={index}
+                        href={object.link}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {object.icon}
+                        <p className="2xl:text-[16px]">{object.text}</p>
+                      </Link>
+                    );
+                  }
+
+                  return (
+                    <div
+                      className="flex flex-row gap-4 items-center padding_mobile"
+                      key={index}
+                    >
+                      {object.icon}
+                      <p className="2xl:text-[16px]">{object.text}</p>
+                    </div>
+                  );
+                })}
               </div>
             </>
           </Drawer>
