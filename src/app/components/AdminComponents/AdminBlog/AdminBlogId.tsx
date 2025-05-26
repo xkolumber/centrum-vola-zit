@@ -316,7 +316,7 @@ const AdminBlogId = ({ id }: Props) => {
             <div className="product_admin_row !flex-col">
               <h6>Text1:</h6>
               <Tiptap
-                key={actualizeData.text1}
+                key={actualizeData.slug}
                 content={actualizeData.text1}
                 onChange={(value) => handleTextChange("text1", value)}
               />
@@ -349,7 +349,7 @@ const AdminBlogId = ({ id }: Props) => {
             <div className="product_admin_row !flex-col">
               <h6>Text2:</h6>
               <Tiptap
-                key={actualizeData.text2}
+                key={actualizeData.slug}
                 content={actualizeData.text2}
                 onChange={(value) => handleTextChange("text2", value)}
               />
@@ -382,7 +382,7 @@ const AdminBlogId = ({ id }: Props) => {
             <div className="product_admin_row !flex-col">
               <h6>Text3:</h6>
               <Tiptap
-                key={actualizeData.text3}
+                key={actualizeData.slug}
                 content={actualizeData.text3}
                 onChange={(value) => handleTextChange("text3", value)}
               />
