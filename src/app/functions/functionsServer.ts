@@ -888,7 +888,7 @@ export async function sendFormEmail(actualizeData: ContactFormInterface) {
 
   try {
     const data = await resend.emails.send({
-      from: "symbiom@symbiom.sk",
+      from: "info@centrumvolazit.sk",
       to: "centrum.volazit@gmail.com",
       subject: "Dotaz od klienta z webstránky",
       html: emailHtml,

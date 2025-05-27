@@ -13,7 +13,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 const team_members: TeamMemberInterface[] = [
   {
     name: "Mgr. Alexandra Németh",
-    job: "externý fyzioterapeut",
+    job: "fyzioterapeut",
     desc: "Neurorehabilitácia detí, Detský Bobath terapeut, diagnostika a terapia posturálnych porúch, SM-systém, Kineziotejping",
     fb_link: "www.facebook.com",
     ig_link: "www.instagram.com",
@@ -31,7 +31,7 @@ const team_members: TeamMemberInterface[] = [
   },
   {
     name: "Yuliia Bushmatova",
-    job: "Nápravná výchova: logopédia, defektológia",
+    job: "logopédia",
     desc: "Práca s deťmi s narušenou výslovnosťou, bez reči. Logopedická masáž - orofaciálna, intraorálna stimulácia (sondova, vibračná stimulácia artikulačných svalov)",
     fb_link: "www.facebook.com",
     ig_link: "www.instagram.com",
@@ -48,9 +48,18 @@ const team_members: TeamMemberInterface[] = [
       "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/mariana_foto.jpg",
   },
   {
+    name: "Miroslava Holubčíková",
+    job: "Zdravotné pomôcky",
+    desc: "Zameriavam sa na výrobu ortopedických vložiek, topánok, bandážových, redresných ortéz, ortéz na chôdzu a plastových ortéz po úrazoch.",
+    fb_link: "www.facebook.com",
+    ig_link: "www.instagram.com",
+    photo:
+      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/mirka_foto.jpg",
+  },
+  {
     name: "Mgr. Lucia Kačmarčíková",
     job: "sociálna a nadačná sféra",
-    desc: "Zabezpečujem sociálne vybavanie pre klientov, výber vhodných pomôcok pre dieťa.",
+    desc: "Vediem občianske združenie, zabezpečujem sociálne vybavanie pre klientov. Som obchodný reprezentant zdravotných pomôcok a detského programu. Riešim finančnú podporu pre dieťa. ",
     fb_link: "www.facebook.com",
     ig_link: "www.instagram.com",
     photo: "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/lucia.jpg",

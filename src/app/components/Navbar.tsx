@@ -235,53 +235,6 @@ const Navbar = () => {
                   <p> {object.title}</p>
                 </Link>
               ))}
-
-              <div
-                className="flex flex-col"
-                style={{
-                  borderTop: "1px solid rgba(0, 0, 0, 0.10)",
-                }}
-              >
-                {navbar_right_part.map((object, index) => {
-                  if (object.phone === "yes") {
-                    return (
-                      <a
-                        className="flex flex-row gap-4 items-center padding_mobile"
-                        key={index}
-                        href="tel:+421915653553"
-                      >
-                        {object.icon}
-                        <p className="2xl:text-[16px]">{object.text}</p>
-                      </a>
-                    );
-                  }
-
-                  if (object.address === "yes") {
-                    return (
-                      <Link
-                        className="flex flex-row gap-4 items-center padding_mobile"
-                        key={index}
-                        href={object.link}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        {object.icon}
-                        <p className="2xl:text-[16px]">{object.text}</p>
-                      </Link>
-                    );
-                  }
-
-                  return (
-                    <div
-                      className="flex flex-row gap-4 items-center padding_mobile"
-                      key={index}
-                    >
-                      {object.icon}
-                      <p className="2xl:text-[16px]">{object.text}</p>
-                    </div>
-                  );
-                })}
-              </div>
             </>
           </Drawer>
         </div>
