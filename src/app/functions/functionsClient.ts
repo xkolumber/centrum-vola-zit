@@ -74,7 +74,7 @@ export const cloudfront_url = "https://d9xqr11l6v5wz.cloudfront.net";
 export async function CompressImage(file: File) {
   try {
     const options = {
-      maxSizeMB: 1.6,
+      maxSizeMB: 2,
       maxWidthOrHeight: 1920,
       useWebWorker: true,
     };
