@@ -66,6 +66,7 @@ const HomePageSelection = () => {
       <div className="grid grid-cols-1 lg:hidden gap-8 mt-8">
         {data.map((object, index) => (
           <div className="h-full relative" key={index}>
+            <div className="absolute top-0 left-0 w-full h-full rounded-[8px] bg-gradient-to-b from-transparent to-black/10 z-10" />
             <Image
               src={cloudfront_url + `${object.image}`}
               alt="Left"

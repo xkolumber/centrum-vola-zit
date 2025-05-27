@@ -5,6 +5,7 @@ import HomePageHowWeWork from "./components/HomePageElements/HomePageHowWeWork";
 import HomePageSelection from "./components/HomePageElements/HomePageSelection";
 import HomePageSwiper from "./components/HomePageElements/HomePageSwiper";
 import HomePageTeam from "./components/HomePageElements/HomePageTeam";
+import CallToAction from "./components/CallToAction";
 
 export const metadata: Metadata = {
   title: "Centrum vôľa žiť",
@@ -45,6 +46,9 @@ export default function Home() {
       <HomePageFaq />
       {/* <HomePageThreeElements /> */}
       <HomePageGallery />
+      <div className="main_section m-auto !pt-16 !pb-16 md:!pt-0 lg:!pb-32">
+        <CallToAction />
+      </div>
     </div>
   );
 }

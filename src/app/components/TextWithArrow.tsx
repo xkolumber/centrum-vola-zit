@@ -14,7 +14,7 @@ const TextWithArrow = ({ title, link }: Props) => {
 
   return (
     <Link
-      className={`flex flex-row gap-6 items-center cursor-pointer rounded-[16px] absolute bottom-16 left-16 z-10
+      className={`flex flex-row gap-6 items-center cursor-pointer rounded-[16px] absolute bottom-12 md:bottom-16 left-12 md:left-16 z-10
    
 
       `}

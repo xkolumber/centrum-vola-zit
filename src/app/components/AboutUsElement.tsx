@@ -1,13 +1,14 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import Lightbox, { SlideImage } from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import { photos_room } from "../components/HomePageElements/HomePageOnePoint";
 import { aws_bucket_url, cloudfront_url } from "../functions/functionsClient";
-import NextJsImage from "./NextImage";
+import AboutUsTeam from "./AboutUsTeam";
 import CallToAction from "./CallToAction";
-import HomePageTeam from "./HomePageElements/HomePageTeam";
+import NextJsImage from "./NextImage";
 
 const AboutUsElement = () => {
   const [open, setOpen] = useState(false);
@@ -34,37 +35,49 @@ const AboutUsElement = () => {
           podporu – fyzickú, psychologickú aj sociálnu – v bezpečnom a
           priateľskom prostredí.
         </p>
-        <p>
-          V našom tíme nájdete logopédov, fyzioterapeutov a psychológov, ktorí
-          sa venujú individuálnym potrebám každého dieťaťa. Pomáhame aj rodičom
-          – s vybavením pomôcok na mieru či získavaním financií cez sociálnu
-          poisťovňu.
-        </p>
+
+        <AboutUsTeam />
 
         <div>
-          <h3 className="font-extrabold mt-16 mb-4">Naše služby</h3>
+          <Link href="/sluzby">
+            {" "}
+            <h3 className="font-extrabold mt-16 mb-4">Naše služby</h3>
+          </Link>
           <ul className="list-disc list-inside text-gray-700 space-y-1">
-            <li>
+            <Link href="/terapie">
               {" "}
-              Terapie: Bobath koncept, závesný systém, Redcord, Galileo,
-              Horizontálny motomed
-            </li>
-            <li>
-              Doplnkové terapie: elektrostimulácia, rašelinový zábal,
-              oxygenoterapia, Bioptron lampa, tejpovanie, zdravý chrbát
-            </li>
-            <li>
-              Masáže: klasická, reflexná, myofasiálna, lymfodrenáž, bankovanie
-            </li>
-            <li>Logopédia</li>
+              <li>
+                {" "}
+                Terapie: Bobath koncept, závesný systém, Redcord, Galileo,
+                Horizontálny motomed
+              </li>
+            </Link>
+            <Link href="/doplnkove-terapie">
+              <li>
+                Doplnkové terapie: elektrostimulácia, rašelinový zábal,
+                oxygenoterapia, Bioptron lampa, tejpovanie, zdravý chrbát
+              </li>
+            </Link>
+            <Link href="/masaze">
+              <li>
+                Masáže: klasická, reflexná, myofasiálna, lymfodrenáž, bankovanie
+              </li>
+            </Link>
+            <Link href="/logopedia">
+              <li>Logopédia</li>
+            </Link>
+            <Link href="/zrakova-stimulacia">
+              <li>Zraková stimulácia</li>
+            </Link>
+            <Link href="/zdravotnicke-pomocky">
+              <li>Zdravotnícke pomôcky</li>
+            </Link>
           </ul>
         </div>
 
-        <HomePageTeam />
-
         <div>
           <h3 className="font-extrabold mt-16 lg:mt-24 mb-4">Naše priestory</h3>
-          <p className="mb-4 text-gray-700 max-w-[700px]">
+          <p className="mb-4 max-w-[700px]">
             Vytvorili sme bezpečné a podporné prostredie, kde sa deti môžu cítiť
             príjemne a slobodne. Priestory sú navrhnuté tak, aby podporovali
             rehabilitáciu aj relaxáciu.

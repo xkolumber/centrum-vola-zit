@@ -10,11 +10,11 @@ import "swiper/css/pagination";
 import { Navigation, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-const team_members: TeamMemberInterface[] = [
+export const team_members: TeamMemberInterface[] = [
   {
     name: "Mgr. Alexandra Németh",
     job: "fyzioterapeut",
-    desc: "Neurorehabilitácia detí, Detský Bobath terapeut, diagnostika a terapia posturálnych porúch, SM-systém, Kineziotejping",
+    desc: "Venujem sa neurorehabilitácii detí. Som certifikovaná detská Bobath terapeutka. Zameriavam sa na diagnostiku a terapiu posturálnych porúch, pričom využívam aj metódu SM-systém a kineziotejping.",
     fb_link: "www.facebook.com",
     ig_link: "www.instagram.com",
     photo:
@@ -23,7 +23,7 @@ const team_members: TeamMemberInterface[] = [
   {
     name: "Bc. Peter Németh",
     job: "fyzioterapeut",
-    desc: "Neurorehabilitácia detí a dospelých, diagnostika a terapia posturálnych porúch DNS - dynamická neuromuskulárna stabilizácia, Redcord, SM-systém, Kineziotejping",
+    desc: "Venujem sa neurorehabilitácii detí a dospelých. Zameriavam sa na diagnostiku a terapiu posturálnych porúch pomocou metódy DNS – dynamickej neuromuskulárnej stabilizácie. Vo svojej práci využívam aj Redcord, SM-systém a kineziotejping.",
     fb_link: "www.facebook.com",
     ig_link: "www.instagram.com",
     photo:
@@ -32,7 +32,7 @@ const team_members: TeamMemberInterface[] = [
   {
     name: "Yuliia Bushmatova",
     job: "logopédia",
-    desc: "Práca s deťmi s narušenou výslovnosťou, bez reči. Logopedická masáž - orofaciálna, intraorálna stimulácia (sondova, vibračná stimulácia artikulačných svalov)",
+    desc: "Pracujem s deťmi, ktoré majú narušenú výslovnosť alebo ešte nerozprávajú. Venujem sa logopedickej masáži – orofaciálnej aj intraorálnej stimulácii. Používam sondy a vibračnú stimuláciu na podporu artikulačných svalov, aby som deťom pomohla lepšie rozvíjať reč.",
     fb_link: "www.facebook.com",
     ig_link: "www.instagram.com",
     photo:
@@ -41,7 +41,7 @@ const team_members: TeamMemberInterface[] = [
   {
     name: "Mgr. Miriam Garneková",
     job: "zraková stimulácia",
-    desc: "Špecializované centrum poradenstva a prevencie pre deti a žiadkov so zrakovým postihnutím",
+    desc: "Pôsobím v Špecializovanom centre poradenstva a prevencie, kde sa venujem deťom a žiakom so zrakovým postihnutím. Pomáham im rozvíjať zrakové schopnosti a podporujem ich v každodennom živote aj vzdelávaní.",
     fb_link: "www.facebook.com",
     ig_link: "www.instagram.com",
     photo:

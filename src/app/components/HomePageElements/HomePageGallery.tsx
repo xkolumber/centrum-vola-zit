@@ -17,7 +17,7 @@ const HomePageGallery = () => {
   });
 
   return (
-    <div className="w-full  flex justify-center pt-8 pb-8 2xl:pt-32 2xl:pb-32">
+    <div className="w-full  flex justify-center pt-8 2xl:pt-24 ">
       <div className="main_section justify-center w-full flex flex-col  ">
         <div className="flex flex-col w-full ">
           <p>Spomienky</p>
@@ -35,7 +35,7 @@ const HomePageGallery = () => {
         {isFetching && <CircularProgress size={24} color="inherit" />}
         {error && <p>Chyba pri načítaní dát.</p>}
         {data && (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16">
             {data.pages
               .flatMap((page) => page.items)
               .slice(0, 3)
