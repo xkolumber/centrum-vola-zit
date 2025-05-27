@@ -56,7 +56,7 @@ const GalleryPageSlug = ({ slug }: Props) => {
                 <Image
                   src={object.replace(aws_bucket_url, cloudfront_url)}
                   alt={`Gallery item ${index}`}
-                  width={400}
+                  width={600}
                   height={400}
                   className="rounded-[16px] w-full h-full object-cover relative z-10 cursor-pointer hover:scale-[1.02] duration-200"
                   onClick={() => handleOpenGallery(index)}
