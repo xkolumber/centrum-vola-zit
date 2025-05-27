@@ -3,8 +3,8 @@ import "react-loading-skeleton/dist/skeleton.css";
 
 const SkeletonSponsorsPage = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-      {Array.from({ length: 3 }, (_, index) => (
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-8">
+      {Array.from({ length: 8 }, (_, index) => (
         <div key={index}>
           <Skeleton
             width="100%"

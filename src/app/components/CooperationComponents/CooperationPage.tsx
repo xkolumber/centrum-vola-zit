@@ -40,7 +40,7 @@ const CooperationPage = () => {
       {error && <p className="mt-8">Chyba pri načítaní dát.</p>}
 
       {data && (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-16">
           {data.map((object, index) => (
             <Link
               href={object.link}
@@ -53,13 +53,10 @@ const CooperationPage = () => {
                 alt={`Logo ${object.title}`}
                 width={400}
                 height={300}
-                className="rounded-lg w-full h-full max-h-[300px] object-cover cursor-pointer hover:scale-[1.02] duration-200"
+                className="rounded-lg w-full h-full  object-contain cursor-pointer hover:scale-[1.02] duration-200"
                 key={index}
                 priority
               />
-              <h6 className="font-extrabold text-center pt-4">
-                {object.title}
-              </h6>
             </Link>
           ))}
         </div>

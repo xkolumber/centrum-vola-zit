@@ -7,6 +7,7 @@ import { photos_room } from "../components/HomePageElements/HomePageOnePoint";
 import { aws_bucket_url, cloudfront_url } from "../functions/functionsClient";
 import NextJsImage from "./NextImage";
 import CallToAction from "./CallToAction";
+import HomePageTeam from "./HomePageElements/HomePageTeam";
 
 const AboutUsElement = () => {
   const [open, setOpen] = useState(false);
@@ -59,17 +60,7 @@ const AboutUsElement = () => {
           </ul>
         </div>
 
-        <div>
-          <h3 className="font-extrabold mt-16 mb-8">Náš tím</h3>
-          <Image
-            src={cloudfront_url + `/o_nas.jpg`}
-            alt="Náš tím"
-            width={1920}
-            height={1080}
-            className="rounded-xl shadow-lg w-full h-auto object-cover"
-            priority
-          />
-        </div>
+        <HomePageTeam />
 
         <div>
           <h3 className="font-extrabold mt-16 lg:mt-24 mb-4">Naše priestory</h3>
