@@ -1,6 +1,7 @@
 "use client";
 import {
   aws_bucket_url,
+  BLUR_DATA_URL_GRAY,
   cloudfront_url,
 } from "@/app/functions/functionsClient";
 import React, { useEffect, useState } from "react";
@@ -9,6 +10,8 @@ import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import StepBack from "../StepBack";
 import CallToAction from "../CallToAction";
+import IconArrowServiceRight from "@/app/icons/IconArrowServiceRight";
+import IconArrowServiceLeft from "@/app/icons/IconArrowServiceLeft";
 
 const services = [
   {
@@ -93,6 +96,12 @@ const services = [
   },
 ];
 
+const photos = [
+  "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/bobath_koncept.jpg",
+  "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/bobath_koncept.jpg",
+  "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/bobath_koncept.jpg",
+];
+
 export default function ServiceIntro() {
   const [active, setActive] = useState(0);
   const router = useRouter();
@@ -123,7 +132,7 @@ export default function ServiceIntro() {
     <div className="main_section m-auto py-12 min-h-screen">
       <StepBack />
       <h2 className=" font-bold  mb-8">Terapie</h2>
-      <div className="flex  gap-4 mb-6 flex-wrap">
+      <div className="flex  gap-4 md:mb-6 flex-wrap">
         {services.map((s, i) => (
           <button
             key={i}
@@ -140,7 +149,7 @@ export default function ServiceIntro() {
         ))}
       </div>
 
-      <div className="flex flex-col lg:flex-row gap-16 items-start mt-16">
+      <div className="flex flex-col lg:flex-row gap-8 md:gap-16 items-start mt-8 md:mt-16">
         <div className="w-full lg:w-1/2 ">
           {services[active].videoUrl != "none" ? (
             <div className="react_player_own">
@@ -162,22 +171,44 @@ export default function ServiceIntro() {
               />
             </div>
           ) : (
-            <Image
-              alt="image"
-              width={1920}
-              height={1080}
-              src={services[active].imageUrl!.replace(
-                aws_bucket_url,
-                cloudfront_url
-              )}
-              className={`w-full ${
-                services[active].slug === "zavesny-system" ||
-                services[active].slug === "sm-system"
-                  ? "h-full"
-                  : "h-[513px] "
-              }  object-cover rounded-[16px]`}
-              priority
-            />
+            <>
+              <div className="relative">
+                <IconArrowServiceLeft />
+                <Image
+                  alt="image"
+                  width={1920}
+                  height={1080}
+                  src={services[active].imageUrl!.replace(
+                    aws_bucket_url,
+                    cloudfront_url
+                  )}
+                  className={`w-full ${
+                    services[active].slug === "zavesny-system" ||
+                    services[active].slug === "sm-system"
+                      ? "h-full"
+                      : "h-[513px] "
+                  }  object-cover rounded-[16px]`}
+                  blurDataURL={BLUR_DATA_URL_GRAY}
+                  priority
+                />
+                <IconArrowServiceRight />
+              </div>
+              <div className=" m-auto flex flex-row gap-4 mt-4 md:mt-8 md:gap-8 w-full justify-center">
+                {photos.map((object, index) => (
+                  <Image
+                    alt="image"
+                    width={200}
+                    height={200}
+                    src={object.replace(aws_bucket_url, cloudfront_url)}
+                    className={`w-[60px] h-[60px] md:w-[90px] md:h-[90px] object-cover rounded-[16px] cursor-pointer`}
+                    placeholder="blur"
+                    blurDataURL={BLUR_DATA_URL_GRAY}
+                    quality={50}
+                    key={index}
+                  />
+                ))}
+              </div>
+            </>
           )}
         </div>
         <div className="w-full lg:w-1/2 space-y-4 sticky top-40">
