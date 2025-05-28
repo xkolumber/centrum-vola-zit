@@ -17,7 +17,12 @@ import {
   GalleryInterface,
   SponsorInterface,
 } from "../lib/interface";
-import { aws_bucket_name, createSlug, LIMIT_GALLERY } from "./functionsNeutral";
+import {
+  aws_bucket_name,
+  createSlug,
+  LIMIT_GALLERY,
+  LIMIT_SPONSORS,
+} from "./functionsNeutral";
 
 import { createPresignedPost } from "@aws-sdk/s3-presigned-post";
 import { EmailContactPage } from "../components/EmailContactPage";
@@ -304,6 +309,62 @@ export async function fetchGalleriesLatest(
 
     return {
       items: response.Items as GalleryInterface[],
+      lastEvaluatedKey: response.LastEvaluatedKey,
+    };
+  } catch (err) {
+    console.error("Error fetching product references:", err);
+    return { items: [] };
+  }
+}
+
+export async function fetchSponsorsLatest(
+  exclusiveStartKey?: any
+): Promise<{ items: SponsorInterface[]; lastEvaluatedKey?: any }> {
+  try {
+    const command = new QueryCommand({
+      TableName: "sponzori",
+      IndexName: "partition_key-priority-index",
+      KeyConditionExpression: "partition_key = :partition_key",
+      ExpressionAttributeValues: {
+        ":partition_key": "all",
+      },
+      ScanIndexForward: false,
+      Limit: LIMIT_SPONSORS,
+      ExclusiveStartKey: exclusiveStartKey,
+    });
+
+    const response = await docClient.send(command);
+
+    return {
+      items: response.Items as SponsorInterface[],
+      lastEvaluatedKey: response.LastEvaluatedKey,
+    };
+  } catch (err) {
+    console.error("Error fetching product references:", err);
+    return { items: [] };
+  }
+}
+
+export async function fetchCooperationLatest(
+  exclusiveStartKey?: any
+): Promise<{ items: SponsorInterface[]; lastEvaluatedKey?: any }> {
+  try {
+    const command = new QueryCommand({
+      TableName: "spolupracujeme",
+      IndexName: "partition_key-priority-index",
+      KeyConditionExpression: "partition_key = :partition_key",
+      ExpressionAttributeValues: {
+        ":partition_key": "all",
+      },
+      ScanIndexForward: false,
+      Limit: LIMIT_SPONSORS,
+      ExclusiveStartKey: exclusiveStartKey,
+    });
+
+    const response = await docClient.send(command);
+
+    return {
+      items: response.Items as SponsorInterface[],
       lastEvaluatedKey: response.LastEvaluatedKey,
     };
   } catch (err) {
@@ -700,6 +761,10 @@ export async function AdminActualizeBlog(actualizeData: BlogInterface) {
 
 export async function AdminActualizeSponsor(actualizeData: SponsorInterface) {
   try {
+    if (actualizeData.priority !== undefined) {
+      actualizeData.priority = Number(actualizeData.priority);
+    }
+
     const updateExpression = Object.keys(actualizeData)
       .filter((key) => key !== "id")
       .map((key) => `#${key} = :${key}`)
@@ -746,6 +811,10 @@ export async function AdminActualizeCooperation(
   actualizeData: CooperationInterface
 ) {
   try {
+    if (actualizeData.priority !== undefined) {
+      actualizeData.priority = Number(actualizeData.priority);
+    }
+
     const updateExpression = Object.keys(actualizeData)
       .filter((key) => key !== "id")
       .map((key) => `#${key} = :${key}`)
@@ -844,6 +913,7 @@ export async function AdminAddSponsor(actualizeData: SponsorInterface) {
         ...actualizeData,
         id: uuid,
         partition_key: "all",
+        priority: Number(actualizeData.priority),
       },
     };
 
@@ -865,6 +935,7 @@ export async function AdminAddPartner(actualizeData: CooperationInterface) {
         ...actualizeData,
         id: uuid,
         partition_key: "all",
+        priority: Number(actualizeData.priority),
       },
     };
 

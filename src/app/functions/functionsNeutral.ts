@@ -15,3 +15,5 @@ export function createSlug(title: string): string {
 export const aws_bucket_name = "centrumvolazitopen";
 
 export const LIMIT_GALLERY = 6;
+
+export const LIMIT_SPONSORS = 8;

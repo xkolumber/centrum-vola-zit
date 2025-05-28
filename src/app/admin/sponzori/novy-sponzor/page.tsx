@@ -28,6 +28,7 @@ const Page = () => {
     logo: "",
     title: "",
     partition_key: "all",
+    priority: 0,
   });
   const [isLoadingMap, setIsLoadingMap] = useState<IsLoadingMap>({});
 
@@ -132,6 +133,18 @@ const Page = () => {
               type="text"
               name="title"
               value={actualizeData.title}
+              onChange={handleChangeMain}
+              className="w-full border border-solid border-black h-[5rem] mt-4"
+              required
+            />
+          </div>
+
+          <div className="flex flex-row justify-between items-center gap-4 mt-8">
+            <h6>Priorita zobrazenia (0-100):</h6>
+            <input
+              type="number"
+              name="priority"
+              value={actualizeData.priority}
               onChange={handleChangeMain}
               className="w-full border border-solid border-black h-[5rem] mt-4"
               required

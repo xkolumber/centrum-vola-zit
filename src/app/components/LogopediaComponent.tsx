@@ -26,10 +26,10 @@ const LogopediaComponent = () => {
   const swiperRef = useRef<SwiperCore | null>(null);
 
   const objects = [
+    "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/logopedia/logopedia_video.mp4",
     "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/logopedia1.jpg",
     "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/logopedia2.jpg",
     "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/logopedia3.jpg",
-    "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/logopedia/logopedia_video.mp4",
   ];
 
   const handleSelectPhoto = (index: number) => {

@@ -41,6 +41,7 @@ const AdminCooperationId = ({ id }: Props) => {
     logo: "",
     title: "",
     partition_key: "all",
+    priority: 0,
   });
   const [isLoadingMap, setIsLoadingMap] = useState<IsLoadingMap>({});
 
@@ -100,6 +101,7 @@ const AdminCooperationId = ({ id }: Props) => {
         logo: data.logo,
         title: data.title,
         partition_key: data.partition_key,
+        priority: data.priority,
       }));
     }
   }, [data]);
@@ -158,6 +160,18 @@ const AdminCooperationId = ({ id }: Props) => {
                 type="text"
                 name="title"
                 value={actualizeData.title}
+                onChange={handleChangeMain}
+                className="w-full border border-solid border-black h-[5rem] mt-4"
+                required
+              />
+            </div>
+
+            <div className="flex flex-row justify-between items-center gap-4 mt-8">
+              <h6>Priorita zobrazenia (0-100):</h6>
+              <input
+                type="number"
+                name="priority"
+                value={actualizeData.priority}
                 onChange={handleChangeMain}
                 className="w-full border border-solid border-black h-[5rem] mt-4"
                 required

@@ -73,6 +73,7 @@ export interface SponsorInterface {
   logo: string;
   title: string;
   partition_key: "all";
+  priority: number;
 }
 
 export interface CooperationInterface {
@@ -81,6 +82,7 @@ export interface CooperationInterface {
   logo: string;
   title: string;
   partition_key: "all";
+  priority: number;
 }
 
 export interface BlogInterface {
