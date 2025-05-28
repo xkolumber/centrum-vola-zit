@@ -124,17 +124,8 @@ const HealthCare = () => {
           ))}
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-16 items-start mt-16">
+        <div className="flex flex-col lg:flex-row gap-16 items-start mt-8 lg:mt-16">
           <div className="w-full lg:w-1/2 ">
-            {/* <Image
-              alt="image"
-              width={1920}
-              height={1080}
-              src={imageUrl.replace(aws_bucket_url, cloudfront_url)}
-              className={`w-full h-[513px] "
-              }  object-cover rounded-[16px]`}
-              priority
-            /> */}
             <>
               <div className="relative">
                 <div className="arrow-right">

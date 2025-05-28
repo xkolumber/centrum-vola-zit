@@ -41,9 +41,9 @@ const LogopediaComponent = () => {
   return (
     <div className="main_section m-auto py-12 min-h-screen">
       <StepBack />
-      <h2 className=" font-bold  mb-8">Logopédia</h2>
+      <h2 className=" font-bold mb-8">Logopédia</h2>
 
-      <div className="flex flex-col lg:flex-row gap-16 items-start mt-16">
+      <div className="flex flex-col lg:flex-row gap-16 items-start lg:mt-16">
         <div className="w-full lg:w-1/2 ">
           <div className="relative">
             <div className="arrow-right">
@@ -93,6 +93,7 @@ const LogopediaComponent = () => {
                       src={object.replace(aws_bucket_url, cloudfront_url)}
                       className={`w-full h-[513px] "
               }  object-cover  rounded-[16px]`}
+                      placeholder="blur"
                       blurDataURL={BLUR_DATA_URL_GRAY}
                       priority
                     />

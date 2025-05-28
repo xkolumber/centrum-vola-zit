@@ -32,7 +32,9 @@ const HomePageGallery = () => {
             naša práca má zmysel.
           </p>
         </div>{" "}
-        {isFetching && <CircularProgress size={24} color="inherit" />}
+        {isFetching && data === null && (
+          <CircularProgress size={24} color="inherit" />
+        )}
         {error && <p>Chyba pri načítaní dát.</p>}
         {data && (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16">

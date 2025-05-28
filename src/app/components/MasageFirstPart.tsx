@@ -2,7 +2,11 @@
 import { useRouter, useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import ReactPlayer from "react-player/lazy";
-import { aws_bucket_url, cloudfront_url } from "../functions/functionsClient";
+import {
+  aws_bucket_url,
+  BLUR_DATA_URL_GRAY,
+  cloudfront_url,
+} from "../functions/functionsClient";
 import Image from "next/image";
 import StepBack from "./StepBack";
 import CallToAction from "./CallToAction";
@@ -104,7 +108,7 @@ export default function MasageFirstPart() {
         ))}
       </div>
 
-      <div className="flex flex-col lg:flex-row gap-16 items-start mt-16">
+      <div className="flex flex-col lg:flex-row gap-16 items-start mt-8 lg:mt-16">
         <div className="w-full lg:w-1/2 ">
           {services[active].videoUrl != "none" ? (
             <div className="react_player_own">
@@ -134,6 +138,8 @@ export default function MasageFirstPart() {
                 aws_bucket_url,
                 cloudfront_url
               )}
+              placeholder="blur"
+              blurDataURL={BLUR_DATA_URL_GRAY}
               className="w-full h-[513px] object-cover rounded-[16px]"
               priority
             />
@@ -141,7 +147,7 @@ export default function MasageFirstPart() {
         </div>
         <div className="w-full lg:w-1/2 space-y-4 sticky top-40">
           <h3 className=" font-semibold">{services[active].name}</h3>
-          <p className="text-gray-800">{services[active].description}</p>
+          <p>{services[active].description}</p>
         </div>
       </div>
 

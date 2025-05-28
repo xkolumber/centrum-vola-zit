@@ -240,7 +240,7 @@ export default function ServiceIntro() {
                           services[active].slug === "zavesny-system" ||
                           services[active].slug === "sm-system"
                             ? "h-full"
-                            : "h-[713px]"
+                            : "h-[513px] lg:h-[713px]"
                         }  object-cover rounded-[16px]`}
                         blurDataURL={BLUR_DATA_URL_GRAY}
                         priority

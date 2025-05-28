@@ -118,7 +118,7 @@ export default function TherapyComplementary() {
           </button>
         ))}
       </div>
-      <div className="flex flex-col lg:flex-row gap-16 items-start mt-16">
+      <div className="flex flex-col lg:flex-row gap-16 items-start mt-8 lg:mt-16">
         <div className="w-full lg:w-1/2 ">
           {services[active].videoUrl != "none" ? (
             <div className="react_player_own">

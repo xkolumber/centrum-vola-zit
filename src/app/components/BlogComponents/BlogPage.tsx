@@ -3,6 +3,7 @@
 import {
   aws_bucket_url,
   cloudfront_url,
+  STALE_TIME,
   stripHtmlTags,
 } from "@/app/functions/functionsClient";
 import { fetchBlogsLatest } from "@/app/functions/functionsServer";
@@ -25,6 +26,7 @@ const BlogPage = () => {
       initialPageParam: undefined,
       initialData: { pages: [], pageParams: [] },
       refetchOnWindowFocus: false,
+      staleTime: STALE_TIME,
     });
 
   useEffect(() => {
@@ -33,7 +35,7 @@ const BlogPage = () => {
     }
   }, [fetchNextPage, inView]);
   return (
-    <div className="main_section justify-center w-full flex flex-col m-auto  ">
+    <div className="main_section w-full flex flex-col m-auto min-h-screen ">
       <h2 className="font-extrabold ">Blog</h2>
       <p className="mt-4 mb-16">
         {" "}
@@ -43,7 +45,7 @@ const BlogPage = () => {
         všetkých, ktorým záleží na deťoch so znevýhodnením.
       </p>
 
-      {isFetching && <SkeletonBlogPage />}
+      {isFetching && data === null && <SkeletonBlogPage />}
       {data && (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
           {data.pages

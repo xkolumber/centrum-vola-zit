@@ -38,7 +38,7 @@ const EyeStimulation = () => {
       <StepBack />
       <h2 className=" font-bold  mb-8">Zraková stimulácia</h2>
 
-      <div className="flex flex-col lg:flex-row gap-16 items-start mt-16">
+      <div className="flex flex-col lg:flex-row gap-16 items-start lg:mt-16">
         <div className="w-full lg:w-1/2 ">
           {/* <Image
             alt="image"
@@ -80,6 +80,7 @@ const EyeStimulation = () => {
                       src={object.replace(aws_bucket_url, cloudfront_url)}
                       className={`w-full h-[513px] "
               }  object-cover rounded-[16px]`}
+                      placeholder="blur"
                       blurDataURL={BLUR_DATA_URL_GRAY}
                       priority
                     />

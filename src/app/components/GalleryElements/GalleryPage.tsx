@@ -29,7 +29,7 @@ const GalleryPage = () => {
   }, [fetchNextPage, inView]);
 
   return (
-    <div className="main_section justify-center w-full flex flex-col m-auto  ">
+    <div className="main_section w-full flex flex-col m-auto min-h-screen  ">
       <h2 className="font-extrabold ">Galéria fotiek</h2>
       <p className="mt-4 mb-16">
         {" "}
@@ -40,7 +40,7 @@ const GalleryPage = () => {
       </p>
       {isFetching && <SkeletonGalleryPage />}
       {data && (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16">
           {data.pages
             .flatMap((page) => page.items)
             .map((object, index) => (
