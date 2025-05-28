@@ -26,7 +26,7 @@ const data = [
     id: "04",
     title: "Zraková stimulácia",
     slug: "zrakova-stimulacia",
-    image: "/zrakova_stimulacia.jpg",
+    image: "/zrakova_stimulacia/zrak_stimulacia3.jpg",
   },
   {
     id: "05",

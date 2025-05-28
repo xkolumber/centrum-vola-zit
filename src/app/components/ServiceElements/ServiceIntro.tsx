@@ -4,20 +4,33 @@ import {
   BLUR_DATA_URL_GRAY,
   cloudfront_url,
 } from "@/app/functions/functionsClient";
-import React, { useEffect, useState } from "react";
-import ReactPlayer from "react-player/lazy";
+import IconArrowServiceLeft from "@/app/icons/IconArrowServiceLeft";
+import IconArrowServiceRight from "@/app/icons/IconArrowServiceRight";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
-import StepBack from "../StepBack";
+import { useEffect, useRef, useState } from "react";
+import ReactPlayer from "react-player/lazy";
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 import CallToAction from "../CallToAction";
-import IconArrowServiceRight from "@/app/icons/IconArrowServiceRight";
-import IconArrowServiceLeft from "@/app/icons/IconArrowServiceLeft";
+import StepBack from "../StepBack";
+
+import SwiperCore from "swiper";
 
 const services = [
   {
     id: 0,
     name: "Bobath koncept",
     slug: "bobath-koncept",
+    photos: [
+      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/bobath_koncept/bobath1.jpg",
+      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/bobath_koncept/bobath2.jpg",
+      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/bobath_koncept/bobath3.jpg",
+    ],
     imageUrl:
       "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/bobath_koncept.jpg",
     videoUrl: "none",
@@ -28,8 +41,12 @@ const services = [
     id: 1,
     name: "Závesný systém",
     slug: "zavesny-system",
-    imageUrl:
-      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/zavesny_system.jpg",
+    photos: [
+      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/zavesny_system/zavesny_system1.jpg",
+      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/zavesny_system/zavesny_system4.jpg",
+      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/zavesny_system/zavesny_system3.jpg",
+    ],
+    imageUrl: "",
     videoUrl: "none",
     description:
       "Cvičenie je určené na nácvik chôdze a vertikalizáciu pacienta",
@@ -38,8 +55,12 @@ const services = [
     id: 2,
     name: "Redcord",
     slug: "redcord",
-    imageUrl:
-      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/redcord_new.png",
+    photos: [
+      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/redcord/redcord1.jpg",
+      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/redcord/redcord2.jpg",
+      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/redcord/redcord3.jpg",
+    ],
+
     videoUrl: "none",
     description:
       "Ide o unikátne cvičenie v závesnom systéme. Redcord je metóda zameraná na diagnostiku a následnú terapiu pri poruchách funkčných pohybových vzorov. Pomocou systému Redcord vieme odstrániť bolesti, zlepšiť pohybové stereotypy a obnoviť rozsah pohyblivosti v kĺboch. Zameriavame sa najmä na odstránenie príčiny daného motorického problému.",
@@ -48,6 +69,7 @@ const services = [
     id: 3,
     name: "Galileo",
     slug: "galileo",
+    photos: [],
     videoUrl:
       "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/galileo.mp4",
     description:
@@ -57,9 +79,14 @@ const services = [
     id: 4,
     name: "Horizontálny motomed",
     slug: "horizontalny-motomed",
-    imageUrl:
+    photos: [
       "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/horizontalny_motomed.jpg",
-    videoUrl: "none",
+      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/horizontalny_motomed.jpg",
+      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/horizontalny_motomed.jpg",
+    ],
+
+    videoUrl:
+      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/giger.mp4",
     description:
       "je zariadenie, ktoré podporuje rozvoj motorických funkcií a tým zároveň aj nápravu poškodení CNS (centrálneho nervového systému). V procese obnovy CNS vyvoláva vytváranie nových nervových buniek a množenie funkčných buniek. Zariadenie využíva rytmické, dynamicky koordinované pohyby, ktoré podporujú obnovenie základných funkcií CNS. Pohyby pacientov na zariadení spúšťajú impulzy v receptoroch kože, svalov, kĺbov a iných tkanív, ktoré mnohonásobným opakovaním vyvolávajú zmeny v nervovej sústave.",
   },
@@ -68,7 +95,7 @@ const services = [
     id: 5,
     name: "Motomed",
     slug: "motomed",
-
+    photos: [],
     videoUrl:
       "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/motomed_video.mp4",
     description:
@@ -78,8 +105,12 @@ const services = [
     id: 6,
     name: "Snoozelen",
     slug: "snoozelen",
-    imageUrl:
-      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/intro_doplnkove.jpg",
+    photos: [
+      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/snoozelen/snoozelen1.jpg",
+      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/snoozelen/snoozelen3.jpg",
+      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/snoozelen/snoozelen2.jpg",
+    ],
+
     videoUrl: "none",
     description:
       "Snoezelen je multifunkčná metóda, ktorá sa realizuje v obzvlášť príjemnom a upravenom prostredí pomocou svetelných a zvukových prvkov, vôní a hudby, pričom jej cieľom je vyvolanie zmyslových pocitov. Je určená najmä pre osoby s vývinovými poruchami, s mentálnym, telesným alebo viacnásobným postihnutím, s poruchou autistického spektra, poruchami správania a učenia, s psychickými poruchami, traumatickým poranením mozgu, pre osoby s demenciou a pre chronicky chorých pacientov.",
@@ -88,21 +119,20 @@ const services = [
     id: 7,
     name: "SM systém",
     slug: "sm-system",
-    imageUrl:
-      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/sm_system.jpg",
+    photos: [
+      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/sm_system/sm_system1.jpg",
+      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/sm_system/sm_system2.jpg",
+      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/sm_system/sm_system3.jpg",
+    ],
+
     videoUrl: "none",
     description:
       "SM Systém je systematická starostlivosť o pohybový aparát človeka a funkciu vnútorných orgánov. Prepája rehabilitačnú liečbu s prevenciou, regeneráciou a kondičným i výkonnostným tréningom v jednotnom metodickom postupe. Hlavný efekt metódy je vyvolanie trakčnej (naťahovacej) sily v oblasti medzistavcových platničiek. Tento efekt dosahujeme aktiváciou špirálových svalových reťazcov, ktoré zužujú obvod pása a ťahajú telo smerom nahor. Týmto spôsobom je chrbtica pri pohybe aktívne stabilizovaná. Všeobecná indikácia cvičenia je posilňovanie, preťahovanie, koordinácia pohybu, optimálne koordinovaná a stabilizovaná chôdza a beh.",
   },
 ];
 
-const photos = [
-  "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/bobath_koncept.jpg",
-  "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/bobath_koncept.jpg",
-  "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/bobath_koncept.jpg",
-];
-
 export default function ServiceIntro() {
+  const swiperRef = useRef<SwiperCore | null>(null);
   const [active, setActive] = useState(0);
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -127,6 +157,12 @@ export default function ServiceIntro() {
       router.replace(`?druh=bobath-koncept`);
     }
   }, [druh]);
+
+  const handleSelectPhoto = (index: number) => {
+    if (swiperRef.current) {
+      swiperRef.current.slideTo(index);
+    }
+  };
 
   return (
     <div className="main_section m-auto py-12 min-h-screen">
@@ -173,28 +209,51 @@ export default function ServiceIntro() {
           ) : (
             <>
               <div className="relative">
-                <IconArrowServiceLeft />
-                <Image
-                  alt="image"
-                  width={1920}
-                  height={1080}
-                  src={services[active].imageUrl!.replace(
-                    aws_bucket_url,
-                    cloudfront_url
-                  )}
-                  className={`w-full ${
-                    services[active].slug === "zavesny-system" ||
-                    services[active].slug === "sm-system"
-                      ? "h-full"
-                      : "h-[513px] "
-                  }  object-cover rounded-[16px]`}
-                  blurDataURL={BLUR_DATA_URL_GRAY}
-                  priority
-                />
-                <IconArrowServiceRight />
+                <div className="arrow-right">
+                  <IconArrowServiceLeft />
+                </div>
+                <Swiper
+                  onSwiper={(swiper) => {
+                    swiperRef.current = swiper;
+                  }}
+                  breakpoints={{
+                    320: {
+                      slidesPerView: 1,
+                      spaceBetween: 40,
+                    },
+                  }}
+                  loop={true}
+                  freeMode={true}
+                  modules={[Navigation]}
+                  navigation={{ nextEl: ".arrow-left", prevEl: ".arrow-right" }}
+                  speed={1000}
+                  className="rounded-[16px] "
+                >
+                  {services[active].photos.map((object, index) => (
+                    <SwiperSlide key={index}>
+                      <Image
+                        alt="image"
+                        width={1920}
+                        height={1080}
+                        src={object.replace(aws_bucket_url, cloudfront_url)}
+                        className={`w-full ${
+                          services[active].slug === "zavesny-system" ||
+                          services[active].slug === "sm-system"
+                            ? "h-full"
+                            : "h-[713px]"
+                        }  object-cover rounded-[16px]`}
+                        blurDataURL={BLUR_DATA_URL_GRAY}
+                        priority
+                      />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+                <div className="arrow-left">
+                  <IconArrowServiceRight />
+                </div>
               </div>
               <div className=" m-auto flex flex-row gap-4 mt-4 md:mt-8 md:gap-8 w-full justify-center">
-                {photos.map((object, index) => (
+                {services[active].photos.map((object, index) => (
                   <Image
                     alt="image"
                     width={200}
@@ -205,6 +264,7 @@ export default function ServiceIntro() {
                     blurDataURL={BLUR_DATA_URL_GRAY}
                     quality={50}
                     key={index}
+                    onClick={() => handleSelectPhoto(index)}
                   />
                 ))}
               </div>

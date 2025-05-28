@@ -27,7 +27,6 @@ const HomePageSwiper = () => {
     refetchOnWindowFocus: false,
   });
 
-  // const [isFetching, setIsFetching] = useState(true);
   return (
     <div className="bg-[#F1F1F1] flex flex-col justify-center items-center  md:h-[600px] lg:min-h-[70vh] relative">
       <div className="w-full   flex">
