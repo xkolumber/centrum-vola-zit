@@ -20,7 +20,7 @@ const HomePageMember = ({ data }: Props) => {
             width={600}
             height={600}
             src={data.photo.replace(aws_bucket_url, cloudfront_url)}
-            className={`rounded-[16px] h-[350px] md:h-[440px] object-cover ${(data.name === "Mgr. Alexandra Németh" || data.name === "Mgr. Miriam Garneková" || data.name === "Miroslava Holubčíková") && "object-top"}`}
+            className={`rounded-[16px] h-[350px] 2xl:h-[440px] object-cover ${(data.name === "Mgr. Alexandra Németh" || data.name === "Mgr. Miriam Garneková" || data.name === "Miroslava Holubčíková") && "object-top"}`}
             priority
           />
         ) : (

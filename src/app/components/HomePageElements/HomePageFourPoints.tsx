@@ -37,7 +37,7 @@ const data: HowWeWork[] = [
 const HomePageFourPoints = () => {
   return (
     <div>
-      <div className=" grid-cols-1 lg:grid-cols-2 mt-16 hidden md:grid">
+      <div className=" grid-cols-1 lg:grid-cols-2 mt-16 hidden lg:grid">
         {data.map((object, index) => {
           const isFirstRow = index < 2;
           const isFirstCol = index % 2 === 0;
@@ -55,7 +55,7 @@ const HomePageFourPoints = () => {
         })}
       </div>
 
-      <div className=" grid-cols-1 md:hidden">
+      <div className=" grid-cols-1 lg:hidden">
         {data.map((object, index) => {
           return (
             <div key={index} className={` border-b border-gray-300`}>

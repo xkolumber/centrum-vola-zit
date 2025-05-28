@@ -27,7 +27,7 @@ const ButtonMui = ({ color, text, link }: Props) => {
             backgroundColor: "#b5d132",
           },
         }}
-        className="!text-[14px] 2xl:!text-[16px]"
+        className="!text-[14px] 3xl:!text-[16px]"
       >
         {text}
       </Button>

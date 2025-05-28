@@ -2,6 +2,7 @@
 import {
   aws_bucket_url,
   cloudfront_url,
+  STALE_TIME,
 } from "@/app/functions/functionsClient";
 import { fetchActualityLatest } from "@/app/functions/functionsServer";
 import IconSwiperLeft from "@/app/icons/IconSwiperLeft";
@@ -25,10 +26,11 @@ const HomePageSwiper = () => {
     initialPageParam: undefined,
     initialData: { pages: [], pageParams: [] },
     refetchOnWindowFocus: false,
+    staleTime: STALE_TIME,
   });
 
   return (
-    <div className="bg-[#F1F1F1] flex flex-col justify-center items-center  md:h-[600px] lg:min-h-[70vh] relative">
+    <div className="bg-[#F1F1F1] flex flex-col justify-center items-center  md:h-[600px] xl:min-h-[70vh] relative">
       <div className="w-full   flex">
         {isFetching && <SkeletonActualityHomePage />}
         {error && <p>Chyba pri načítaní dát.</p>}

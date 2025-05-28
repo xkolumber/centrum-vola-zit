@@ -41,7 +41,7 @@ const Navbar = () => {
   return (
     <>
       <div
-        className={`hidden md:flex !justify-between  navbar_section m-auto !pt-4 !pb-4 items-center w-full ${
+        className={`hidden lg:flex !justify-between  navbar_section m-auto !pt-4 !pb-4 items-center w-full ${
           pathname.startsWith("/admin") && "!hidden"
         }`}
         style={{

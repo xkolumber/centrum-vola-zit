@@ -5,6 +5,7 @@ import { CircularProgress } from "@mui/material";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import GalleryObject from "../GalleryElements/GalleryObject";
 import Link from "next/link";
+import { STALE_TIME } from "@/app/functions/functionsClient";
 
 const HomePageGallery = () => {
   const { data, error, isFetching } = useInfiniteQuery({
@@ -14,10 +15,11 @@ const HomePageGallery = () => {
     initialPageParam: undefined,
     initialData: { pages: [], pageParams: [] },
     refetchOnWindowFocus: false,
+    staleTime: STALE_TIME,
   });
 
   return (
-    <div className="w-full  flex justify-center pt-8 2xl:pt-24 ">
+    <div className="w-full  flex justify-center pt-8  ">
       <div className="main_section justify-center w-full flex flex-col  ">
         <div className="flex flex-col w-full ">
           <p>Spomienky</p>

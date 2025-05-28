@@ -17,7 +17,7 @@ const Footer = () => {
         }`}
         id="footer_contacts"
       >
-        <div className="main_section m-auto !pt-0 !pb-0 flex flex-col gap-12 md:gap-0 md:flex-row justify-between w-full  ">
+        <div className="main_section m-auto !pt-0 !pb-0 flex flex-col gap-12 lg:gap-0 lg:flex-row justify-between w-full  ">
           <div className="flex flex-col items-start">
             <Image
               src={"/logo_complet.svg"}
@@ -97,6 +97,9 @@ const Footer = () => {
         <p className="text-[12px] md:text-[14px] text-center">
           © Copyright {actual_year} Centrum vôľa žiť - všetky práva vyhradené
         </p>
+        <Link className="text-[12px] md:text-[14px]" href={"/ochrana-sukromia"}>
+          Ochrana súkromia
+        </Link>
       </div>
     </>
   );

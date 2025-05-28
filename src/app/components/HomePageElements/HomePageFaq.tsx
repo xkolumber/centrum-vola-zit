@@ -30,7 +30,7 @@ const HomePageFaq = () => {
     setExpandedIndex((prev) => (prev === index ? false : index));
   };
   return (
-    <div className="w-full bg-[#F1F1F1]  flex justify-center pt-8 pb-8 2xl:pt-32 2xl:pb-32">
+    <div className="w-full bg-[#F1F1F1]  flex justify-center pt-8 pb-8">
       <div className="main_section justify-center w-full flex flex-col md:flex-row gap-8 xl:gap-16 ">
         <div className="flex flex-col w-full ">
           <p>Faq</p>

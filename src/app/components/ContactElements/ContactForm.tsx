@@ -198,7 +198,9 @@ const ContactForm = () => {
 
         <FormControlLabel
           key={"1"}
-          label={"Súhlasím so spracovaním osobných údajov"}
+          label={
+            "Súhlasím so spracovaním mojich osobných údajov (meno, telefónne číslo, e-mail a správa) výlučne za účelom vybavenia mojej požiadavky správcom webu. Vaše údaje nebudú zdieľané s tretími stranami a budú použité iba na odpoveď na Vašu správu."
+          }
           required
           control={
             <Checkbox

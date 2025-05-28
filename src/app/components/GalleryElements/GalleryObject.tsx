@@ -22,7 +22,7 @@ const GalleryObject = ({ data }: Props) => {
         alt="Left"
         width={600}
         height={600}
-        className="w-full h-[400px]  object-cover rounded-[16px]"
+        className="w-full h-[300px] 2xl:h-[400px]  object-cover rounded-[16px]"
         priority
         placeholder="blur"
         blurDataURL={BLUR_DATA_URL_GRAY}

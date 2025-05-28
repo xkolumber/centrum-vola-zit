@@ -54,7 +54,7 @@ const HomePageSelection = () => {
               alt={object.image}
               width={1920}
               height={1080}
-              className="w-full h-[370px] object-cover rounded-[8px]"
+              className="w-full h-[300px] 2xl:h-[370px]  object-cover rounded-[8px]"
               priority
             />
 
@@ -63,7 +63,7 @@ const HomePageSelection = () => {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 lg:hidden gap-8 mt-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:hidden gap-8 mt-8">
         {data.map((object, index) => (
           <div className="h-full relative" key={index}>
             <div className="absolute top-0 left-0 w-full h-full rounded-[8px] bg-gradient-to-b from-transparent to-black/10 z-10" />
@@ -72,7 +72,7 @@ const HomePageSelection = () => {
               alt="Left"
               width={600}
               height={280}
-              className="w-full h-[280px] object-cover rounded-[8px]"
+              className="w-full h-[300px] object-cover rounded-[8px]"
               priority
             />
             <TextWithArrow link={object.slug} title={object.title} />

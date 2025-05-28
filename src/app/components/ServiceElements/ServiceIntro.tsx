@@ -86,7 +86,7 @@ const services = [
     ],
 
     videoUrl:
-      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/giger.mp4",
+      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/giger_new.mp4",
     description:
       "je zariadenie, ktoré podporuje rozvoj motorických funkcií a tým zároveň aj nápravu poškodení CNS (centrálneho nervového systému). V procese obnovy CNS vyvoláva vytváranie nových nervových buniek a množenie funkčných buniek. Zariadenie využíva rytmické, dynamicky koordinované pohyby, ktoré podporujú obnovenie základných funkcií CNS. Pohyby pacientov na zariadení spúšťajú impulzy v receptoroch kože, svalov, kĺbov a iných tkanív, ktoré mnohonásobným opakovaním vyvolávajú zmeny v nervovej sústave.",
   },
@@ -185,7 +185,7 @@ export default function ServiceIntro() {
         ))}
       </div>
 
-      <div className="flex flex-col lg:flex-row gap-8 md:gap-16 items-start mt-8 md:mt-16">
+      <div className="flex flex-col lg:flex-row gap-8 md:gap-16 items-start mt-8 lg:mt-16">
         <div className="w-full lg:w-1/2 ">
           {services[active].videoUrl != "none" ? (
             <div className="react_player_own">
@@ -273,7 +273,7 @@ export default function ServiceIntro() {
         </div>
         <div className="w-full lg:w-1/2 space-y-4 sticky top-40">
           <h3 className=" font-semibold">{services[active].name}</h3>
-          <p className="text-gray-800">{services[active].description}</p>
+          <p className="">{services[active].description}</p>
         </div>
       </div>
       <div className="mt-16 lg:mt-32 2xl:mt-52">
