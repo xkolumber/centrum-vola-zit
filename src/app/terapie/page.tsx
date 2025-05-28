@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   description:
     "Objavte terapie, ktoré pomáhajú deťom so zdravotným znevýhodnením napredovať – Bobath koncept, závesné systémy, Redcord, Galileo a ďalšie inovatívne prístupy využívané v našom centre.",
   keywords: [
+    "centrum vôľa žiť",
+    "centrum vola zit",
     "terapie pre deti",
     "bobath koncept",
     "redcord terapia",
@@ -19,6 +21,8 @@ export const metadata: Metadata = {
     "zdravotné znevýhodnenie",
     "rehabilitácia Spišská Belá",
     "fyzioterapia detí",
+    "kežmarok",
+    "spišská belá",
   ],
   openGraph: {
     title: "Terapie pre deti so zdravotným znevýhodnením",

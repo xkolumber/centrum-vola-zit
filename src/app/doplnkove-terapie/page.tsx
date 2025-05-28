@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   description:
     "Preskúmajte naše doplnkové terapeutické metódy – elektrostimulácia, rašelinový zábal, oxygenoterapia, bioptron lampa, tejpovanie a cvičenia na zdravý chrbát. Pomáhame pri regenerácii, úľave od bolesti aj podpore imunity.",
   keywords: [
+    "centrum vôľa žiť",
+    "centrum vola zit",
     "doplnkové terapie",
     "elektrostimulácia",
     "rašeľinový zábal",
@@ -20,6 +22,8 @@ export const metadata: Metadata = {
     "centrum pre deti",
     "rehabilitácia Spišská Belá",
     "podpora zdravia",
+    "kežmarok",
+    "spišská belá",
   ],
   openGraph: {
     title: "Doplnkové terapie pre deti a dospelých",

@@ -7,6 +7,8 @@ export const metadata: Metadata = {
     "Máte otázky alebo záujem o naše služby? Neváhajte nás kontaktovať. Sme tu pre rodičov a deti, ktoré potrebujú odbornú starostlivosť, terapiu a podporu.",
 
   keywords: [
+    "centrum vôľa žiť",
+    "centrum vola zit",
     "kontakt",
     "pomoc ďeťom",
     "centrum pre deti",

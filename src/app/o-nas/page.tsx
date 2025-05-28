@@ -8,7 +8,8 @@ export const metadata: Metadata = {
     "Sme občianske združenie, ktoré sa s láskou a odbornosťou stará o deti so znevýhodnením. Naším cieľom je poskytovať komplexnú starostlivosť a podporu – fyzickú, psychologickú aj sociálnu – v bezpečnom a priateľskom prostredí.",
 
   keywords: [
-    "Centrum vôľa žiť",
+    "centrum vôľa žiť",
+    "centrum vola zit",
     "deti s nevýhodnením",
     "fyzioterapia",
     "masáže",

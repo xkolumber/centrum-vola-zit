@@ -20,6 +20,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1,
     },
     {
+      url: "https://centrumvolazit.sk/sluzby",
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: "https://centrumvolazit.sk/o-nas",
       lastModified: new Date(),
       changeFrequency: "weekly",
@@ -56,7 +62,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     },
     {
-      url: "https://centrumvolazit.sk/pomocky",
+      url: "https://centrumvolazit.sk/zdravotnicke-pomocky",
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,

@@ -8,6 +8,8 @@ export const metadata: Metadata = {
     "Vážime si každého partnera, ktorý s nami zdieľa spoločnú víziu – pomáhať deťom rásť, rozvíjať sa a napredovať napriek prekážkam. Naša spolupráca je postavená na dôvere, odbornosti a spoločnom cieli: vytvárať lepšie podmienky pre život detí so znevýhodnením.",
 
   keywords: [
+    "centrum vôľa žiť",
+    "centrum vola zit",
     "Sponzori",
     "pomoc ďeťom",
     "centrum pre deti",

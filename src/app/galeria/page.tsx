@@ -8,6 +8,8 @@ export const metadata: Metadata = {
     "Pozrite sa, ako vyzerá naša každodenná práca – momenty plné odhodlania, pokroku a radosti. Naša galéria zachytáva príbehy detí, ktorým pomáhame, aj úsilie odborníkov, ktorí im podávajú pomocnú ruku. Každý úsmev, každý malý krôčik vpred je pre nás dôkazom, že naša práca má zmysel.",
 
   keywords: [
+    "centrum vôľa žiť",
+    "centrum vola zit",
     "Centrum vôľa žiť",
     "deti s nevýhodnením",
     "fyzioterapia",

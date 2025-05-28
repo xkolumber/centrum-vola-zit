@@ -14,6 +14,8 @@ export const metadata: Metadata = {
 
   keywords: [
     "Centrum vôľa žiť",
+    "centrum vôľa žiť",
+    "centrum vola zit",
     "deti s nevýhodnením",
     "fyzioterapia",
     "masáže",

@@ -1,7 +1,9 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import TextWithArrow from "../TextWithArrow";
 import { cloudfront_url } from "@/app/functions/functionsClient";
+import { usePathname } from "next/navigation";
 
 const data = [
   {
@@ -43,9 +45,15 @@ const data = [
 ];
 
 const HomePageSelection = () => {
+  const pathname = usePathname();
   return (
     <div className="main_section m-auto" id="sluzby">
-      <div className="hidden lg:grid grid-cols-3 gap-8">
+      <h2
+        className={`font-extrabold lg:mb-8  ${pathname != "/sluzby" && "hidden"}`}
+      >
+        Naše služby
+      </h2>
+      <div className="hidden lg:grid grid-cols-3 gap-8 ">
         {data.map((object, index) => (
           <div className="relative" key={index}>
             <div className="absolute top-0 left-0 w-full h-full rounded-[8px] bg-gradient-to-b from-transparent to-black/10 z-10" />

@@ -8,6 +8,8 @@ export const metadata: Metadata = {
     "Bez Vás by to nešlo. Vďaka podpore našich partnerov môžeme každý deň pomáhať deťom, ktoré to najviac potrebujú. Vaša pomoc nám umožňuje zabezpečiť odborné terapie, kvalitné pomôcky a bezpečné priestory, v ktorých deti nachádzajú oporu a nové možnosti.",
 
   keywords: [
+    "centrum vôľa žiť",
+    "centrum vola zit",
     "Sponzori",
     "pomoc ďeťom",
     "centrum pre deti",

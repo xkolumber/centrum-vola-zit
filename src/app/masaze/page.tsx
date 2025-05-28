@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   description:
     "Vyberte si z našej ponuky masáží – klasická, reflexná, myofasciálna, lymfodrenáž a bankovanie. Masáže pomáhajú uvoľniť telo, zmierniť bolesť a podporiť regeneráciu organizmu prirodzeným spôsobom.",
   keywords: [
+    "centrum vôľa žiť",
+    "centrum vola zit",
     "masáže",
     "klasická masáž",
     "reflexná masáž",
@@ -19,6 +21,8 @@ export const metadata: Metadata = {
     "regenerácia tela",
     "relaxačné techniky",
     "fyzioterapia",
+    "kežmarok",
+    "spišská belá",
   ],
   openGraph: {
     title: "Masáže – účinná pomoc pri bolesti a únave",

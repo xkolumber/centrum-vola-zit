@@ -8,7 +8,8 @@ export const metadata: Metadata = {
     "Nahliadnite do našej práce cez fotografie z terapií, stretnutí a radostných momentov našich detí.",
 
   keywords: [
-    "Centrum vôľa žiť",
+    "centrum vôľa žiť",
+    "centrum vola zit",
     "centrum pre deti",
     "zdravotné znevýhodnenie",
     "rehalitácia",

@@ -6,6 +6,8 @@ export const metadata: Metadata = {
   description:
     "Zistite, aké pomôcky využívame pri terapiách a rehabilitáciách – od vozíkov, cez podložky, ortopedické pomôcky až po odporúčané domáce vybavenie. Pomáhajú zlepšiť pohyblivosť, bezpečnosť a komfort klientov.",
   keywords: [
+    "centrum vôľa žiť",
+    "centrum vola zit",
     "rehabilitačné pomôcky",
     "vozík",
     "pomôcky pre pohyb",
@@ -19,6 +21,8 @@ export const metadata: Metadata = {
     "chodítka",
     "pomôcky pre hendikepovaných",
     "fyzická terapia pomôcky",
+    "kežmarok",
+    "spišská belá",
   ],
   openGraph: {
     title: "Pomôcky pre terapiu, rehabilitáciu a každodenný život",
