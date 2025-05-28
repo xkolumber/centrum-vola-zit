@@ -2,7 +2,6 @@
 import {
   aws_bucket_url,
   cloudfront_url,
-  STALE_TIME,
 } from "@/app/functions/functionsClient";
 import { fetchActualityLatest } from "@/app/functions/functionsServer";
 import IconSwiperLeft from "@/app/icons/IconSwiperLeft";
@@ -26,7 +25,6 @@ const HomePageSwiper = () => {
     initialPageParam: undefined,
     initialData: { pages: [], pageParams: [] },
     refetchOnWindowFocus: false,
-    staleTime: STALE_TIME,
   });
 
   return (

@@ -38,7 +38,7 @@ const GalleryPage = () => {
         aj úsilie odborníkov, ktorí im podávajú pomocnú ruku. Každý úsmev, každý
         malý krôčik vpred je pre nás dôkazom, že naša práca má zmysel.
       </p>
-      {isFetching && <SkeletonGalleryPage />}
+      {isFetching && data === null && <SkeletonGalleryPage />}
       {data && (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16">
           {data.pages
