@@ -49,7 +49,7 @@ const AboutUsElement = () => {
               <li>
                 {" "}
                 Terapie: Bobath koncept, závesný systém, Redcord, Galileo,
-                Horizontálny motomed
+                Horizontálny motomed, Motomed, Snoozelen, SM systém
               </li>
             </Link>
             <Link href="/doplnkove-terapie">
