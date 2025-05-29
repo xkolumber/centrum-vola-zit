@@ -16,6 +16,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useRef, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import ReactPlayer from "react-player/lazy";
 import { ClipLoader } from "react-spinners";
 
 const Page = () => {
@@ -35,6 +36,9 @@ const Page = () => {
     photo1: "",
     photo2: "",
     photo3: "",
+    video1: "",
+    video2: "",
+    video3: "",
     another_photos: [],
     viditelnost: false,
   });
@@ -206,6 +210,13 @@ const Page = () => {
     });
   };
 
+  const handleDeleteObject = (object: string) => {
+    setActualizeData((prev) => ({
+      ...prev,
+      [object]: "",
+    }));
+  };
+
   return (
     <div>
       <div className="products_admin">
@@ -213,7 +224,7 @@ const Page = () => {
         <StepBack />
 
         <form onSubmit={handleSaveData}>
-          <h5 className="text-center">Nový blog</h5>
+          <h2>Nový blog</h2>
           <div className="flex flex-row justify-between items-center gap-4 mt-8">
             <h6>Názov blog:</h6>
             <input
@@ -225,6 +236,7 @@ const Page = () => {
               required
             />
           </div>
+
           <div className="product_admin_row">
             <p>Viditeľnosť článku:</p>
             <input
@@ -234,6 +246,7 @@ const Page = () => {
               checked={actualizeData.viditelnost}
             />
           </div>
+
           <div className="flex flex-row justify-between items-center gap-4 mt-8">
             <h6>Meno autora:</h6>
             <input
@@ -245,7 +258,6 @@ const Page = () => {
               required
             />
           </div>
-
           <div className="product_admin_row">
             <h6>Titulná foto:</h6>
             <div className="flex flex-col w-[75%]">
@@ -274,6 +286,7 @@ const Page = () => {
           <div className="product_admin_row !flex-col">
             <h6>Text1:</h6>
             <Tiptap
+              key={actualizeData.slug}
               content={actualizeData.text1}
               onChange={(value) => handleTextChange("text1", value)}
             />
@@ -301,11 +314,62 @@ const Page = () => {
                 onChange={(e) => handleFileChange(e, "photo1")}
               />
             </div>
+
+            {actualizeData.photo1 != "" && (
+              <p
+                className="underline cursor-pointer mt-4 text-red-600"
+                onClick={() => handleDeleteObject("photo1")}
+              >
+                Odstrániť objekt
+              </p>
+            )}
+          </div>
+
+          <div className="product_admin_row">
+            <h6>Video1 :</h6>
+            <div className="flex flex-col w-[75%]">
+              {actualizeData.video1 && (
+                <div className="react_player_own">
+                  <ReactPlayer
+                    url={actualizeData.video1.replace(
+                      aws_bucket_url,
+                      cloudfront_url
+                    )}
+                    controls
+                    width="100%"
+                    height="513px"
+                    config={{
+                      file: {
+                        attributes: {
+                          controlsList: "nodownload",
+                        },
+                      },
+                    }}
+                  />
+                </div>
+              )}
+
+              <input
+                type="file"
+                accept="video/*"
+                onChange={(e) => handleFileChange(e, "video1")}
+              />
+
+              {actualizeData.video1 != "" && (
+                <p
+                  className="underline cursor-pointer mt-4 text-red-600"
+                  onClick={() => handleDeleteObject("video1")}
+                >
+                  Odstrániť objekt
+                </p>
+              )}
+            </div>
           </div>
 
           <div className="product_admin_row !flex-col">
             <h6>Text2:</h6>
             <Tiptap
+              key={actualizeData.slug}
               content={actualizeData.text2}
               onChange={(value) => handleTextChange("text2", value)}
             />
@@ -332,12 +396,62 @@ const Page = () => {
                 accept="image/*"
                 onChange={(e) => handleFileChange(e, "photo2")}
               />
+              {actualizeData.photo2 != "" && (
+                <p
+                  className="underline cursor-pointer mt-4 text-red-600"
+                  onClick={() => handleDeleteObject("photo2")}
+                >
+                  Odstrániť objekt
+                </p>
+              )}
+            </div>
+          </div>
+
+          <div className="product_admin_row">
+            <h6>Video2 :</h6>
+            <div className="flex flex-col w-[75%]">
+              {actualizeData.video2 && (
+                <div className="react_player_own">
+                  <ReactPlayer
+                    url={actualizeData.video2.replace(
+                      aws_bucket_url,
+                      cloudfront_url
+                    )}
+                    controls
+                    width="100%"
+                    height="513px"
+                    config={{
+                      file: {
+                        attributes: {
+                          controlsList: "nodownload",
+                        },
+                      },
+                    }}
+                  />
+                </div>
+              )}
+
+              <input
+                type="file"
+                accept="video/*"
+                onChange={(e) => handleFileChange(e, "video2")}
+              />
+
+              {actualizeData.video2 != "" && (
+                <p
+                  className="underline cursor-pointer mt-4 text-red-600"
+                  onClick={() => handleDeleteObject("video2")}
+                >
+                  Odstrániť objekt
+                </p>
+              )}
             </div>
           </div>
 
           <div className="product_admin_row !flex-col">
             <h6>Text3:</h6>
             <Tiptap
+              key={actualizeData.slug}
               content={actualizeData.text3}
               onChange={(value) => handleTextChange("text3", value)}
             />
@@ -364,6 +478,56 @@ const Page = () => {
                 accept="image/*"
                 onChange={(e) => handleFileChange(e, "photo3")}
               />
+
+              {actualizeData.photo3 != "" && (
+                <p
+                  className="underline cursor-pointer mt-4 text-red-600"
+                  onClick={() => handleDeleteObject("photo3")}
+                >
+                  Odstrániť objekt
+                </p>
+              )}
+            </div>
+          </div>
+
+          <div className="product_admin_row">
+            <h6>Video3 :</h6>
+            <div className="flex flex-col w-[75%]">
+              {actualizeData.video3 && (
+                <div className="react_player_own">
+                  <ReactPlayer
+                    url={actualizeData.video3.replace(
+                      aws_bucket_url,
+                      cloudfront_url
+                    )}
+                    controls
+                    width="100%"
+                    height="513px"
+                    config={{
+                      file: {
+                        attributes: {
+                          controlsList: "nodownload",
+                        },
+                      },
+                    }}
+                  />
+                </div>
+              )}
+
+              <input
+                type="file"
+                accept="video/*"
+                onChange={(e) => handleFileChange(e, "video3")}
+              />
+
+              {actualizeData.video3 != "" && (
+                <p
+                  className="underline cursor-pointer mt-4 text-red-600"
+                  onClick={() => handleDeleteObject("video3")}
+                >
+                  Odstrániť objekt
+                </p>
+              )}
             </div>
           </div>
 
@@ -406,7 +570,6 @@ const Page = () => {
               </div>
             ))}
           </div>
-
           <button
             className={`btn btn--primary ${
               isLoadingMap["actualize_album"] && "disabledBtn"

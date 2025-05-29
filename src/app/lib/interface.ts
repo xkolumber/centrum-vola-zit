@@ -99,6 +99,9 @@ export interface BlogInterface {
   photo1: string;
   photo2: string;
   photo3: string;
+  video1: string;
+  video2: string;
+  video3: string;
   another_photos: string[];
   viditelnost: boolean;
 }

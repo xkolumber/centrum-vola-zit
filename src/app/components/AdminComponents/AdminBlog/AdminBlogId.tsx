@@ -22,6 +22,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { ClipLoader } from "react-spinners";
 import StepBack from "../../StepBack";
 import Tiptap from "../../TipTapEditor/TipTap";
+import ReactPlayer from "react-player";
 
 interface Props {
   id: string;
@@ -51,6 +52,9 @@ const AdminBlogId = ({ id }: Props) => {
     photo1: "",
     photo2: "",
     photo3: "",
+    video1: "",
+    video2: "",
+    video3: "",
     another_photos: [],
     viditelnost: false,
   });
@@ -129,6 +133,9 @@ const AdminBlogId = ({ id }: Props) => {
         photo1: data.photo1,
         photo2: data.photo2,
         photo3: data.photo3,
+        video1: data.video1 ? data.video1 : "",
+        video2: data.video2 ? data.video2 : "",
+        video3: data.video3 ? data.video3 : "",
         another_photos: data.another_photos,
         viditelnost: data.viditelnost,
       }));
@@ -242,6 +249,13 @@ const AdminBlogId = ({ id }: Props) => {
     });
   };
 
+  const handleDeleteObject = (object: string) => {
+    setActualizeData((prev) => ({
+      ...prev,
+      [object]: "",
+    }));
+  };
+
   return (
     <div>
       <div className="products_admin">
@@ -344,6 +358,56 @@ const AdminBlogId = ({ id }: Props) => {
                   onChange={(e) => handleFileChange(e, "photo1")}
                 />
               </div>
+
+              {actualizeData.photo1 != "" && (
+                <p
+                  className="underline cursor-pointer mt-4 text-red-600"
+                  onClick={() => handleDeleteObject("photo1")}
+                >
+                  Odstrániť objekt
+                </p>
+              )}
+            </div>
+
+            <div className="product_admin_row">
+              <h6>Video1 :</h6>
+              <div className="flex flex-col w-[75%]">
+                {actualizeData.video1 && (
+                  <div className="react_player_own">
+                    <ReactPlayer
+                      url={actualizeData.video1.replace(
+                        aws_bucket_url,
+                        cloudfront_url
+                      )}
+                      controls
+                      width="100%"
+                      height="513px"
+                      config={{
+                        file: {
+                          attributes: {
+                            controlsList: "nodownload",
+                          },
+                        },
+                      }}
+                    />
+                  </div>
+                )}
+
+                <input
+                  type="file"
+                  accept="video/*"
+                  onChange={(e) => handleFileChange(e, "video1")}
+                />
+
+                {actualizeData.video1 != "" && (
+                  <p
+                    className="underline cursor-pointer mt-4 text-red-600"
+                    onClick={() => handleDeleteObject("video1")}
+                  >
+                    Odstrániť objekt
+                  </p>
+                )}
+              </div>
             </div>
 
             <div className="product_admin_row !flex-col">
@@ -376,6 +440,55 @@ const AdminBlogId = ({ id }: Props) => {
                   accept="image/*"
                   onChange={(e) => handleFileChange(e, "photo2")}
                 />
+                {actualizeData.photo2 != "" && (
+                  <p
+                    className="underline cursor-pointer mt-4 text-red-600"
+                    onClick={() => handleDeleteObject("photo2")}
+                  >
+                    Odstrániť objekt
+                  </p>
+                )}
+              </div>
+            </div>
+
+            <div className="product_admin_row">
+              <h6>Video2 :</h6>
+              <div className="flex flex-col w-[75%]">
+                {actualizeData.video2 && (
+                  <div className="react_player_own">
+                    <ReactPlayer
+                      url={actualizeData.video2.replace(
+                        aws_bucket_url,
+                        cloudfront_url
+                      )}
+                      controls
+                      width="100%"
+                      height="513px"
+                      config={{
+                        file: {
+                          attributes: {
+                            controlsList: "nodownload",
+                          },
+                        },
+                      }}
+                    />
+                  </div>
+                )}
+
+                <input
+                  type="file"
+                  accept="video/*"
+                  onChange={(e) => handleFileChange(e, "video2")}
+                />
+
+                {actualizeData.video2 != "" && (
+                  <p
+                    className="underline cursor-pointer mt-4 text-red-600"
+                    onClick={() => handleDeleteObject("video2")}
+                  >
+                    Odstrániť objekt
+                  </p>
+                )}
               </div>
             </div>
 
@@ -409,8 +522,59 @@ const AdminBlogId = ({ id }: Props) => {
                   accept="image/*"
                   onChange={(e) => handleFileChange(e, "photo3")}
                 />
+
+                {actualizeData.photo3 != "" && (
+                  <p
+                    className="underline cursor-pointer mt-4 text-red-600"
+                    onClick={() => handleDeleteObject("photo3")}
+                  >
+                    Odstrániť objekt
+                  </p>
+                )}
               </div>
             </div>
+
+            <div className="product_admin_row">
+              <h6>Video3 :</h6>
+              <div className="flex flex-col w-[75%]">
+                {actualizeData.video3 && (
+                  <div className="react_player_own">
+                    <ReactPlayer
+                      url={actualizeData.video3.replace(
+                        aws_bucket_url,
+                        cloudfront_url
+                      )}
+                      controls
+                      width="100%"
+                      height="513px"
+                      config={{
+                        file: {
+                          attributes: {
+                            controlsList: "nodownload",
+                          },
+                        },
+                      }}
+                    />
+                  </div>
+                )}
+
+                <input
+                  type="file"
+                  accept="video/*"
+                  onChange={(e) => handleFileChange(e, "video3")}
+                />
+
+                {actualizeData.video3 != "" && (
+                  <p
+                    className="underline cursor-pointer mt-4 text-red-600"
+                    onClick={() => handleDeleteObject("video3")}
+                  >
+                    Odstrániť objekt
+                  </p>
+                )}
+              </div>
+            </div>
+
             <div className="flex flex-row items-center pt-8 gap-6 mb-16">
               {" "}
               <h6 className="text-primary ">Pridajte fotky:</h6>

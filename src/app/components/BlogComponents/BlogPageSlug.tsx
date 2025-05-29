@@ -16,6 +16,7 @@ import ButtonMui from "../ButtonMui";
 import NextJsImage from "../NextImage";
 import StepBack from "../StepBack";
 import SkeletonBlogPageSlug from "./SkeletonBlogPageSlug";
+import ReactPlayer from "react-player";
 
 interface Props {
   slug: string;
@@ -124,6 +125,24 @@ const BlogPageSlug = ({ slug }: Props) => {
                 />
               )}
 
+              {data.video1 && (
+                <div className="react_player_own  mt-8 md:mt-16 rounded-[50px] ">
+                  <ReactPlayer
+                    url={data.video1.replace(aws_bucket_url, cloudfront_url)}
+                    controls
+                    width="100%"
+                    height="513px"
+                    config={{
+                      file: {
+                        attributes: {
+                          controlsList: "nodownload",
+                        },
+                      },
+                    }}
+                  />
+                </div>
+              )}
+
               {data?.text3 && (
                 <div
                   className="w-full dark mt-4 md:mt-16 "
@@ -144,6 +163,55 @@ const BlogPageSlug = ({ slug }: Props) => {
                   placeholder="blur"
                   blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAEklEQVR4nGP48OHDf2TMQLoAABc0PPGQ/86sAAAAAElFTkSuQmCC"
                 />
+              )}
+
+              {data.video2 && (
+                <div className="react_player_own  mt-8 md:mt-16 rounded-[50px] ">
+                  <ReactPlayer
+                    url={data.video2.replace(aws_bucket_url, cloudfront_url)}
+                    controls
+                    width="100%"
+                    height="513px"
+                    config={{
+                      file: {
+                        attributes: {
+                          controlsList: "nodownload",
+                        },
+                      },
+                    }}
+                  />
+                </div>
+              )}
+
+              {data.photo3 && (
+                <Image
+                  src={data.photo3.replace(aws_bucket_url, cloudfront_url)}
+                  width={500}
+                  height={500}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+                  className="w-full h-full  object-cover mt-4 md:mt-16 rounded-[50px] "
+                  alt="Blog foto"
+                  placeholder="blur"
+                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAEklEQVR4nGP48OHDf2TMQLoAABc0PPGQ/86sAAAAAElFTkSuQmCC"
+                />
+              )}
+
+              {data.video3 && (
+                <div className="react_player_own  mt-8 md:mt-16 rounded-[50px] ">
+                  <ReactPlayer
+                    url={data.video3.replace(aws_bucket_url, cloudfront_url)}
+                    controls
+                    width="100%"
+                    height="513px"
+                    config={{
+                      file: {
+                        attributes: {
+                          controlsList: "nodownload",
+                        },
+                      },
+                    }}
+                  />
+                </div>
               )}
 
               {data.another_photos.length > 0 && (

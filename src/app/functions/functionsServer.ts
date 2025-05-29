@@ -176,7 +176,7 @@ export async function fetchActualityId(
   }
 }
 
-export async function fetchBlogId(id: string): Promise<ActualityInterface> {
+export async function fetchBlogId(id: string): Promise<BlogInterface> {
   try {
     const command = new GetCommand({
       TableName: "blogy",
@@ -190,7 +190,7 @@ export async function fetchBlogId(id: string): Promise<ActualityInterface> {
       throw new Error(`Item with id not found.`);
     }
 
-    return response.Item as ActualityInterface;
+    return response.Item as BlogInterface;
   } catch (err) {
     console.log(err);
     throw new Error(`Item with  not found.`);
@@ -494,7 +494,7 @@ export async function fetchBlogSlug(slug: string) {
       throw new Error();
     }
 
-    return response.Items[0] as ActualityInterface;
+    return response.Items[0] as BlogInterface;
   } catch (error) {
     console.log(error);
     throw new Error();
