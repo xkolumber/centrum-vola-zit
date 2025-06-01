@@ -58,8 +58,8 @@ export const team_members: TeamMemberInterface[] = [
   },
   {
     name: "Mgr. Lucia Kačmarčíková",
-    job: "sociálna a nadačná sféra",
-    desc: "Vediem občianske združenie, zabezpečujem sociálne vybavanie pre klientov. Som obchodný reprezentant zdravotných pomôcok a detského programu. Riešim finančnú podporu pre dieťa. ",
+    job: "sociálna a nadačná sféra, zdravotné pomôcky",
+    desc: "Vediem občianske združenie, zabezpečujem sociálne vybavanie pre klientov. Som obchodná reprezentantka zdravotných pomôcok - detský program. Riešim finančnú podporu pre dieťa. ",
     fb_link: "www.facebook.com",
     ig_link: "www.instagram.com",
     photo: "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/lucia.jpg",

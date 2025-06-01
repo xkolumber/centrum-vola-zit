@@ -222,6 +222,14 @@ const HealthCare = () => {
               >
                 www.revomat.sk
               </Link>
+              <Link
+                href="https://www.facebook.com/permalink.php?story_fbid=pfbid023nf2menswzj63vgR1wUzKBqTdcFrYUqXHPzBo7BrLhsTugak2P3j2nD3Kzi8xo9Gl&id=100054485828872"
+                className="underline"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Najčastejšie otázky k procesu získania zdravotníckej pomôcky
+              </Link>
             </div>
           </div>
         </div>
