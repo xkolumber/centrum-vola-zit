@@ -15,7 +15,7 @@ const TextWithArrow = ({ title, link }: Props) => {
   return (
     <Link
       className={`flex flex-row gap-6 items-center cursor-pointer rounded-[16px] absolute bottom-12 md:bottom-16 left-12 md:left-16 z-10
-   
+   ${link === "zdravotnicke-pomocky" && "md:max-w-min 2xl:max-w-none"}
 
       `}
       onMouseEnter={() => setHoverButton(true)}
@@ -23,7 +23,9 @@ const TextWithArrow = ({ title, link }: Props) => {
       href={link}
     >
       <h5 className=" font-semibold text-white ">{title}</h5>
-      <IconArrowRight ishovered={hoverButton} />
+      <div className="">
+        <IconArrowRight ishovered={hoverButton} />
+      </div>
     </Link>
   );
 };
