@@ -39,6 +39,7 @@
     "react-player": "^2.16.0",
     "react-spinners": "^0.17.0",
     "resend": "^4.5.1",
+    "sharp": "^0.34.2",
     "swiper": "^11.2.6",
     "yet-another-react-lightbox": "^3.23.1"
   },
