@@ -61,7 +61,7 @@ jobs:
             docker run -d \
               --name centrumvz-container \
               --restart=always \
-              -p 127.0.0.1:3000:3000
+              -p 127.0.0.1:3000:3000 \
               -e ACCESS_KEY_ID="$ACCESS_KEY_ID" \
               -e SECRET_ACCESS_KEY="$SECRET_ACCESS_KEY" \
               -e NEXT_PUBLIC_USER_POOL_ID="$NEXT_PUBLIC_USER_POOL_ID" \
