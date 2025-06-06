@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import type { MetadataRoute } from "next";
 import { fetchBlogs } from "./functions/functionsServer";
 import { BlogInterface } from "./lib/interface";
