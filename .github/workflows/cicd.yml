@@ -40,10 +40,8 @@ jobs:
 
       - name: Set up SSH private key
         run: |
-          echo "$CONTABO_KEY_B64" | base64 -d > contabo_key.pem
+          echo "${{ secrets.CONTABO_KEY }}" > contabo_key.pem
           chmod 600 contabo_key.pem
-        env:
-          CONTABO_KEY_B64: ${{ secrets.CONTABO_KEY_B64 }}
 
       - name: Deploy to Contabo VPS
         env:
