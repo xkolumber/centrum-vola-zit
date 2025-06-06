@@ -75,5 +75,5 @@ jobs:
           EOF
 
           chmod +x deploy.sh
-          scp -i contabo_key.pem -o StrictHostKeyChecking=no deploy.sh root@109.205.176.214:/root/deploy.sh
-          ssh -i contabo_key.pem -o StrictHostKeyChecking=no root@109.205.176.214 'bash /root/deploy.sh'
+          scp -i contabo_key.pem -o StrictHostKeyChecking=no deploy.sh root@89.117.58.203:/root/deploy.sh
+          ssh -i contabo_key.pem -o StrictHostKeyChecking=no root@89.117.58.203 'bash /root/deploy.sh'
