@@ -52,9 +52,7 @@ jobs:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           IMAGE_TAG: ${{ github.run_number }}
         run: |
-          echo "Running deploy with image tag: $IMAGE_TAG"
-
-          cat << EOF > deploy.sh
+          ssh -i contabo_key.pem -o StrictHostKeyChecking=no deployuser@89.117.58.203 << EOF
             docker pull xkolumber/centrumvz-distroless-image:$IMAGE_TAG
             docker stop centrumvz-container || true
             docker rm centrumvz-container || true
@@ -62,18 +60,14 @@ jobs:
               --name centrumvz-container \
               --restart=always \
               -p 127.0.0.1:3000:3000 \
-              -e ACCESS_KEY_ID="$ACCESS_KEY_ID" \
-              -e SECRET_ACCESS_KEY="$SECRET_ACCESS_KEY" \
-              -e NEXT_PUBLIC_USER_POOL_ID="$NEXT_PUBLIC_USER_POOL_ID" \
-              -e NEXT_PUBLIC_USER_POOL_CLIENT_ID="$NEXT_PUBLIC_USER_POOL_CLIENT_ID" \
-              -e RESEND_API_KEY="$RESEND_API_KEY" \
+              -e ACCESS_KEY_ID="${ACCESS_KEY_ID}" \
+              -e SECRET_ACCESS_KEY="${SECRET_ACCESS_KEY}" \
+              -e NEXT_PUBLIC_USER_POOL_ID="${NEXT_PUBLIC_USER_POOL_ID}" \
+              -e NEXT_PUBLIC_USER_POOL_CLIENT_ID="${NEXT_PUBLIC_USER_POOL_CLIENT_ID}" \
+              -e RESEND_API_KEY="${RESEND_API_KEY}" \
               xkolumber/centrumvz-distroless-image:$IMAGE_TAG
 
-              docker images "xkolumber/centrumvz-distroless-image" --format "{{.Repository}}:{{.Tag}}" \
-                | grep -v ":$IMAGE_TAG" \
-                | xargs -r docker rmi || true
+            docker images "xkolumber/centrumvz-distroless-image" --format "{{.Repository}}:{{.Tag}}" \
+              | grep -v ":$IMAGE_TAG" \
+              | xargs -r docker rmi || true
           EOF
-
-          chmod +x deploy.sh
-          scp -i contabo_key.pem -o StrictHostKeyChecking=no deploy.sh deployuser@89.117.58.203:/home/deployuser/deploy.sh
-          ssh -i contabo_key.pem -o StrictHostKeyChecking=no deployuser@89.117.58.203 'bash /home/deployuser/deploy.sh'
