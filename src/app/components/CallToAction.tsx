@@ -1,5 +1,3 @@
-import Link from "next/link";
-import React from "react";
 import ButtonMui from "./ButtonMui";
 
 const CallToAction = () => {
@@ -11,9 +9,8 @@ const CallToAction = () => {
         poradenstvo či konkrétnu terapiu – neváhajte nás kontaktovať. Radi vám
         pomôžeme.
       </p>
-      <Link href="/kontakt">
-        <ButtonMui color="#ADCA2A" text="Kontaktujte nás" link="/kontakt" />
-      </Link>
+
+      <ButtonMui color="#ADCA2A" text="Kontaktujte nás" link="/kontakt" />
     </div>
   );
 };

@@ -27,13 +27,14 @@ const HomePageSwiper = () => {
     refetchOnWindowFocus: false,
   });
 
+  console.log(data);
   return (
     <div className="bg-[#F1F1F1] flex flex-col justify-center items-center  md:h-[600px] xl:min-h-[70vh] relative">
       <div className="w-full   flex">
-        {isFetching && <SkeletonActualityHomePage />}
+        {isFetching && data.pages.length === 0 && <SkeletonActualityHomePage />}
         {error && <p>Chyba pri načítaní dát.</p>}
 
-        {data && !isFetching && (
+        {data && (
           <>
             <Swiper
               breakpoints={{
