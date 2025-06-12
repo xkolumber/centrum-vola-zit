@@ -30,7 +30,7 @@ export const team_members: TeamMemberInterface[] = [
       "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/peter_foto.jpg",
   },
   {
-    name: "Yuliia Bushmatova",
+    name: "Mgr. Yuliia Bushmatova",
     job: "logopédia",
     desc: "Pracujem s deťmi, ktoré majú narušenú výslovnosť alebo ešte nerozprávajú. Venujem sa logopedickej masáži – orofaciálnej aj intraorálnej stimulácii. Používam sondy a vibračnú stimuláciu na podporu artikulačných svalov, aby som deťom pomohla lepšie rozvíjať reč.",
     fb_link: "www.facebook.com",
