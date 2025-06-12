@@ -5,19 +5,29 @@ import { CircularProgress } from "@mui/material";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import Link from "next/link";
 import GalleryObject from "../GalleryElements/GalleryObject";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 
 const HomePageGallery = () => {
-  const { data, error, isFetching } = useInfiniteQuery({
+  const { ref, inView } = useInView();
+  const { data, error, isFetching, refetch, isFetched } = useInfiniteQuery({
     queryKey: ["gallery"],
     queryFn: ({ pageParam = undefined }) => fetchGalleriesLatest(pageParam),
     getNextPageParam: (lastPage) => lastPage.lastEvaluatedKey ?? undefined,
     initialPageParam: undefined,
     initialData: { pages: [], pageParams: [] },
     refetchOnWindowFocus: false,
+    enabled: false,
   });
 
+  useEffect(() => {
+    if (inView && !isFetched) {
+      refetch();
+    }
+  }, [inView, refetch, isFetched]);
+
   return (
-    <div className="w-full  flex justify-center pt-8  ">
+    <div className="w-full  flex justify-center pt-8  " ref={ref}>
       <div className="main_section justify-center w-full flex flex-col  ">
         <div className="flex flex-col w-full ">
           <p>Spomienky</p>
