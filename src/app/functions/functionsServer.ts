@@ -401,6 +401,28 @@ export async function fetchActualityLatest(
   }
 }
 
+export async function fetchActualityAll() {
+  try {
+    const command = new ScanCommand({
+      TableName: "aktuality",
+    });
+
+    const response = await docClient.send(command);
+    if (response.Items) {
+      const sortedItems = response.Items.sort((a, b) => {
+        return new Date(b.date).getTime() - new Date(a.date).getTime();
+      });
+
+      return sortedItems as ActualityInterface[];
+    }
+
+    throw new Error(`Item with  not found.`);
+  } catch (err) {
+    console.log(err);
+    throw new Error(`Item with  not found.`);
+  }
+}
+
 export async function fetchBlogsLatest(
   exclusiveStartKey?: any
 ): Promise<{ items: ActualityInterface[]; lastEvaluatedKey?: any }> {

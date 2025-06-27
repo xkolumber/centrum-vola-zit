@@ -2,11 +2,13 @@
 import {
   aws_bucket_url,
   cloudfront_url,
+  STALE_TIME,
 } from "@/app/functions/functionsClient";
-import { fetchActualityLatest } from "@/app/functions/functionsServer";
+import { fetchActualityAll } from "@/app/functions/functionsServer";
 import IconSwiperLeft from "@/app/icons/IconSwiperLeft";
 import IconSwiperRight from "@/app/icons/IconSwiperRight";
-import { useInfiniteQuery } from "@tanstack/react-query";
+import { ActualityInterface } from "@/app/lib/interface";
+import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -18,21 +20,20 @@ import SkeletonActualityHomePage from "../ActualityComponents/SkeletonActualityH
 import ButtonMui from "../ButtonMui";
 
 const HomePageSwiper = () => {
-  const { data, error, isFetching } = useInfiniteQuery({
+  const { data, error, isLoading } = useQuery<ActualityInterface[]>({
     queryKey: ["aktuality"],
-    queryFn: ({ pageParam = undefined }) => fetchActualityLatest(pageParam),
-    getNextPageParam: (lastPage) => lastPage.lastEvaluatedKey ?? undefined,
-    initialPageParam: undefined,
-    initialData: { pages: [], pageParams: [] },
+    queryFn: () => fetchActualityAll(),
+    staleTime: STALE_TIME,
     refetchOnWindowFocus: false,
+    placeholderData: (previousData) => previousData,
   });
 
   return (
     <div className="bg-[#F1F1F1] flex flex-col justify-center items-center  md:h-[600px] xl:min-h-[70vh] relative">
-      {isFetching && <SkeletonActualityHomePage />}
+      {isLoading && <SkeletonActualityHomePage />}
       {error && <p>Chyba pri načítaní dát.</p>}
       <div className="w-full   flex">
-        {data && !isFetching && (
+        {data && (
           <>
             <Swiper
               breakpoints={{
@@ -49,8 +50,7 @@ const HomePageSwiper = () => {
               speed={1000}
               className=" "
             >
-              {data.pages
-                .flatMap((page) => page.items)
+              {data
                 .filter((object) => object.viditelnost)
                 .map((object, index) => (
                   <SwiperSlide key={index}>
