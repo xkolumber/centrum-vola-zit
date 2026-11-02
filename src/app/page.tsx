@@ -41,7 +41,6 @@ export default function Home() {
   return (
     <div className="">
       <HomePageSwiper />
-
       <HomePageSelection />
       <HomePageHowWeWork />
       <HomePageTeam />
