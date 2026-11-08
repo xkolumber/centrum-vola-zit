@@ -70,7 +70,7 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col">
-            <h5 className="uppercase mb-2 font-semibold">Fyzioterapia</h5>
+            {/* <h5 className="uppercase mb-2 font-semibold">Fyzioterapia</h5>
             <p className="">Centrum Vôľa Žiť: Mgr. Alexandra Németh</p>
             <a href="tel:+421911744717">
               <p>Tel: +421 911 744 717</p>
@@ -78,7 +78,7 @@ const Footer = () => {
             <p className="">Centrum Vôľa Žiť: Bc. Peter Németh</p>
             <a href="tel:+421918457939">
               <p>Tel: +421 918 457 939</p>
-            </a>
+            </a> */}
           </div>
           <div className="flex flex-col">
             <h5 className="uppercase mb-2 font-semibold">Adresa</h5>

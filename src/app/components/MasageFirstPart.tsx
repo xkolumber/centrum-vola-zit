@@ -115,7 +115,7 @@ export default function MasageFirstPart() {
               <ReactPlayer
                 url={services[active].videoUrl.replace(
                   aws_bucket_url,
-                  cloudfront_url
+                  cloudfront_url,
                 )}
                 controls
                 width="100%"
@@ -136,7 +136,7 @@ export default function MasageFirstPart() {
               height={1080}
               src={services[active].imageUrl!.replace(
                 aws_bucket_url,
-                cloudfront_url
+                cloudfront_url,
               )}
               placeholder="blur"
               blurDataURL={BLUR_DATA_URL_GRAY}

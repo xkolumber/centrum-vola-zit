@@ -11,15 +11,15 @@ import { Navigation, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 export const team_members: TeamMemberInterface[] = [
-  {
-    name: "Mgr. Alexandra Németh",
-    job: "fyzioterapeut",
-    desc: "Venujem sa neurorehabilitácii detí. Som certifikovaná detská Bobath terapeutka. Zameriavam sa na diagnostiku a terapiu posturálnych porúch, pričom využívam aj metódu SM-systém a kineziotejping.",
-    fb_link: "www.facebook.com",
-    ig_link: "www.instagram.com",
-    photo:
-      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/alexandra_foto.jpg",
-  },
+  // {
+  //   name: "Mgr. Alexandra Németh",
+  //   job: "fyzioterapeut",
+  //   desc: "Venujem sa neurorehabilitácii detí. Som certifikovaná detská Bobath terapeutka. Zameriavam sa na diagnostiku a terapiu posturálnych porúch, pričom využívam aj metódu SM-systém a kineziotejping.",
+  //   fb_link: "www.facebook.com",
+  //   ig_link: "www.instagram.com",
+  //   photo:
+  //     "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/alexandra_foto.jpg",
+  // },
   {
     name: "Bc. Peter Németh",
     job: "fyzioterapeut",

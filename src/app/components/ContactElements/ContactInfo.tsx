@@ -52,10 +52,16 @@ const data = [
 const data2 = [
   {
     title: "Ochotní pomôcť",
-    desc: "Mgr. Alexandra Németh, Mgr. Lucia Kačmarčíková",
+    desc: "Mgr. Lucia Kačmarčíková",
     color: "#F4D529",
     icon: <VolunteerActivismIcon />,
   },
+  //  {
+  //   title: "Ochotní pomôcť",
+  //   desc: "Mgr. Alexandra Németh, Mgr. Lucia Kačmarčíková",
+  //   color: "#F4D529",
+  //   icon: <VolunteerActivismIcon />,
+  // },
   {
     title: "Náš e-mail",
     desc: "centrum.volazit@gmail.com",
@@ -64,7 +70,7 @@ const data2 = [
   },
   {
     title: "Telefónny kontakt",
-    desc: "+421 911 744 717, +421 915 653 553",
+    desc: "+421 915 653 553",
     color: "#20A9E1",
     icon: (
       <CallIcon
@@ -74,6 +80,18 @@ const data2 = [
       />
     ),
   },
+  //  {
+  //   title: "Telefónny kontakt",
+  //   desc: "+421 911 744 717, +421 915 653 553",
+  //   color: "#20A9E1",
+  //   icon: (
+  //     <CallIcon
+  //       style={{
+  //         color: "#ffffff",
+  //       }}
+  //     />
+  //   ),
+  // },
   {
     title: "Sídlo",
     desc: "Dr. Alexandra 42, 060 01 Kežmarok, Slovensko",
