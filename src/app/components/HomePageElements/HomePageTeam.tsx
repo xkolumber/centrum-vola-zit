@@ -20,15 +20,15 @@ export const team_members: TeamMemberInterface[] = [
   //   photo:
   //     "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/alexandra_foto.jpg",
   // },
-  {
-    name: "Bc. Peter Németh",
-    job: "fyzioterapeut",
-    desc: "Venujem sa neurorehabilitácii detí a dospelých. Zameriavam sa na diagnostiku a terapiu posturálnych porúch pomocou metódy DNS – dynamickej neuromuskulárnej stabilizácie. Vo svojej práci využívam aj Redcord, SM-systém a kineziotejping.",
-    fb_link: "www.facebook.com",
-    ig_link: "www.instagram.com",
-    photo:
-      "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/peter_foto.jpg",
-  },
+  // {
+  //   name: "Bc. Peter Németh",
+  //   job: "fyzioterapeut",
+  //   desc: "Venujem sa neurorehabilitácii detí a dospelých. Zameriavam sa na diagnostiku a terapiu posturálnych porúch pomocou metódy DNS – dynamickej neuromuskulárnej stabilizácie. Vo svojej práci využívam aj Redcord, SM-systém a kineziotejping.",
+  //   fb_link: "www.facebook.com",
+  //   ig_link: "www.instagram.com",
+  //   photo:
+  //     "https://centrumvolazitopen.s3.eu-north-1.amazonaws.com/peter_foto.jpg",
+  // },
   {
     name: "Mgr. Yuliia Bushmatova",
     job: "logopédia",
