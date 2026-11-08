@@ -47,7 +47,7 @@ export default function Home() {
       <HomePageFaq />
       {/* <HomePageThreeElements /> */}
       <HomePageGallery />
-      <div className="main_section m-auto !pt-16 !pb-16 md:!pt-0 lg:!pb-32">
+      <div className="main_section m-auto !pt-16 !pb-16 md:!pt-0 lg:!pb-32 ">
         <CallToAction />
       </div>
     </div>
